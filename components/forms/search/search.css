@@ -1,0 +1,65 @@
+
+/*.search-form-input{
+	border: 1px solid #333;
+}*/
+
+.category-search{
+	border: 1px solid #A2AB58;
+}
+
+.search-form-input div{
+	display: inline-block;
+}
+
+.search-form-input .category-list{
+	
+}
+
+.search-form-input .category-list select{
+	/*margin: 50px;
+    border: 1px solid #111;*/
+   	background: transparent;
+   	width: 150px;
+   	padding: 8px 0;
+   	font-size: 16px;
+   	border: 1px solid #ccc;
+   	/*height: 34px;*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://i.imgur.com/D35T3Bg.png) 96% / 15% no-repeat #eee;
+
+	/*padding: 10px 0;
+	border: none;
+	-webkit-appearance: none;
+   -moz-appearance: none;
+   	appearance: none;
+	background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;*/
+	/*border-top-left-radius: 3px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 0*/
+}
+
+
+.search-form-input .search-box{
+	
+}
+
+.search-form-input .search-box input{
+	
+}
+
+
+.search-form-input .search-button{
+	background-color: #999;
+	padding: 10px 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-bottom-left-radius: 0;
+}
+
+.search-form-input .search-button a{
+	
+}
