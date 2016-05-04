@@ -1,0 +1,50 @@
+.checkout{
+	box-sizing: border-box;
+	border: 1px solid #333;
+	/*padding: 5px;*/
+	font-family: "Roboto", sans-serif;
+	border-radius: 3px;
+	box-shadow: 2px 2px 5px #333;
+	color: #333;
+	width: 100%;
+}
+
+.checkout-form .title h3{
+	text-transform: uppercase;
+}
+
+.address-info{
+	box-sizing: border-box;
+}
+
+.form-input label{
+	display:block;
+	margin: 5px 0;
+	box-sizing: border-box;
+}
+
+.form-input input{
+	line-height: 2em;
+	font-size: 16px;
+	border-radius: 3px;
+	border: 1px solid #999;
+	margin: 10px 0;
+	box-sizing: border-box;
+}
+
+.half input{
+	width: 100%;
+}
+
+.half{
+	display: inline-block;
+	width: 50%;
+}
+
+/*.whole{
+	width:100%;
+}*/
+
+.whole input{
+	width: 100%;
+}

@@ -1,0 +1,52 @@
+body{
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+.questionnaire{
+	border: 1px solid #999999;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 3px;
+	color: #333;
+	box-shadow: 2px 2px 5px #67BCDB;
+	max-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.questionnaire h3{
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.form-input{
+	display: inline-block;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.form-input input[type=radio]{
+
+}
+
+.form-input input[type=text]{
+	width: 100%;
+	border: 1px solid #999;
+	border-radius: 3px;
+	font-size:16px;
+	line-height: 2em;
+	box-sizing: border-box;
+	padding: 5px 5px;
+}
+
+.form-submit input[type=submit]{
+	background-color:#E44424;
+	color:#fff;
+	cursor: pointer;
+	border: 1px solid #E44424;
+	padding: 5px;
+	border-radius: 3px;
+	margin-top: 10px;
+	font-size: 16px;
+}
