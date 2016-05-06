@@ -1,0 +1,61 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+}
+
+.scheduler{
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 5px #67BCDB;
+	color: #333;
+	border-radius: 3px;
+	width: 600px;
+}
+
+.scheduler h3{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 24px;
+}
+
+.form-input{
+	margin: 15px 0;
+}
+
+.form-input input, select, textarea{
+	width: 100%;
+	padding: 8px 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.half{
+	display: inline-block;
+	width: 50%;
+	float: left;
+	padding: 0 15px;
+}
+
+.whole{
+	display: inline-block;
+	width: 100%;
+	float: left;
+	padding: 0 15px;
+}
+
+.form-submit{
+	text-align: center;
+}
+
+.form-submit input{
+	padding: 20px 30px;
+	margin: 15px 0;
+	background-color: #E44424;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+}

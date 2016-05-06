@@ -1,0 +1,88 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 25px;
+	font-family: "Roboto", sans-serif;
+}
+
+.calculator {
+	width: 600px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	overflow: auto;
+	padding: 15px 15px;
+}
+
+/*.calculator:after{
+	clear: both;
+}*/
+
+.form-input{
+	display: inline-block;
+	float: left;
+	margin: 10px 0;
+}
+
+.form-input button{
+	padding: 10px 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: 2px 2px 5px #67BCDB;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.form-input input{
+	padding: 10px 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	/*box-shadow: 2px 2px 5px #67BCDB;*/
+	border-style: inset;
+}
+
+.quarter{
+	padding: 0 10px;
+	width: 25%;
+}
+
+.quarter button, input{
+	width: 100%;
+}
+
+.half{
+	padding: 0 10px;
+	width: 50%;
+}
+
+.half button, input{
+	width: 100%;
+}
+
+.three-quarters{
+	padding: 0 10px;
+	width: 75%;
+}
+
+.three-quarter button, input{
+	width: 100%;
+}
+
+.whole{
+	padding: 0 10px;
+	width: 100%;
+}
+
+.whole button, input{
+	width: 100%;
+}
+
+.equal button{
+	background-color: #E44424;
+	color: #fff;
+}
+
+.symbol button{
+	background-color: #ccc;
+	
+}
