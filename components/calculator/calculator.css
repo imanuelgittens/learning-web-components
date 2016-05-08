@@ -44,6 +44,11 @@
 	border-style: inset;
 }
 
+.target {
+  float: none;
+  display: inline-block;
+}
+
 .quarter{
 	padding: 0 10px;
 	width: 25%;
@@ -88,4 +93,8 @@
 .symbol button{
 	background-color: #ccc;
 	
+}
+
+form {
+  white-space: nowrap;
 }
