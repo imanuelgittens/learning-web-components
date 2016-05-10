@@ -1,0 +1,54 @@
+#main{
+	background: url(http://i.imgur.com/ZJtRFzN.jpg);
+	background-size: cover;
+	font-family: "Roboto", sans-serif;
+	height: 1080px;
+	margin: -20px -10px;
+}
+
+header h1{
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+nav ul{
+	list-style-type: none;
+	text-align: center;
+}
+
+.top-menu li{
+	display: inline;
+	padding: 0 15px;
+	
+}
+
+.top-menu li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: #e44424;
+}
+
+.pic{
+	text-align: center;
+}
+
+.pic img{
+	border-radius: 50%;
+	width: 150px;
+	height: 100px;
+}
+
+footer{
+	text-align: center;
+}
+
+footer p{
+	/*position: fixed;*/
+	bottom: 0px;
+	color: #fff;
+
+}
