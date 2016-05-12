@@ -8,8 +8,8 @@ body{
 	margin-right: -5px;
 }
 
-.search-form-input .category-list{
-
+.search-form{
+	margin-top: 80px;
 }
 
 .search-form-input .category-list select{

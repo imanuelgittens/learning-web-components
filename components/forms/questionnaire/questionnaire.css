@@ -6,13 +6,13 @@ body{
 .questionnaire{
 	border: 1px solid #999999;
 	padding: 10px;
-	margin: 10px;
+	margin-top: 80px;
 	border-radius: 3px;
 	color: #333;
 	box-shadow: 2px 2px 5px #67BCDB;
 	max-width: 600px;
 	width: 100%;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 }
 
 .questionnaire h3{

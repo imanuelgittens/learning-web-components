@@ -1,21 +1,29 @@
-#main{
-	background: url(http://i.imgur.com/ZJtRFzN.jpg);
-	background-size: cover;
-	font-family: "Roboto", sans-serif;
-	height: 1080px;
-	margin: -20px -10px;
+body{
+	margin: 0;
 }
 
-header h1{
+#main{
+	background: url(http://i.imgur.com/ZJtRFzN.jpg);
+	background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;  
+	font-family: "Roboto", sans-serif;
+	height: 1080px;
+	/*margin: -20px -10px;*/
+}
+
+.about-me h1{
 	text-align: center;
 	color: #fff;
 	text-transform: uppercase;
-	margin-bottom: 40px;
+	margin-top: 80px;
 }
 
 nav ul{
 	list-style-type: none;
 	text-align: center;
+	margin: 0;
+    padding-top: 20px;
 }
 
 .top-menu li{
