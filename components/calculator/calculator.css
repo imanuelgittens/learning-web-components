@@ -1,0 +1,103 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	font-family: "Roboto", sans-serif;
+}
+
+.calculator {
+	width: 600px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	/*overflow: hidden;*/
+	padding: 15px 15px;
+	font-size: 25px;
+	margin-top: 80px;
+	text-align: center;
+
+}
+
+.calculator::after{
+	content: "";
+	display: block;
+	clear: left;
+}
+
+
+.form-input{
+	display: inline-block;
+	float: left;
+	margin: 10px 0;
+}
+
+.form-input button{
+	padding: 10px 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: 2px 2px 5px #67BCDB;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.form-input input{
+	padding: 10px 25px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	border-style: inset;
+}
+
+.target {
+  float: none;
+  display: inline-block;
+}
+
+.quarter{
+	padding: 0 10px;
+	width: 25%;
+}
+
+.quarter button, input{
+	width: 100%;
+}
+
+.half{
+	padding: 0 10px;
+	width: 50%;
+}
+
+.half button, input{
+	width: 100%;
+}
+
+.three-quarters{
+	padding: 0 10px;
+	width: 75%;
+}
+
+.three-quarter button, input{
+	width: 100%;
+}
+
+.whole{
+	padding: 0 10px;
+	width: 100%;
+}
+
+.whole button, input{
+	width: 100%;
+}
+
+.equal button{
+	background-color: #E44424;
+	color: #fff;
+}
+
+.symbol button{
+	background-color: #ccc;
+	
+}
+
+form {
+  white-space: nowrap;
+}

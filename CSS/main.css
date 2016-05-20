@@ -1,0 +1,62 @@
+body{
+	margin: 0;
+}
+
+#main{
+	background: url(http://i.imgur.com/ZJtRFzN.jpg);
+	background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;  
+	font-family: "Roboto", sans-serif;
+	height: 1080px;
+	/*margin: -20px -10px;*/
+}
+
+.about-me h1{
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	margin-top: 80px;
+}
+
+nav ul{
+	list-style-type: none;
+	text-align: center;
+	margin: 0;
+    padding-top: 20px;
+}
+
+.top-menu li{
+	display: inline;
+	padding: 0 15px;
+	
+}
+
+.top-menu li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: #e44424;
+}
+
+.pic{
+	text-align: center;
+}
+
+.pic img{
+	border-radius: 50%;
+	width: 150px;
+	height: 100px;
+}
+
+footer{
+	text-align: center;
+}
+
+footer p{
+	/*position: fixed;*/
+	bottom: 0px;
+	color: #fff;
+
+}

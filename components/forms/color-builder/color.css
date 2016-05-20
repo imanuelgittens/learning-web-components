@@ -1,0 +1,58 @@
+.interactive-color-builder{
+	width: 600px;
+	border: 1px solid #999999;
+	padding: 10px 20px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 5px #67BCDB;
+	box-sizing: border-box;
+	color: #333;
+	font-family: "Roboto", sans-serif;
+	margin-top:80px;
+}
+
+.interactive-color-builder h3{
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+.interactive-color-builder .color-builder, .color-result{
+	display: inline-block;
+}
+
+.color-builder{
+	box-sizing: border-box;
+	width: 50%;
+}
+
+.form-input label{
+	display: block;
+	width: 100px;
+}
+
+.form-input input{
+	margin: 0;
+}
+
+.color-result{
+	box-sizing: border-box;
+	width: 50%%;
+}
+
+.color-result textarea{
+	background-color: rgba(127, 127, 127, 0.5);
+	border: 1px solid #999999;
+	border-radius: 3px;
+}
+
+.color-code{
+	padding-top: 10px;
+}
+
+.color-code input{
+	line-height: 1.5em;
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #999999;
+}

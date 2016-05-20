@@ -1,0 +1,59 @@
+
+
+.register{
+	width:400px;
+	border: 1px solid #efefef;
+	padding: 10px;
+	border-radius: 3px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2px 2px 5px #67BCDB;
+	color:#333;
+	margin-top: 80px;
+}
+
+.register h3{
+	text-align: center;
+	text-decoration: underline;
+}
+
+.form-input{
+	padding: 5px 0;
+}
+
+.form-input label{
+	/* To make sure that all labels have the same size and are properly aligned */
+    display: inline-block;
+    
+    text-align: right;
+}
+
+.form-input input{
+	line-height: 2em;
+	border: 1px solid #eee;
+	border-radius: 2px;
+	width:100%;
+}
+
+.form-input input:focus{
+	line-height: 2em;
+	border: 1px solid #A2AB58;
+	border-radius: 2px;
+}
+
+.form-submit{
+	text-align: center;
+	padding: 5px 0;
+
+}
+
+.form-submit input{
+	cursor: pointer;
+	border:none;
+	font-size:16px;
+	color:#fff;
+	text-decoration: none;
+	background-color: #E44424;
+	padding: 10px;
+	border-radius: 3px;
+
+}
