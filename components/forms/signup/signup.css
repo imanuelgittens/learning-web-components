@@ -1,15 +1,14 @@
-body{
-	width:400px;
-}
+
 
 .register{
-	width:100%;
+	width:400px;
 	border: 1px solid #efefef;
 	padding: 10px;
 	border-radius: 3px;
 	font-family: "Roboto", sans-serif;
 	box-shadow: 2px 2px 5px #67BCDB;
 	color:#333;
+	margin-top: 80px;
 }
 
 .register h3{
