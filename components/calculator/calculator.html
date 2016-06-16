@@ -4,6 +4,7 @@
 	<title>Calculator</title>
 	<link rel="stylesheet" type="text/css" href="calculator.css">
 	<link rel="stylesheet" type="text/css" href="../../CSS/main.css">
+	<script type="text/javascript" src="calculator.js"></script>
 </head>
 <body>
 	<nav>
@@ -18,77 +19,82 @@
 	</nav>
 	<div class="calculator">
 		<form>
+			<div class="form-input quarter">
+				<label></label>
+				<button id="delete">DEL</button>
+			</div>
 			<div class="form-input quarter target">
 				<label></label>
-				<button>C</button>
+				<button id="clear">C</button>
 			</div>
-			<div class="form-input three-quarters target">
+
+			<div class="form-input half target">
 				<label></label>
-				<input type="text" placeholder="" />
-			</div>
-			<div class="form-input quarter">
-				<label></label>
-				<button>7</button>
+				<input id="result" type="text" placeholder="" />
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>8</button>
+				<button id="seven">7</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>9</button>
+				<button id="eight">8</button>
+			</div>
+			<div class="form-input quarter">
+				<label></label>
+				<button id="nine">9</button>
 			</div>
 			<div class="form-input quarter symbol">
 				<label></label>
-				<button>+</button>
+				<button id="plus">+</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>4</button>
+				<button id="four">4</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>5</button>
+				<button id="five">5</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>6</button>
+				<button id="six">6</button>
 			</div>
 			<div class="form-input quarter symbol">
 				<label></label>
-				<button>-</button>
+				<button id="minus">-</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>1</button>
+				<button id="one">1</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>2</button>
+				<button id="two">2</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>3</button>
+				<button id="three">3</button>
 			</div>
 			<div class="form-input quarter symbol">
 				<label></label>
-				<button>/</button>
+				<button id="divide">/</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>0</button>
+				<button id="zero">0</button>
 			</div>
 			<div class="form-input quarter">
 				<label></label>
-				<button>.</button>
+				<button id="decimal">.</button>
 			</div>
 			<div class="form-input quarter equal">
 				<label></label>
-				<button>=</button>
+				<button id="equals">=</button>
 			</div>
 			<div class="form-input quarter symbol">
 				<label></label>
-				<button>x</button>
+				<button id="multiply">x</button>
 			</div>
 		</form>
 	</div>
