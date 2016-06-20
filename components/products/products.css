@@ -236,3 +236,11 @@
 .toggle-cart{
 	margin: 40px auto;
 }
+
+.inactive{
+	display:none;
+}
+
+.active{
+	display: block;
+}
