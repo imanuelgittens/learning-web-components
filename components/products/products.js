@@ -88,14 +88,14 @@ window.addEventListener('load', function(){
 		shoppingCart.push(singleProduct);
 
 		buildCartItems();
-		totalPrice();
+		totalPrice(0);
 		showCart();
 	}
 
 	function removeFromCart(index){
 		shoppingCart.splice(index, 1);
 		buildCartItems();
-		totalPrice();
+		totalPrice(0);
 		if(shoppingCart.length  <= 0){
 			hideCart();
 		}
@@ -103,37 +103,45 @@ window.addEventListener('load', function(){
 
 	function changeQuantity(index, value){
 		shoppingCart[index].quantity = value;
-		totalPrice();
+		totalPrice(0);
 	}
-//to finish
-	function totalPrice(){
+
+	function totalPrice(discount){
 		var subTotal = document.getElementById('subTotal');
 		var shippingCost = document.getElementById('shippingCost');
 		var total = document.getElementById('total');
-//		console.log(subTotal);
+
 		var i;
 		var result = 0;
 		for(i = 0; i < shoppingCart.length; i++){
 			result = result + (shoppingCart[i].price * shoppingCart[i].quantity);
 		}
+
+		result = result - (result * (discount/100));
 		subTotal.innerHTML = '$' + result;
-//console.log(result);
-
+		return result;
 	}
 
-	function promoCode(){
-
+	function promoCode(coupon){
+		if(coupon === "5ALL"){
+			//totalPrice(0);
+			totalPrice(5);
+		}
+/*		if(coupon === "PEN10"){
+			//totalPrice(0);
+			for(var i = 0; i < shoppingCart.length; i++){
+				if(shoppingCart[i].id === 'product1'){
+					shoppingCart[i].price =  shoppingCart[i].price - (shoppingCart[i].price * 0.1)
+				}
+			}
+			totalPrice(0);
+		}*/
 	}
-
-
-
 	//show/hide cart
 
 	toggleButton.addEventListener('click', function(event){
 		toggleCart();
 	});
-
-
 	//end show/hide cart
 
 //----
@@ -203,6 +211,33 @@ window.addEventListener('load', function(){
 				removeFromCart(productNumber);
 			}else{
 				changeQuantity(productNumber, value);
+			}
+		}
+	}
+
+//---
+	if(document.addEventListener){
+		document.addEventListener('click', handleCouponClick, true);
+	}else{
+		if(document.attachEvent){
+			document.attachEvent('onclick', handleCouponClick);
+		}
+	}
+
+	function handleCouponClick(event){
+		event = event || window.event;
+		event.target = event.target || event.srcElement;
+		var element = event.target;
+
+		var productNumber, value;
+
+		if(element.className === 'apply-coupon'){
+			value = document.getElementById('coupon').value;
+
+			if(value){
+				promoCode(value);
+			}else{
+				alert("Enter a coupon code.");
 			}
 		}
 	}
