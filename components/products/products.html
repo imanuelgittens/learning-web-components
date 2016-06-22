@@ -36,7 +36,7 @@
 				<p>$20.00</p>
 			</div>
 			<div class="add-to-cart">
-				<button>Add To Cart
+				<button class="cartAdd" id="product0">Add To Cart
 				</button>
 			</div>
 		</div>
@@ -54,7 +54,7 @@
 				<p>$20.00</p>
 			</div>
 			<div class="add-to-cart">
-				<button>Add To Cart
+				<button class="cartAdd" id="product1">Add To Cart
 				</button>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 				<p>$20.00</p>
 			</div>
 			<div class="add-to-cart">
-				<button>Add To Cart
+				<button class="cartAdd" id="product2">Add To Cart
 				</button>
 			</div>
 		</div>
@@ -90,7 +90,7 @@
 				<p>$20.00</p>
 			</div>
 			<div class="add-to-cart">
-				<button>Add To Cart
+				<button class="cartAdd" id="product3">Add To Cart
 				</button>
 			</div>
 		</div>
@@ -280,7 +280,26 @@
 						<h3>Price</h3>
 					</div>
 				</div>
-				<div class="body">
+				<div class="cart-products body">
+				
+					<!--<div class="sixth cart-options">
+					<a href="#">Remove</a>
+					</div>
+					<div class="sixth cart-item">
+						<img src="http://placehold.it/70x70">
+					</div>
+					<div class="third cart-desc">
+						<h3>Title</h3>
+						<p>Neque porro quisquam est qui dolorem ipsum...</p>
+					</div>
+					<div class="sixth cart-qty">
+						<input type="text" value="1" />
+					</div>
+					<div class="sixth cart-price">
+						<h4><strong>$29.99</strong></h4>
+					</div>
+				
+					
 					<div class="sixth cart-options">
 					<a href="#">Remove</a>
 					</div>
@@ -312,24 +331,8 @@
 					</div>
 					<div class="sixth cart-price">
 						<h4><strong>$29.99</strong></h4>
-					</div>
-					<div class="sixth cart-options">
-					<a href="#">Remove</a>
-					</div>
-					<div class="sixth cart-item">
-						<img src="http://placehold.it/70x70">
-					</div>
-					<div class="third cart-desc">
-						<h3>Title</h3>
-						<p>Neque porro quisquam est qui dolorem ipsum...</p>
-					</div>
-					<div class="sixth cart-qty">
-						<input type="text" value="1" />
-					</div>
-					<div class="sixth cart-price">
-						<h4><strong>$29.99</strong></h4>
-					</div>
-				</div>
+					</div>-->
+				</div> 
 
 				<div class="totals clearfix">
 					<div class="sixth coupons">
@@ -342,9 +345,9 @@
 						<p>Total:</p>
 					</div>
 					<div class="sixth figures">
-						<p>$89.97</p>
-						<p>$2.00</p>
-						<p>$91.97</p>
+						<p id="subTotal">$0.00</p>
+						<p id="shippingCost">$0.00</p>
+						<p id="total">$0.00</p>
 					</div>
 				</div>
 
