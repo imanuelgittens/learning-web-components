@@ -124,7 +124,7 @@ window.addEventListener('load', function(){
 
 	function promoCode(coupon){
 		if(coupon === "5ALL"){
-			//totalPrice(0);
+			buildCartItems();
 			totalPrice(5);
 		}
 /*		if(coupon === "PEN10"){
