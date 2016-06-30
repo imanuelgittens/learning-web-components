@@ -37,7 +37,9 @@ window.addEventListener('load', function(){
 
 	var cart = {
 		coupon: "",
-		items: []
+		items: [],
+		total: 0,
+		couponTotal: 0
 	}
 
 	var toggleButton = document.querySelector('.toggle-cart');
@@ -107,6 +109,7 @@ window.addEventListener('load', function(){
 			
 			lineItem = document.createElement('div');
 			lineItem.id = shoppingCart[i].id;
+			lineItem.classList += "cart-details"
 
 			prodString = '<div class="sixth cart-options">';
 			prodString += '<button class="remove-link" id="remove-product'+i+'">Remove</button>';
@@ -141,6 +144,7 @@ window.addEventListener('load', function(){
 
 		if(inCart){
 			incrementQty(id);
+			alert('Quantity Updated!');
 		}else{
 			for(i = 0; i < products.length; i++){
 				if(products[i].id === id){
@@ -181,6 +185,7 @@ window.addEventListener('load', function(){
 				cart.items[i].qty++;
 			}
 		}
+
 	}
 
 	function decrementQty(id){
@@ -211,51 +216,79 @@ window.addEventListener('load', function(){
 
 		var i,j,k;
 		var result = 0;
+		var penCount = [];
+		var couponTotal = 0
+		var existsRuler = [];
+		
+
 		if(coupon === '5ALL'){
+
 			for(i = 0; i < cart.items.length; i++){
-				result = result + (cart.items[i].price * cart.items[i].qty);
+				couponTotal = cart.total - (cart.items[i].price * 0.05);
+
 			}
-			buildCartItems();
-			result = result - (result * 0.05);
-			subTotal.innerHTML = '$' + result;
+			
+
+			if(couponTotal < cart.couponTotal){
+				cart.couponTotal = couponTotal;
+				buildCartItems();
+				subTotal.innerHTML = '$' + cart.couponTotal;
+			}else{
+				alert("Coupon doesn't reduce your purchase amount.");
+			}
+			console.log(cart.couponTotal)
 		}else{
 			if(coupon === 'PEN10'){
+
 				for(j = 0; j < cart.items.length; j++){
 					if(cart.items[j].id === 'product1'){
-						cart.items[j].price = cart.items[j].price - (cart.items[j].price * 0.1)
+
+						penCount[j] = cart.items[j];
 					}
 				}
-				for(i = 0; i < cart.items.length; i++){
-					result = result + (cart.items[i].price * cart.items[i].qty);
+				for(k = 0; k < penCount.length; k++){
+					couponTotal = cart.total - (penCount[k].price * 0.1 *penCount[k].qty);
 				}
-				buildCartItems();
-				subTotal.innerHTML = '$' + result;
+				console.log(cart.couponTotal)
+				if(couponTotal < cart.couponTotal){
+					cart.couponTotal = couponTotal;
+					buildCartItems();
+					subTotal.innerHTML = '$' + couponTotal;
+				}else{
+					alert("Coupon doesn't reduce your purchase amount.");
+				}
+
+		
 			}else{
+
 				if(coupon === 'RULERFREE'){
-					var existsRuler = false;
 					for(i = 0; i < cart.items.length; i++){
 						if(cart.items[i].id === 'product3'){
-							existsRuler = true;
+							existsRuler.push(cart.items[i]);
 						}
 					}
-					if(existsRuler){
+					if(existsRuler.length > 0){
 						for(i = 0; i < cart.items.length; i++){
-							result = result + (cart.items[i].price * cart.items[i].qty);
+							couponTotal = cart.total - existsRuler[0].price;
 						}
-						result = result - products[2].price;
-						buildCartItems();
-						subTotal.innerHTML = '$' + result;	
+						if(couponTotal < cart.couponTotal){
+							cart.couponTotal = couponTotal;
+							buildCartItems();
+							subTotal.innerHTML = '$' + cart.couponTotal;
+						}else{
+							alert("Coupon doesn't reduce your purchase amount.");
+						}
+
+					}else{
+						alert("No Ruler in Cart!")
 					}
 				}else{
-					if(coupon){
-						alert('Invalid Coupon!')
-					}else{
-						for(i = 0; i < cart.items.length; i++){
-							result = result + (cart.items[i].price * cart.items[i].qty);
-						}
-						buildCartItems();
-						subTotal.innerHTML = '$' + result;	
+					for(i = 0; i < cart.items.length; i++){
+						result = result + (cart.items[i].price * cart.items[i].qty);
 					}
+					cart.total = result;
+					cart.couponTotal = result;
+					subTotal.innerHTML = '$' + cart.couponTotal;
 				}
 			}
 		}
