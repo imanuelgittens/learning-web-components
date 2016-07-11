@@ -4,6 +4,8 @@
 	<title>Login Form</title>
 	<link rel="stylesheet" type="text/css" href="login.css">
 	<link rel="stylesheet" type="text/css" href="../../../CSS/main.css">
+	<script type="text/javascript" src="../../../JS/validator.js"></script>
+	
 </head>
 <body>
 	<nav>
@@ -16,16 +18,17 @@
 			<li><a href="../../../components/profileSummary/index.html">Profile</a></li>
 		</ul>
 	</nav>
-	<div class="login-form">
+	<div class="login-form" id="login-form">
 		<h3>Great to See You Again!</h3>
-		<form>
+		<form id="loginForm">
 			<div class="form-input">
 				<label for="Login Email">Email</label>
-				<input type="email" placeholder="Enter your email..." />
+				<input id="email" placeholder="Enter your email..." required />
+				<span class="error" aria-live="polite"></span>
 			</div>
 			<div class="form-input">
 				<label for="Login Password">Password</label>
-				<input type="password" placeholder="Enter your password..." />
+				<input id="password" type="password" placeholder="Enter your password..." />
 			</div>
 
 			<div class="display-password">
@@ -45,5 +48,6 @@
 			</div>
 		</form>
 	</div>
+	<script type="text/javascript" src="login.js"></script>
 </body>
 </html>

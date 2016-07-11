@@ -4,6 +4,7 @@
 	<title>Payment Form</title>
 	<link rel="stylesheet" type="text/css" href="pay.css">
 	<link rel="stylesheet" type="text/css" href="../../../CSS/main.css">
+	<script type="text/javascript" src="../../../JS/validator.js"></script>
 </head>
 <body>
 <nav>
@@ -24,12 +25,16 @@
 			<input type="text" placeholder="Enter your name..." required />
 		</div>
 		<div class="form-input whole">
+			<label for="Name">Name</label>
+			<input type="text" placeholder="Enter your name..." required />
+		</div>
+		<div class="form-input whole">
 			<label for="Credit Card Number">Credit Card</label>
 			<div class="cc-images">
 				<img src="./assets/images/zzzcredit-card-logos.png">
 			</div>
 			
-			<input type="text" placeholder="Enter Credit Card Number..." maxlength="19" required />
+			<input id="credit-card" type="text" placeholder="Enter Credit Card Number..." maxlength="19" required />
 		</div>
 		<div class="form-input quater">
 			<label for="Expiry Month">Month</label>
@@ -51,8 +56,7 @@
 		<div class="form-input quater">
 			<label for="Expiry Year">Year</label>
 			<select>
-				<option checked>01</option>
-				<option>16</option>
+				<option checked>16</option>
 				<option>17</option>
 				<option>18</option>
 				<option>19</option>
@@ -70,7 +74,7 @@
 		</div>
 		<div class="form-input half">
 			<label for="Card Verification Value">CVV</label><span class="helper"><img src="./assets/images/question.png"></span>
-			<input type="text" placeholder="Enter CVV Number..." maxlength="3" required />
+			<input type="text" placeholder="Enter CVV Number..." maxlength="4" required />
 		</div>
 		
 		<div class="form-submit">
@@ -81,5 +85,6 @@
 
 	</form>
 </div>
+<script type="text/javascript" src="pay.js"></script>
 </body>
 </html>
