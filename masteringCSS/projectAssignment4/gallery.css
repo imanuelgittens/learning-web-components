@@ -1,0 +1,53 @@
+section.simple-gallery{
+	position: relative;
+}
+
+nav.thumbnails ul{
+	margin:0;
+	padding: 0;
+	background-color: #333;
+	display: inline-block;
+	padding: 10px
+}
+
+nav.thumbnails ul li{
+	display: inline;
+	list-style-type: none;
+	padding-right:10px;	
+
+}
+
+nav.thumbnails ul li img{
+	width:200px;
+
+}
+
+.target figure{
+	margin:0;
+	padding: 0;
+}
+
+.target figure img{
+	width:1200px;
+	
+}
+
+
+.target{
+	position: absolute;
+	z-index: -1;
+	left:-1300px;
+	top:0px;
+	-webkit-transition: 1s;
+       -moz-transition: 1s;
+        -ms-transition: 1s;
+         -o-transition: 1s;
+            transition: 1s;
+}
+
+
+
+.target:target {
+    top: 0px;
+    left: 0px;
+ }

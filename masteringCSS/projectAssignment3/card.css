@@ -1,0 +1,310 @@
+body{
+	margin:0;
+	font-family: 'Roboto', serif;
+	box-sizing: border-box;
+}
+
+
+label.bizCardWrapper{
+	-webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-color: #F17563;
+
+}
+
+label.bizCardWrapper .card:hover {
+    -webkit-transform: rotateX(20deg);
+    transform: rotateX(10deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    transition: 1s;
+
+
+}
+/*
+.card {
+	position: relative;
+}*/
+
+.card div.front, div.back {
+    position: absolute;
+    height: 275px;
+    width: 465px;
+    background: #FFF;
+    text-align: center;
+    line-height: 200px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 2px;
+    left: 20%;
+    top: 20%;
+}
+
+.bizCardWrapper input[type="checkbox"]{
+	display: none;
+}
+
+.bizCardWrapper input[type="checkbox"]:not(:checked) ~ .card .back{
+	transform: rotateX(-160deg);
+	transition: 1s;
+}
+
+.bizCardWrapper input[type="checkbox"]:not(:checked) ~ .card .front{
+	transform: rotateX(0deg);
+	transition: 1s;
+}
+
+.bizCardWrapper input[type="checkbox"]:checked ~ .card .back{
+	transform: rotateX(0deg);
+	transition: 1s;
+}
+
+.bizCardWrapper input[type="checkbox"]:checked ~ .card .front{
+	transform: rotateX(160deg);
+	transition: 1s;
+}
+
+label.bizCardWrapper .card div.front{
+	border-radius: 3px;
+	background: url('me_small_card.jpg');
+
+}
+
+label.bizCardWrapper .card div.front div.name{
+	position: absolute;
+	left:10px;
+	top:80%;
+	display: inline-block;
+	color: #333;
+	width: 300px;
+	height: 40px;
+	background-color: rgba(255,255,255, 0.8);
+	line-height: 15px;
+	margin: 0;
+	width: 120px;
+}
+
+label.bizCardWrapper .card div.front div.name p{
+	vertical-align: middle;
+	padding: 0;
+	margin: 10px 0;
+}
+
+label.bizCardWrapper .card div.front div.symbol{
+	position: absolute;
+	top:5%;
+	left:90%;
+	display: inline-block;
+	padding:0;
+	margin: 0;
+	background-color: transparent;
+}
+
+label.bizCardWrapper .card div.front div.symbol i{
+	color:#fff;
+}
+
+label.bizCardWrapper .card div.back{
+	background-color: #333;
+}
+
+label.bizCardWrapper .card div.back div.title{
+	display: inline-block;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+}
+
+label.bizCardWrapper .card div.back div.title p.name{
+	display: inline-block;
+	font-size:30px;
+	text-align:left;
+	color:#fff;
+	position: absolute;
+	top:2%;
+	left:10px;
+}
+
+label.bizCardWrapper .card div.back div.title p.position{
+	display: inline-block;
+	font-size:16px;
+	text-align:left;
+	color:#fff;
+	position: absolute;
+	top:18%;
+	left:10px;
+}
+
+label.bizCardWrapper .card div.back div.desc{
+	display: inline-block;
+	font-size:14px;
+	text-align:left;
+	color:#fff;
+	width: 400px;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+	line-height: 15px;
+	position: absolute;
+	top:30%;
+	left:2%;
+}
+
+label.bizCardWrapper .card div.back div.email{
+	display: inline-block;
+	font-size:14px;
+	text-align:left;
+	color:#fff;
+	width: 400px;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+	line-height: 15px;
+	position: absolute;
+	top:60%;
+	left:2%;
+}
+
+label.bizCardWrapper .card div.back div.email a{
+	text-decoration: none;
+	color: #7D33DC;
+	cursor: pointer;
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia{
+	display: inline-block;
+	font-size:14px;
+	text-align:left;
+	color:#fff;
+	width: 400px;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+	line-height: 30px;
+	position: absolute;
+	top:78%;
+	left:2%;
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia div.icon, div.info{
+	display: inline-block;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia p, div{
+	line-height: 15px;
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia div.icon a{
+	color:#fff;
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia div.icon ul li{
+	position: absolute;
+    top: 0%;
+    left: 1%;
+  	line-height: 30px;
+  	vertical-align: bottom;
+	background-color: #7D33DC;
+    border: 10px solid #D442E1;
+	display: inline-block;
+	list-style-type: none;
+	width:30px;
+	height:30px;
+	border-radius: 30px;
+	text-align:center;
+} 
+
+label.bizCardWrapper .card div.back div.encyclopedia div.info{
+	position: absolute;
+    top: -6%;
+    left: 18%;
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia div.info p{
+	text-align:left;
+}
+
+label.bizCardWrapper .card div.back div.encyclopedia div.info a{
+	color:#D442E1;
+}
+
+
+label.bizCardWrapper .card div.back div.social{
+	display: inline-block;
+	font-size:14px;
+	text-align:left;
+	color:#fff;
+	width: 400px;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+	line-height: 30px;
+	position: absolute;
+	top:-5%;
+	left:65%;
+}
+
+label.bizCardWrapper .card div.back div.social ul li{
+	display: inline-block;
+	list-style-type: none;
+	width:30px;
+	height:30px;
+	border-radius: 30px;
+	text-align:center;
+}
+
+label.bizCardWrapper .card div.back div.social ul li a{
+	color:#fff;
+}
+
+label.bizCardWrapper .card div.back div.social ul li.twitter{
+	background-color: #1DA1F2;
+}
+
+label.bizCardWrapper .card div.back div.social ul li.github{
+	background-color: #171515;
+}
+
+label.bizCardWrapper .card div.back div.social ul li.facebook{
+	background-color: #3B5998;
+}
+
+label.bizCardWrapper .card div.back div.social ul li.linkedin{
+	background-color: #006699;
+}
+
+label.bizCardWrapper .card div.back div.symbol{
+	display: inline-block;
+	font-size:14px;
+	text-align:left;
+	color:#fff;
+	width: 400px;
+	background-color: transparent;
+	padding:0;
+	margin:0;
+	line-height: 30px;
+	position: absolute;
+	top:1%;
+	left:93%;
+}
+
+
+
+

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Imanuel Gittens Web Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="styles/portfolio.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<script src="https://use.fontawesome.com/212b5d74ea.js"></script>
+</head>
+<body>
+	<header class="top-menu">
+		<div class="container">
+			<nav>
+				<section class="menu-my-id">
+					<h3>Imanuel Gittens</h3>
+				</section>
+				<section class="menu-main">
+					<ul>
+						<li><a href="about.html">About</a></li>
+						<li><a  class="active" href="projects.html">Projects</a></li>
+						<li><a href="skills.html">Skills</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</section>
+				<section class="menu-search">
+					<form>
+						<label for="navSearch">Search</label>
+						<input type="text" name="search" id="navSearch">
+						<a href="#searchModal"><i class="fa fa-search" aria-hidden="true"></i></a>
+					</form>
+				</section>
+			</nav>
+		</div>
+		
+	</header>
+
+	<section class="main-content">
+		<div class="container">
+			<header>
+				<h1>Projects</h1>
+				<p>Throughout my studies at Modern Developer, I created many projects for practice while honing my development skills. This page will be used to showcase all the projects I've created so far, and will be updated when I create new projects in the future.</p>
+			</header>
+			<section class="projects">
+				<div class="tabComponent">
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="calculator" checked>
+						<label for="calculator">Real Calculator</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="carousel" id="first" checked>
+									<label class="previous" for="third">&lt;</label>
+									<label class="next" for="second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a simple calculator using HTML, CSS and JavaScript. The calculator must be able to perform basic arithmetic operations as well as clearing the input for additional data.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="carousel" id="second">
+									<label class="previous" for="first">&lt;</label>
+									<label class="next" for="third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/calculator.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="carousel" id="third">
+									<label class="previous" for="second">&lt;</label>
+									<label class="next" for="first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>At the time of it's creation, students were beginners with JS so we used the simple eval() function to calulate the answers for a given expression. </p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="first"></label>
+									<label class="bullet" for="second"></label>
+									<label class="bullet" for="third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="teamCollab">
+						<label for="teamCollab">Team Collaboration App</label>
+						<div class="tabContent">
+						    <div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="team-carousel" id="team-first" checked>
+									<label class="previous" for="team-third">&lt;</label>
+									<label class="next" for="team-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to pair up with another student in the program to build the HTML and CSS skeleton on a Team Collaboration app.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="team-carousel" id="team-second">
+									<label class="previous" for="team-first">&lt;</label>
+									<label class="next" for="team-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/team-collaboration.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="team-carousel" id="team-third">
+									<label class="previous" for="team-second">&lt;</label>
+									<label class="next" for="team-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>The hidden benefit of this app was to get students familiar with collaboration using github. We had to do pull requests and well as highlight issues with each other code.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="team-first"></label>
+									<label class="bullet" for="team-second"></label>
+									<label class="bullet" for="team-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="styledButtons">
+						<label for="styledButtons">Styled Buttons</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="buttonsCarousel" id="buttons-first" checked>
+									<label class="previous" for="buttons-third">&lt;</label>
+									<label class="next" for="buttons-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create some simple button components. Here we start to get an idea of what it means to create a style guide.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="buttonsCarousel" id="buttons-second">
+									<label class="previous" for="buttons-first">&lt;</label>
+									<label class="next" for="buttons-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/buttons.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="buttonsCarousel" id="buttons-third">
+									<label class="previous" for="buttons-second">&lt;</label>
+									<label class="next" for="buttons-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>I liked to think of this project as the start of my own mini bootstrap css library. We use classes like 'small' and 'large' to change the size of these buttons.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="buttons-first"></label>
+									<label class="bullet" for="buttons-second"></label>
+									<label class="bullet" for="buttons-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="shoppingCart">
+						<label for="shoppingCart">Live Working Shopping Cart</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="cartCarousel" id="cart-first" checked>
+									<label class="previous" for="cart-third">&lt;</label>
+									<label class="next" for="cart-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a working front end of a shopping cart using HTML, CSS and JavaScript. We first had to list the products, then create the functionality to add and remove them to/from the cart. We also needed to calculate the total price based on the items in the cart as well as implement a simple discount code system.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="cartCarousel" id="cart-second">
+									<label class="previous" for="cart-first">&lt;</label>
+									<label class="next" for="cart-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/shopping-cart.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="cartCarousel" id="cart-third">
+									<label class="previous" for="cart-second">&lt;</label>
+									<label class="next" for="cart-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>This project really opened a lot of doors that were previously closed in the world of JS. A concept that stood on to me particularly was the 'source of truth'. Here we define one location that was a source of truth for all interactions with the application. My source of truth was an array of products from which I was able to add them to the cart and calculate totals based on their prices. </p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="cart-first"></label>
+									<label class="bullet" for="cart-second"></label>
+									<label class="bullet" for="cart-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="profileCard">
+						<label for="profileCard">A Profile Card</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="profileCarousel" id="profile-first" checked>
+									<label class="previous" for="profile-third">&lt;</label>
+									<label class="next" for="profile-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a simple profile containing some information and pictures about yourself.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="profileCarousel" id="profile-second">
+									<label class="previous" for="profile-first">&lt;</label>
+									<label class="next" for="profile-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/profile.jpg" width="400px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="profileCarousel" id="profile-third">
+									<label class="previous" for="profile-second">&lt;</label>
+									<label class="next" for="profile-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>This project was used as an intro to using HTML and CSS. </p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="profile-first"></label>
+									<label class="bullet" for="profile-second"></label>
+									<label class="bullet" for="profile-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="colorBuilder">
+						<label for="colorBuilder">Color Builder Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="colorBuilderCarousel" id="colorBuilder-first" checked>
+									<label class="previous" for="colorBuilder-third">&lt;</label>
+									<label class="next" for="colorBuilder-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create an RGBA color builder component using HTML, CSS and JavaScript. </p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="colorBuilderCarousel" id="colorBuilder-second">
+									<label class="previous" for="colorBuilder-first">&lt;</label>
+									<label class="next" for="colorBuilder-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/color-builder.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="colorBuilderCarousel" id="colorBuilder-third">
+									<label class="previous" for="colorBuilder-second">&lt;</label>
+									<label class="next" for="colorBuilder-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>We added the JS functionality to make a live preview as the user changed the RGBA values on the color builder.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="colorBuilder-first"></label>
+									<label class="bullet" for="colorBuilder-second"></label>
+									<label class="bullet" for="colorBuilder-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="login">
+						<label for="login">Login Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="loginCarousel" id="login-first" checked>
+									<label class="previous" for="login-third">&lt;</label>
+									<label class="next" for="login-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a login form using HTML and CSS. </p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="loginCarousel" id="login-second">
+									<label class="previous" for="login-first">&lt;</label>
+									<label class="next" for="login-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/login-form.jpg" width="400px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="loginCarousel" id="login-third">
+									<label class="previous" for="login-second">&lt;</label>
+									<label class="next" for="login-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>Using a checkbox, I built a switcher to toggle between showing and hiding the password values.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="login-first"></label>
+									<label class="bullet" for="login-second"></label>
+									<label class="bullet" for="login-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="creditCard">
+						<label for="creditCard">Credit Card Payment Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="creditCardCarousel" id="creditCard-first" checked>
+									<label class="previous" for="creditCard-third">&lt;</label>
+									<label class="next" for="creditCard-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a credit card processing form using HTML and CSS.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="creditCardCarousel" id="creditCard-second">
+									<label class="previous" for="creditCard-first">&lt;</label>
+									<label class="next" for="creditCard-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/credit-card.jpg" width="400px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="creditCardCarousel" id="creditCard-third">
+									<label class="previous" for="creditCard-second">&lt;</label>
+									<label class="next" for="creditCard-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>Credit Card processing is a staple in web development if anyone wants to get paid. Even though we did not do the actual gateway connection and validation at this early stage, I'm  happy that we were exposed to it.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="creditCard-first"></label>
+									<label class="bullet" for="creditCard-second"></label>
+									<label class="bullet" for="creditCard-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="questionnaire">
+						<label for="questionnaire">Questionnaire Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="questionnaireCarousel" id="questionnaire-first" checked>
+									<label class="previous" for="questionnaire-third">&lt;</label>
+									<label class="next" for="questionnaire-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a single input of a questionnaire form. A simple introduction to HTML and CSS.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="questionnaireCarousel" id="questionnaire-second">
+									<label class="previous" for="questionnaire-first">&lt;</label>
+									<label class="next" for="questionnaire-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/questionnaire-field.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="questionnaireCarousel" id="questionnaire-third">
+									<label class="previous" for="questionnaire-second">&lt;</label>
+									<label class="next" for="questionnaire-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>Creating a simple questionnaire input was a great way to introduce forms.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="questionnaire-first"></label>
+									<label class="bullet" for="questionnaire-second"></label>
+									<label class="bullet" for="questionnaire-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="scheduler">
+						<label for="scheduler">Scheduler Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="schedulerCarousel" id="scheduler-first" checked>
+									<label class="previous" for="scheduler-third">&lt;</label>
+									<label class="next" for="scheduler-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a sheduling form using HTML and CSS.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="schedulerCarousel" id="scheduler-second">
+									<label class="previous" for="scheduler-first">&lt;</label>
+									<label class="next" for="scheduler-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/scheduler-form.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="schedulerCarousel" id="scheduler-third">
+									<label class="previous" for="scheduler-second">&lt;</label>
+									<label class="next" for="scheduler-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>An unexpected benefit of creating this form was the exposure to dates and time in HTML5 and their support in different browsers.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="scheduler-first"></label>
+									<label class="bullet" for="scheduler-second"></label>
+									<label class="bullet" for="scheduler-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="searchForm">
+						<label for="searchForm">Search Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="searchFormCarousel" id="searchForm-first" checked>
+									<label class="previous" for="searchForm-third">&lt;</label>
+									<label class="next" for="searchForm-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a search Form using HTML and CSS.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="searchFormCarousel" id="searchForm-second">
+									<label class="previous" for="searchForm-first">&lt;</label>
+									<label class="next" for="searchForm-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/search.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="searchFormCarousel" id="searchForm-third">
+									<label class="previous" for="searchForm-second">&lt;</label>
+									<label class="next" for="searchForm-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>Form this search form, I tried to mimic amazon.com's search bar.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="searchForm-first"></label>
+									<label class="bullet" for="searchForm-second"></label>
+									<label class="bullet" for="searchForm-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="shippingForm">
+						<label for="shippingForm">Shipping Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="shippingFormCarousel" id="shippingForm-first" checked>
+									<label class="previous" for="shippingForm-third">&lt;</label>
+									<label class="next" for="shippingForm-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a billing/shipping form using HTML and CSS.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="shippingFormCarousel" id="shippingForm-second">
+									<label class="previous" for="shippingForm-first">&lt;</label>
+									<label class="next" for="shippingForm-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/billing-form.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="shippingFormCarousel" id="shippingForm-third">
+									<label class="previous" for="shippingForm-second">&lt;</label>
+									<label class="next" for="shippingForm-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>This is another necessary form for making money online. Billing is very important and I' glad we were introduced to this early on.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="shippingForm-first"></label>
+									<label class="bullet" for="shippingForm-second"></label>
+									<label class="bullet" for="shippingForm-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class="tab">
+						<input type="radio" name="projectTabs" id="signupForm">
+						<label for="signupForm">Signup Form</label>
+						<div class="tabContent">
+							<div class="carouselComponent">
+								<div class="carouselItem">
+									<input type="radio" name="signupFormCarousel" id="signupForm-first" checked>
+									<label class="previous" for="signupForm-third">&lt;</label>
+									<label class="next" for="signupForm-second">&gt;</label>
+
+									<div class="content">
+										<div class="text-content">
+											<h3>Overview</h3>
+											<p>The goal of this project is to create a signup/registration form using HTML and CSS.</p>
+										</div>		
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="signupFormCarousel" id="signupForm-second">
+									<label class="previous" for="signupForm-first">&lt;</label>
+									<label class="next" for="signupForm-third">&gt;</label>
+									<div class="content">
+										
+										<img src="assets/images/sign-up.jpg" width="600px">
+									</div>
+								</div>
+								<div class="carouselItem">
+									<input type="radio" name="signupFormCarousel" id="signupForm-third">
+									<label class="previous" for="signupForm-second">&lt;</label>
+									<label class="next" for="signupForm-first">&gt;</label>
+									<div class="content">
+										
+										<div class="text-content">
+											<h3>Extra Details</h3>
+											<p>A signup form is a necessary component in any website. Glad to have made one tis early.</p>
+										</div>
+									</div>
+								</div>
+								<div class="bullet-nav">
+									<label class="bullet" for="signupForm-first"></label>
+									<label class="bullet" for="signupForm-second"></label>
+									<label class="bullet" for="signupForm-third"></label>
+								</div>		
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div id="searchModal" class="modalDialog">
+			<div class="modalInner">
+				<div class="close"><a href="#close"><i class="fa fa-times fa-6" aria-hidden="true"></i></a></div>
+				<h2>Search Temporarily Disabled.</h2>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; Imanuel Gittens</p>
+	</footer>
+
+</body>
+</html>

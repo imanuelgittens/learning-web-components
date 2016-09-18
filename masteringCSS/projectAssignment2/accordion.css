@@ -1,0 +1,49 @@
+.accordion {
+	position: relative;
+}
+
+.accordion ul {
+	border: 1px solid #000;
+	width: 40%;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.accordion li.accordion-item {
+	list-style-type: none;
+	margin-bottom: 3px;
+}
+
+.accordion li.accordion-item input{
+	display:none;	
+}
+
+.accordion li.accordion-item label{
+	background-color: #D95B44;
+	display: block;
+	padding:10px;
+	border:1px solid #000;
+	text-transform: uppercase;
+	color:#66222F;
+}
+
+.accordion li.accordion-item .accordion-info{
+	display: none;
+	background-color: #fff;	
+	
+}
+
+.accordion li.accordion-item input[type="checkbox"]:checked ~ label{
+	color:#fff;
+	background-color: #BF2942
+}
+
+.accordion li.accordion-item input[type="checkbox"]:checked ~ label ~ .accordion-info{
+	display: block;
+	border-bottom:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	padding:10px;
+
+}
+
