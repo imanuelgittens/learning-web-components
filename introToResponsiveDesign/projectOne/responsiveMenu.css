@@ -1,0 +1,98 @@
+
+div.accordionComponent{
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+article.accordion{
+	width: 360px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 10px;
+	background-color: #fff;
+}
+
+article.accordion section{
+	border:1px solid black;
+	padding:0;
+	margin-bottom: 3px;
+	height: 40px;
+	overflow: hidden;
+}
+
+article.accordion section h2{
+	background-color: #C3C3E5;
+	border-bottom:1px solid black;
+	
+	margin: 0;
+}
+
+article.accordion section h2 a{
+	color: #443266;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size:18px;
+	display: block;
+	padding: 10px;
+}
+
+article.accordion section p,strong,h3{
+	padding: 1px 10px;
+}
+
+article.accordion section.large:target{
+	height:400px;
+}
+
+article.accordion section.medium:target{
+	height:300px;
+}
+
+article.accordion section.small:target{
+	height:250px;
+}
+
+article.accordion section:target a{
+	color:#fff;
+}
+
+article.accordion section,
+article.accordion section h2{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+@media(min-width: 600px){
+	article.accordion{
+		width: 600px;
+	}
+
+	article.accordion section h2{
+		background-color: #7ABA7A;
+	}
+
+	article.accordion section h2 a{
+		color: #028482;
+	}
+}
+
+@media(min-width: 1024px){
+	article.accordion{
+		width: 1024px;
+	}
+
+	article.accordion section h2{
+		background-color: #000;
+	}
+
+	article.accordion section h2 a{
+		color: #aaa;
+	}
+}
+
