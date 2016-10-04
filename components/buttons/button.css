@@ -1,3 +1,8 @@
+.buttonWrapper{
+	display: flex;
+	justify-content: center;
+}
+
 .all-buttons{
 	
 	margin-top: 80px;
@@ -21,7 +26,8 @@ a{
   padding: 10px; /*Add 2 extra pixels of padding on each side to make up for border in hover state*/
   background: #339fff;
   color: #fff;
-  border-radius: 3px;
+  border-radius:18px;
+  
   
 }
 
@@ -38,15 +44,19 @@ a{
 }
 
 .button.button-sm{
-	padding: 4px;
+	padding: 8px;
+	border-radius: 18px;
+	
 }
 
 .button.button-sm:hover{
-	padding:2px;
+	padding:6px;
 }
 
 .button.button-md{
 	padding: 12px;
+	border-radius: 20px;
+	
 }
 
 .button.button-md:hover{
@@ -55,9 +65,25 @@ a{
 
 .button.button-lg{
 	padding: 16px;
+	border-radius: 30px;
+	
 }
 
 .button.button-lg:hover{
 	padding:14px;
+}
+
+@media(max-width: 360px){
+	.all-buttons{
+		text-align: center;
+	}
+
+	.button{
+		text-indent: -9999px;
+		width: 20px;
+		height:20px;
+		border-radius:20px;
+		background: #339fff url("assets/check.png") center no-repeat;
+	}
 }
 

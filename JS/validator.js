@@ -8,12 +8,17 @@
 			throw "Missing Parameter in isEmailAddress function: 'input'.";	
 		}
 
-		if(input.indexOf("@") == -1){
+		if(input.indexOf("@") < 1){
 			return false;
 		}
 
 		var emailParts = input.split('@');
 		var domain = emailParts[1];
+	
+		
+		if(emailParts.length > 2){
+			return false;
+		}
 
 		if(domain.indexOf('.') == -1){
 			return false;
@@ -225,17 +230,87 @@
 		
 	};
 	
-	validator.contains = function(){
-		//todo
+	validator.contains = function(inputString, wordsArray){
+		if(!inputString){
+			throw "Missing Parameter in contains function: 'inputString'.";
+		}
+		if(!inputString){
+			throw "Missing Parameter in contains function: 'wordsArray'.";
+		}
+		var i,j,k;
+		var result = true;
+		
+		for(i = 0; i < inputString.length; i++){//remove symbols
+
+				if(inputString.charAt(i).toLowerCase() === inputString.charAt(i).toUpperCase()){
+					inputString = inputString.split(inputString.charAt(i)).join(" ");
+				}
+		}
+		
+		var words = inputString.toLowerCase().split(' ');
+
+		for(k = 0; k < wordsArray.length; k++){
+
+			if(words.indexOf(wordsArray[k]) === -1){
+				result = false;
+			}
+		}
+		return result;
 	};
 
-	validator.lacks = function(){
-		//todo
-	}
+	validator.lacks = function(inputString, wordsArray){
+		if(!inputString){
+			throw "Missing Parameter in lacks function: 'inputString'.";
+		}
+		if(!inputString){
+			throw "Missing Parameter in lacks function: 'wordsArray'.";
+		}
+		var i,j,k;
+		var result = false;
+		
+		for(i = 0; i < inputString.length; i++){//remove symbols
 
-	validator.isComposedof = function(){
-		//todo
-	}
+				if(inputString.charAt(i).toLowerCase() === inputString.charAt(i).toUpperCase()){
+					inputString = inputString.split(inputString.charAt(i)).join(" ");
+				}
+		}
+		
+		var words = inputString.toLowerCase().split(' ');
+
+		for(k = 0; k < wordsArray.length; k++){
+
+			if(words.indexOf(wordsArray[k]) === -1){
+				result = true;
+			}
+		}
+		return result;
+	};
+
+	validator.isComposedof = function(input, arr){
+		if(!inputString){
+			throw "Missing Parameter in isComposedof function: 'input'.";
+		}
+		if(!arr){
+			throw "Missing Parameter in isComposedof function: 'arr'.";
+		}
+		var i,j;
+		result = true;
+		for(i = 0; i < arr.length; i++){
+			if(input.indexOf(arr[i]) !== -1){
+				input = input.split(arr[i]).join("");
+
+			}
+		}
+
+		for(j = 0; j < input.length; j++){
+			if(input.charAt(j).toLowerCase() !== input.charAt(j).toUpperCase()){
+				result = false;
+			}
+		}
+
+		return result;
+
+	};
 
 	validator.isLength = function(input, n){
 
@@ -255,16 +330,42 @@
 		return input.length >= n;
 	};
 
-	validator.countWords = function(){
-		//todo
-	}
+	validator.countWords = function (inputString){
+		if(!inputString){
+			throw "Missing Parameter in countWords function: 'inputString'.";
+		}
+		var i;
+		for(i = 0; i < inputString.length; i++){//remove symbols
 
-	validator.lessWordsThan = function(){
-		//todo
-	}
+				if(inputString.charAt(i).toLowerCase() === inputString.charAt(i).toUpperCase()){
+					inputString = inputString.split(inputString.charAt(i)).join(" ").trim();
+				}
+		}
 
-	validator.moreWordsThan = function(){
-		//todo
+		var words = inputString.toLowerCase().split(' ');		
+		return words.length;
+	};
+
+	validator.lessWordsThan = function(input, n){
+		if(!input){
+			throw "Missing Parameter in lessWordsThan function: 'input'.";
+		}
+
+		if(!n){
+			throw "Missing Parameter in lessWordsThan function: 'n'.";
+		}
+		return this.countWords(input) <= n;
+	};
+
+	validator.moreWordsThan = function(input, n){
+		if(!input){
+			throw "Missing Parameter in moreWordsThan function: 'input'.";
+		}
+
+		if(!n){
+			throw "Missing Parameter in moreWordsThan function: 'n'.";
+		}
+		return this.countWords(input) >= n;
 	}
 
 	validator.isBetween = function(input, floor, ceil){
@@ -393,7 +494,7 @@
 		
 		return result;
 			
-		
+		}
 	};
 
 	validator.isHSL = function(input){
@@ -473,8 +574,5 @@
 		}
 	};
 
-	window.validator = validator;
 
 })(window);
-
-
