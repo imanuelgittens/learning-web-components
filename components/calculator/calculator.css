@@ -6,6 +6,11 @@
 	font-family: "Roboto", sans-serif;
 }
 
+.calculatorWrapper{
+	display: flex;
+	justify-content: center;
+}
+
 .calculator {
 	width: 600px;
 	border: 1px solid #ccc;
@@ -14,7 +19,7 @@
 	padding: 15px 15px;
 	font-size: 25px;
 	margin-top: 80px;
-	text-align: center;
+	text-align:center;
 
 }
 
@@ -100,4 +105,28 @@
 
 form {
   white-space: nowrap;
+}
+
+@media (max-width: 360px){
+	.form-input button{
+		padding:5px 0;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-shadow: 2px 2px 5px #67BCDB;
+		background-color: #fff;
+		cursor: pointer;
+	}
+
+	.form-input input{
+
+		padding:5px 0;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		border-style: inset;
+	}
+
+	.equal button{
+		background-color: #E44424;
+		color: #fff;
+	}
 }
