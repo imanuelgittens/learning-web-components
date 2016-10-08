@@ -3,6 +3,11 @@ body{
 	font-family: "Roboto", sans-serif;
 }
 
+.searchWrapper{
+	display: flex;
+	justify-content: center;
+}
+
 .search-form-input div{
 	display: inline-block;
 	margin-right: -5px;
@@ -15,7 +20,7 @@ body{
 .search-form-input .category-list select{
    	background: transparent;
     width: 50px;
-   	padding: 9px 3px;
+   	padding: 9.5px 3px;
    	font-size: 16px;
    	border: 1px solid #A2AB58;
     -webkit-appearance: none;

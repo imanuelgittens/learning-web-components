@@ -50,10 +50,11 @@ window.addEventListener('load', function(){
 
 	function loadProducts(products){
 		var i, singleProduct, productString;
-		var productArea = document.getElementById('productList')
+		var productArea = document.getElementById('productsWrapper')
 		for(i = 0; i < products.length; i++){
 			singleProduct = document.createElement('div');
 			singleProduct.id = products[i].id;
+			singleProduct.className = 'single-product';
 
 			productString = '<div class="quarter product">';
 			productString += '<div class="featured-img">';

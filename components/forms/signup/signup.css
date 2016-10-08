@@ -1,4 +1,7 @@
-
+.registerWrapper{
+	display: flex;
+	justify-content: center;
+}
 
 .register{
 	width:400px;

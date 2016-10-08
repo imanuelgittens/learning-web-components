@@ -1,4 +1,7 @@
-
+.profileWrapper{
+	display: flex;
+	justify-content: center;
+}
 
 .profile{
 	width:300px;
@@ -10,7 +13,8 @@
 	background-color: #67BCDB;
 	text-align:center;
 	box-sizing: border-box;
-	margin: 80px auto;
+	margin-top: 80px;
+	
 }
 
 .profile p{

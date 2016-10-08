@@ -6,6 +6,8 @@
 	font-family: "Roboto", sans-serif;
 }
 
+
+
 .products-cart{
 	width: 1170px;
 	margin: 80px auto;
@@ -245,4 +247,120 @@
 
 .active{
 	display: block;
+}
+
+@media (max-width: 360px){
+	.products-cart{
+	width: 100%;
+	}
+
+	.product{
+		text-align: center;
+		display: block;
+		clear: both;
+	}
+
+	.quarter{
+		width: 100%;
+	}
+
+	.cart .title{
+		display: block;
+
+	}
+
+	.cart .steps{
+		position: fixed;
+		left:0;
+		top:20%;
+		background-color: #eee;
+	}
+
+	.steps div{
+		display: block;
+		padding-left: 2px;
+		padding-right:2px;
+		border: 1px solid #ccc;
+		margin-bottom:2px;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		width: 70px;
+	}
+
+	.steps div p{
+		font-size: 12px;
+	}
+
+	.cart-details .header div{
+		display: none;
+	}
+
+	.cart-details .body div{
+		display: block;
+		clear: both;
+	}
+
+	.sixth{
+		width:100%;
+	}
+
+	.totals{
+		display: block;
+	}
+
+
+	.cart-products{
+		clear: both;
+	overflow: visible;
+	display: block;
+	}
+
+	.footer .continue{
+	position: fixed;
+	top: 70%;
+	left:0;
+	width: 22%;
+	padding: 0;
+	margin: 0;
+	}
+
+	.footer .continue button{
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.footer .checkout{
+	position: fixed;
+	top: 80%;
+	left:0;
+	width: 22%;
+	padding: 0;
+	margin: 0;
+	}
+
+	.footer .checkout button{
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	#shoppingCart{
+		width: 100%;
+	}
+
+	.labels{
+		float:left;
+		width:50%;
+	}
+
+	.figures{
+		float:left;
+		width:50%;
+	}
+
+	.coupons{
+
+		display: block;
+	}
+
+		
 }
