@@ -26,8 +26,13 @@ nav ul{
     padding-top: 20px;
 }
 
+.top-menu{
+	display: flex;
+	justify-content: center;
+}
+
 .top-menu li{
-	display: inline;
+	
 	padding: 0 15px;
 	
 }
@@ -59,4 +64,14 @@ footer p{
 	bottom: 0px;
 	color: #fff;
 
+}
+
+@media (max-width: 860px){
+	.top-menu{
+		flex-flow: column wrap;
+	}
+
+	.top-menu li{
+		padding-top: 30px;
+	}
 }

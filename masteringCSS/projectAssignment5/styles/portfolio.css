@@ -802,6 +802,10 @@ section.about-me{
 	color: #E05FB0;
 }
 
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-calc:checked ~ .bullets > label[for="fourth-calc"]{
+	color: #E05FB0;
+}
+
 .carouselComponent2 .carousel-item input[type="radio"]#first-team:checked ~ .bullets > label[for="first-team"]{
 	color: #E05FB0;
 }
@@ -965,6 +969,10 @@ section.about-me{
 }
 
 @media (max-width: 860px){
+	.modalDialog{
+		padding: 0;
+	}
+
 	section.main-content{
 		width:100%;
 	}
