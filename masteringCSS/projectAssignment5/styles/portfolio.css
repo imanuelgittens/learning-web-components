@@ -203,7 +203,7 @@ section.projects{
 	top: 0;
 	background-color: #4C4A4A;
 	width: 75%;
-	min-height: 800px;
+	min-height: 100%;
 	padding: 50px 20px 20px 20px;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -722,7 +722,7 @@ section.about-me{
 }
 
 .carouselComponent2 .carousel-item .content img{
-	width:600px;
+	width:100%;
 }
 
 .carouselComponent2 .carousel-item .content .test{
@@ -737,6 +737,7 @@ section.about-me{
 	padding: 0;
 	font-size: 30px;
 	font-weight: 300;
+	line-height: 30px;
 }
 
 .carouselComponent2 .carousel-item label.forward{
@@ -1036,7 +1037,7 @@ section.about-me{
 
 	/*End Contact Styles*/
 
-	
+
 }
 
 @media (max-width: 600px){
@@ -1050,6 +1051,50 @@ section.about-me{
 			margin-top: 100px;
 		}
 	/*end Skills responsive styles*/
+
+	/*Projects Responsive Style*/
+
+		.tabComponent .tab > label{
+			width:100%;
+			position: relative;
+
+		}
+
+		/*.tabComponent .tab input[type="radio"]:checked ~ label{
+			background-color: blue;
+		}*/
+
+		.tabComponent .tab input[type="radio"]:checked ~ label ~ .tabContent{
+			display: block;
+			position: relative;
+			top: 0;
+			background-color: #4C4A4A;
+			width: 100%;
+			min-height: 100%;
+			padding: 50px 20px 20px 20px;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+			overflow: none;
+		}
+
+		.carouselComponent2 .carousel-item .content{
+			padding:5px;
+		}
+
+		.carouselComponent2 .carousel-item label{
+			background-color: transparent;
+		}
+
+		.tabComponent .tab input[type="radio"]:checked ~ label ~ .tabContent{
+			border-radius: 0;
+		}
+
+		.tabComponent .tab input[type="radio"]:checked ~ label{
+			border-radius: 0;
+		}
+
+	/*End Projects responsive styles*/
 }
 
 
