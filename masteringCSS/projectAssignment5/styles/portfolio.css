@@ -43,17 +43,23 @@ body{
 
 header.top-menu{
 	background: linear-gradient(to right, #4686E6, #B55894);
-	height: 60px;
+	
 	border-bottom: 5px solid #D273B0;
+}
+
+header.top-menu nav{
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 
 
 header nav section{
-	display: inline-block;
+	
 	width: 33.33%;
-	float: left;
+	
 	text-align: center;
-	line-height:60px;
+	line-height:50px;
 }
 
 header section.menu-my-id h3{
@@ -289,17 +295,20 @@ section.projects{
 /*Footer Styles*/
 
 footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 40px;
 	line-height: 40px;
 	background-color: #333;
 	color: #fff;
 }
 
-footer p{
+/*footer p{
 	text-align:center;
 	vertical-align: middle;
 	margin:0;
-}
+}*/
 
 /*End Footer Styles*/
 
@@ -318,7 +327,7 @@ footer p{
 
 .contact-card .contact-info{
 	display: inline-block;
-	width:400px;
+	
 	background-color: #4686E6;
 	padding:0;
 	margin:0;
@@ -421,10 +430,11 @@ section.skills{
 }
 
 section.skills .progress{
-	width:800px;
+	width:90%;
 	height: 20px;
 	margin-right: auto;
 	margin-left:auto;
+	
 }
 
 section.skills .progress .complete{
@@ -436,6 +446,8 @@ section.skills .progress .complete{
 	text-align:left;
 	color:#fff;
 	padding-left:10px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
 }
 
 section.skills .progress .remaining{
@@ -446,6 +458,8 @@ section.skills .progress .remaining{
 	text-align:right;
 	color:#fff;
 	padding-right: 10px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 }
 
 
@@ -933,6 +947,110 @@ section.about-me{
 	display: table;
 }
 
+
+@media (max-width: 1024px){
+	.container{
+		width:100%;
+	}
+	header.top-menu nav{
+		
+		justify-content: space-around;
+		padding: 0;
+	}
+	
+	header section.menu-my-id h3{
+		padding:0;
+	}
+}
+
+@media (max-width: 860px){
+	section.main-content{
+		width:100%;
+	}
+	/*Header responsive styles*/
+	header.top-menu nav{
+		flex-flow: column wrap;
+		padding:0;
+	}
+
+	header.top-menu nav section{
+		margin:0px auto;
+	}
+
+	header section.menu-main ul li a{
+		border-radius: 3px;
+	}
+
+	header nav section{
+		width: 100%;
+		line-height: 30px;
+	}
+
+	header section.menu-main ul li a{
+		display: block;
+	}
+
+	header section.menu-main{
+		padding: 10px 0;
+	}
+
+	header section.menu-search{
+		padding: 10px 0;
+	}
+
+	section.main-content header p{
+		padding:0 40px;
+	}
+
+	/*End header responsive styles*/
+
+	/*About responsive styles*/
+
+	section.main-content img{
+		width: 100%;
+	}
+
+	/*End about responsive styles*/
+
+	/*Contact styles*/
+	.contact-card{
+		text-align: center;
+		width:100%;
+	}
+
+	.contact-card .contact-info{
+		display: block;
+		width: 100%;
+		padding:5px;
+	}
+
+	.contact-card .contact-description{
+		display: block;
+		width: 100%;
+		padding: 110px 5px 15px 5px;
+	}
+
+	.contact-card .contact-description p{
+		padding-top: 30px;
+	}
+
+	/*End Contact Styles*/
+
+	
+}
+
+@media (max-width: 600px){
+	/*Skills responsive styles*/
+		.skills .half{
+			width:100%;
+			display: block;
+		}
+
+		section.skills .backend{
+			margin-top: 100px;
+		}
+	/*end Skills responsive styles*/
+}
 
 
 
