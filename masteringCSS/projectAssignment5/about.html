@@ -7,6 +7,22 @@
 	<script src="https://use.fontawesome.com/212b5d74ea.js"></script>
 </head>
 <body>
+
+	<input type="checkbox" id="show-menu">
+	<div id="fix-bar">
+		    <div class="logo">
+		      <a href="/">Imanuel Gittens</a>
+		    </div>
+		    
+		    <div class="push">
+		      <label class="hamburguer" for="show-menu">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		      </label>
+		    </div>
+	</div>
 	<header class="top-menu">
 		<div class="container">
 			<nav>
@@ -16,7 +32,7 @@
 				<section class="menu-main">
 					<ul>
 						<li><a class="active" href="about.html">About</a></li>
-						<li><a href="projects.html">Projects</a></li>
+						<li><a href="project.html">Projects</a></li>
 						<li><a href="skills.html">Skills</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
@@ -33,26 +49,73 @@
 		
 	</header>
 
-	<section class="main-content">
-		<div class="container">
-			<header>
-				<h1>About</h1>
-				<p>I'm a pretty cheerful guy who loves building software applications. I'm particularly interested in E-Commerce applications that can help the Caribbean region. </p>
-			</header>
-			<section class="about-me">
-				<img src="assets/images/me.jpg">
+	<div id="canvas">
+
+		<div id="nav">
+		      <ul class="site-menu">    
+		        <li><a href="about.html">About</a></li>
+		        <li>
+		        	<div class="accordionComponent">
+						<article class="accordion">
+							<input type="checkbox" name="dropdown-menu" id="menuItem1">
+							<label for="menuItem1">
+								<span>Projects</span>
+								<div class="dropdown-menu-content">
+									<ul>
+										<li><a href="#">Buttons</a></li>
+										<li><a href="#">Calculator</a></li>
+										<li><a href="#">Color Builder</a></li>
+										<li><a href="#">Login</a></li>
+										<li><a href="#">Pay</a></li>
+										<li><a href="#">Questionnaire</a></li>
+										<li><a href="#">Schedule</a></li>
+										<li><a href="#">Search</a></li>
+										<li><a href="#">Shipping</a></li>
+										<li><a href="#">Signup</a></li>
+										<li><a href="#">Store</a></li>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Team Project</a></li>
+										<li><a href="#">Accordion</a></li>
+									</ul>
+								</div>
+								
+							</label>
+
+						</article>
+					</div>
+		        </li>
+		        <li><a href="skills.html">Skills</a></li>
+		        <li><a href="contact.html">Contact</a></li>
+		        
+		        <li class="copy"><i class="fa fa-sun-o" aria-hidden="true"></i> Made on a beach in Trindad.</li>
+		      </ul>
+		</div>
+
+		<label for="show-menu" class="mask"></label>
+		<div id="content">
+			<section class="main-content">
+				<div class="container">
+					<header>
+						<h1>About</h1>
+						<p>I'm a pretty cheerful guy who loves building software applications. I'm particularly interested in E-Commerce applications that can help the Caribbean region. </p>
+					</header>
+					<section class="about-me">
+						<img src="assets/images/me.jpg">
+					</section>
+				</div>
+				<div id="searchModal" class="modalDialog">
+					<div class="modalInner">
+						<div class="close"><a href="#close"><i class="fa fa-times fa-6" aria-hidden="true"></i></a></div>
+						<h2>Search Temporarily Disabled.</h2>
+					</div>
+				</div>
 			</section>
 		</div>
-		<div id="searchModal" class="modalDialog">
-			<div class="modalInner">
-				<div class="close"><a href="#close"><i class="fa fa-times fa-6" aria-hidden="true"></i></a></div>
-				<h2>Search Temporarily Disabled.</h2>
-			</div>
-		</div>
-	</section>
+
+	</div>
 
 	<footer>
-		<p>&copy; Imanuel Gittens</p>
+		<p>&copy; Imanuel Gittens. All rights reserved.</p>
 	</footer>
 
 </body>

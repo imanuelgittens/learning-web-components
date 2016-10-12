@@ -7,6 +7,21 @@
 	<script src="https://use.fontawesome.com/212b5d74ea.js"></script>
 </head>
 <body>
+	<input type="checkbox" id="show-menu">
+	<div id="fix-bar">
+		    <div class="logo">
+		      <a href="/">Imanuel Gittens</a>
+		    </div>
+		    
+		    <div class="push">
+		      <label class="hamburguer" for="show-menu">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		      </label>
+		    </div>
+	</div>
 	<header class="top-menu">
 		<div class="container">
 			<nav>
@@ -16,7 +31,7 @@
 				<section class="menu-main">
 					<ul>
 						<li><a href="about.html">About</a></li>
-						<li><a  class="active" href="projects.html">Projects</a></li>
+						<li><a  class="active" href="project.html">Projects</a></li>
 						<li><a href="skills.html">Skills</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
@@ -32,6 +47,50 @@
 		</div>
 		
 	</header>
+	<div id="canvas">
+
+		<div id="nav">
+		      <ul class="site-menu">    
+		        <li><a href="about.html">About</a></li>
+		        <li>
+		        	<div class="accordionComponent">
+						<article class="accordion">
+							<input type="checkbox" name="dropdown-menu" id="menuItem1">
+							<label for="menuItem1">
+								<span>Projects</span>
+								<div class="dropdown-menu-content">
+									<ul>
+										<li><a href="#">Buttons</a></li>
+										<li><a href="#">Calculator</a></li>
+										<li><a href="#">Color Builder</a></li>
+										<li><a href="#">Login</a></li>
+										<li><a href="#">Pay</a></li>
+										<li><a href="#">Questionnaire</a></li>
+										<li><a href="#">Schedule</a></li>
+										<li><a href="#">Search</a></li>
+										<li><a href="#">Shipping</a></li>
+										<li><a href="#">Signup</a></li>
+										<li><a href="#">Store</a></li>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Team Project</a></li>
+										<li><a href="#">Accordion</a></li>
+									</ul>
+								</div>
+								
+							</label>
+
+						</article>
+					</div>
+		        </li>
+		        <li><a href="skills.html">Skills</a></li>
+		        <li><a href="contact.html">Contact</a></li>
+		        
+		        <li class="copy">&copy; 2016 Imanuel Gittens. All Rights Reserved.</li>
+		      </ul>
+		</div>
+
+		<label for="show-menu" class="mask"></label>
+		<div id="content">
 
 	<section class="main-content">
 		<div class="container">
@@ -63,6 +122,7 @@
 										<label for="first-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -88,13 +148,14 @@
 										<label for="first-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="calcCarousel" id="third-calc">
 									<label class="back" for="second-calc"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-calc"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-calc"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -108,6 +169,28 @@
 										<label for="first-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="calcCarousel" id="fourth-calc">
+									<label class="back" for="third-calc"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-calc"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<h3>Responsive View</h3><br>
+											<img src="assets/images/calculator.gif">
+										</div>
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-calc"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -209,6 +292,7 @@
 										<label for="first-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -234,13 +318,14 @@
 										<label for="first-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="buttonCarousel" id="third-button">
 									<label class="back" for="second-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-button"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-button"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -254,6 +339,29 @@
 										<label for="first-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="buttonCarousel" id="fourth-button">
+									<label class="back" for="third-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-button"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<h3>Responsive View</h3><br>
+											<img src="assets/images/buttons.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-button"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -355,6 +463,7 @@
 										<label for="first-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -380,13 +489,14 @@
 										<label for="first-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="profile-Carousel" id="third-profile">
 									<label class="back" for="second-profile"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-profile"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-profile"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -400,6 +510,28 @@
 										<label for="first-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="profile-Carousel" id="fourth-profile">
+									<label class="back" for="third-profile"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-profile"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/profile.gif">
+										</div>
+				
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-profile"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -428,6 +560,7 @@
 										<label for="first-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -453,13 +586,14 @@
 										<label for="first-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="color-Carousel" id="third-color">
 									<label class="back" for="second-color"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-color"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-color"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -473,6 +607,28 @@
 										<label for="first-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="color-Carousel" id="fourth-color">
+									<label class="back" for="third-color"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-color"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/color-builder.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-color"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -501,6 +657,7 @@
 										<label for="first-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -526,13 +683,14 @@
 										<label for="first-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="login-Carousel" id="third-login">
 									<label class="back" for="second-login"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-login"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-login"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -546,6 +704,28 @@
 										<label for="first-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="login-Carousel" id="fourth-login">
+									<label class="back" for="third-login"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-login"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/login.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-login"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -565,7 +745,7 @@
 										<div class="test">
 											<div class="info">
 												<h3>Overview</h3>
-												<p>The goal of this project is to create a credit card processing form component.
+												<p>The goal of this project is to create a credit card processing form component.</p>
 											</div>
 										</div>
 										
@@ -574,6 +754,7 @@
 										<label for="first-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -599,13 +780,14 @@
 										<label for="first-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="creditCard-Carousel" id="third-creditCard">
 									<label class="back" for="second-creditCard"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-creditCard"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-creditCard"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -619,6 +801,28 @@
 										<label for="first-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="creditCard-Carousel" id="fourth-creditCard">
+									<label class="back" for="third-creditCard"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-creditCard"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/pay.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-creditCard"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -647,6 +851,7 @@
 										<label for="first-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -672,13 +877,14 @@
 										<label for="first-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="questionnaire-Carousel" id="third-questionnaire">
 									<label class="back" for="second-questionnaire"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-questionnaire"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-questionnaire"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -692,6 +898,28 @@
 										<label for="first-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="questionnaire-Carousel" id="fourth-questionnaire">
+									<label class="back" for="third-questionnaire"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-questionnaire"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/question.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-questionnaire"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -720,6 +948,7 @@
 										<label for="first-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -745,6 +974,7 @@
 										<label for="first-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -765,6 +995,28 @@
 										<label for="first-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="scheduler-Carousel" id="fourth-scheduler">
+									<label class="back" for="third-scheduler"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-scheduler"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/schedule.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-scheduler"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -793,6 +1045,7 @@
 										<label for="first-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -818,13 +1071,14 @@
 										<label for="first-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="search-Carousel" id="third-search">
 									<label class="back" for="second-search"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-search"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-search"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -838,6 +1092,28 @@
 										<label for="first-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="search-Carousel" id="fourth-search">
+									<label class="back" for="third-search"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-search"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/search.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-search"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -866,6 +1142,7 @@
 										<label for="first-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -891,13 +1168,14 @@
 										<label for="first-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="shipping-Carousel" id="third-shipping">
 									<label class="back" for="second-shipping"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-shipping"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-shipping"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -911,6 +1189,28 @@
 										<label for="first-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="shipping-Carousel" id="fourth-shipping">
+									<label class="back" for="third-shipping"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-shipping"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/shipping.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-shipping"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -939,6 +1239,7 @@
 										<label for="first-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -964,13 +1265,14 @@
 										<label for="first-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
 								<div class="carousel-item">
 									<input type="radio" name="signup-Carousel" id="third-signup">
 									<label class="back" for="second-signup"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
-									<label class="forward" for="first-signup"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<label class="forward" for="fourth-signup"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
 									<div class="content">
 										<div class="test">
 											<div class="info">
@@ -984,6 +1286,28 @@
 										<label for="first-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="second-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 											<label for="third-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+									</div>
+
+								</div>
+								<div class="carousel-item">
+									<input type="radio" name="signup-Carousel" id="fourth-signup">
+									<label class="back" for="third-signup"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></label>
+									<label class="forward" for="first-signup"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></label>
+									<div class="content">
+										<div class="test">
+											<div class="info">
+											<img src="assets/images/signup.gif">
+										</div>
+										
+										</div>
+										
+									</div>
+									<div class="bullets">
+										<label for="first-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="second-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="third-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
+											<label for="fourth-signup"><i class="fa fa-circle" aria-hidden="true"></i></label>
 									</div>
 
 								</div>
@@ -1000,7 +1324,8 @@
 			</div>
 		</div>
 	</section>
-
+	</div>
+	</div>
 	<footer>
 		<p>&copy; Imanuel Gittens</p>
 	</footer>

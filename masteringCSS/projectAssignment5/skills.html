@@ -7,6 +7,21 @@
 	<script src="https://use.fontawesome.com/212b5d74ea.js"></script>
 </head>
 <body>
+	<input type="checkbox" id="show-menu">
+	<div id="fix-bar">
+		    <div class="logo">
+		      <a href="/">Imanuel Gittens</a>
+		    </div>
+		    
+		    <div class="push">
+		      <label class="hamburguer" for="show-menu">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		      </label>
+		    </div>
+	</div>
 	<header class="top-menu">
 		<div class="container">
 			<nav>
@@ -16,7 +31,7 @@
 				<section class="menu-main">
 					<ul>
 						<li><a href="about.html">About</a></li>
-						<li><a href="projects.html">Projects</a></li>
+						<li><a href="project.html">Projects</a></li>
 						<li><a class="active" href="skills.html">Skills</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
@@ -32,6 +47,50 @@
 		</div>
 		
 	</header>
+	<div id="canvas">
+
+		<div id="nav">
+		      <ul class="site-menu">    
+		        <li><a href="about.html">About</a></li>
+		        <li>
+		        	<div class="accordionComponent">
+						<article class="accordion">
+							<input type="checkbox" name="dropdown-menu" id="menuItem1">
+							<label for="menuItem1">
+								<span>Projects</span>
+								<div class="dropdown-menu-content">
+									<ul>
+										<li><a href="#">Buttons</a></li>
+										<li><a href="#">Calculator</a></li>
+										<li><a href="#">Color Builder</a></li>
+										<li><a href="#">Login</a></li>
+										<li><a href="#">Pay</a></li>
+										<li><a href="#">Questionnaire</a></li>
+										<li><a href="#">Schedule</a></li>
+										<li><a href="#">Search</a></li>
+										<li><a href="#">Shipping</a></li>
+										<li><a href="#">Signup</a></li>
+										<li><a href="#">Store</a></li>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">Team Project</a></li>
+										<li><a href="#">Accordion</a></li>
+									</ul>
+								</div>
+								
+							</label>
+
+						</article>
+					</div>
+		        </li>
+		        <li><a href="skills.html">Skills</a></li>
+		        <li><a href="contact.html">Contact</a></li>
+		        
+		        <li class="copy">&copy; 2016 Imanuel Gittens. All Rights Reserved.</li>
+		      </ul>
+		</div>
+
+		<label for="show-menu" class="mask"></label>
+		<div id="content">
 
 	<section class="main-content">
 		<div class="container">
@@ -129,7 +188,8 @@
 			</div>
 		</div>
 	</section>
-
+	</div>
+	</div>
 	<footer>
 		<p>&copy; Imanuel Gittens</p>
 	</footer>
