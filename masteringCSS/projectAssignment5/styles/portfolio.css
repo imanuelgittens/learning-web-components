@@ -219,7 +219,7 @@ section.projects{
 	padding: 50px 20px 20px 20px;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
-	border-bottom-left-radius: 3px;
+	/*border-bottom-left-radius: 3px;*/
 	overflow: none;
 }
 
@@ -1007,6 +1007,22 @@ section.about-me{
 }
 
 .carouselComponent2 .carousel-item input[type="radio"]#fourth-signup:checked ~ .bullets > label[for="fourth-signup"]{
+	color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-accordion:checked ~ .bullets > label[for="first-accordion"]{
+	color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-accordion:checked ~ .bullets > label[for="second-accordion"]{
+	color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-accordion:checked ~ .bullets > label[for="third-accordion"]{
+	color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-accordion:checked ~ .bullets > label[for="fourth-accordion"]{
 	color: #E05FB0;
 }
 
