@@ -645,8 +645,46 @@ section.skills .graph-component .graph ul li:hover > span.tooltip:after{
 /*about page styles*/
 
 section.about-me{
-	margin: 70px 0;
-	text-align: center;
+
+	display: flex;
+	justify-content: center
+}
+
+.about-gallery{
+	position: relative;
+	display: block;
+	width:800px;
+
+}
+.about-gallery .gallery-thumbnails{
+	display: flex;
+	justify-content: center;
+	align-items: bottom;
+}
+
+.about-gallery-image{
+	transition: 2s ease;
+	position: absolute;
+	left:-2000px;
+}
+
+/*.about-gallery-image img{
+	width:100%;
+}*/
+
+.about-gallery .gallery-thumbnails .thumb img{
+	width: 100px;
+	height: auto;
+	margin:5px;
+}
+
+.about-gallery .about-gallery-item input[type="radio"]{
+	display: none;
+}
+
+.about-gallery .about-gallery-item input[type="radio"]:checked ~ .about-gallery-image{
+	left: 0;
+	z-index: 1000;
 }
 
 /*end about page styles*/
