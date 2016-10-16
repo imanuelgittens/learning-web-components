@@ -110,7 +110,8 @@ window.addEventListener('load', function(){
 			
 			lineItem = document.createElement('div');
 			lineItem.id = shoppingCart[i].id;
-			lineItem.classList += "cart-details"
+			lineItem.classList += "cart-details clearfix";
+			//lineItem.classList += "clearfix";
 
 			prodString = '<div class="sixth cart-options">';
 			prodString += '<button class="remove-link" id="remove-product'+i+'">Remove</button>';
