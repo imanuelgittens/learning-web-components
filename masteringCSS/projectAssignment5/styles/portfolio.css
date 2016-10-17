@@ -647,7 +647,8 @@ section.skills .graph-component .graph ul li:hover > span.tooltip:after{
 section.about-me{
 
 	display: flex;
-	justify-content: center
+	justify-content: center;
+	margin-bottom: 70px;
 }
 
 .about-gallery{
