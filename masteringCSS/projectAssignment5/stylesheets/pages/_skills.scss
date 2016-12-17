@@ -1,0 +1,209 @@
+/*Skills Page Styles*/
+
+section.skills{
+  margin-top:40px;
+  margin-bottom: 70px;
+  text-align:center;
+  /*overflow: hidden;*/
+}
+
+section.skills .progress{
+  width:90%;
+  height: 20px;
+  margin-right: auto;
+  margin-left:auto;
+
+}
+
+section.skills .progress .complete{
+  width:65%;
+  height: 100%;
+  background-color: #FB5E5D;
+  display: inline-block;
+  float: left;
+  text-align:left;
+  color:#fff;
+  padding-left:10px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+section.skills .progress .remaining{
+  width:35%;
+  height: 100%;
+  background-color: #4A6FEB;
+  display: inline-block;
+  text-align:right;
+  color:#fff;
+  padding-right: 10px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+
+section.skills .graph-component{
+  border-bottom: 1px solid #999;
+  width:300px;
+  height: 300px;
+  position: relative;
+  margin:0 auto;
+
+}
+
+section.skills .graph-component h3{
+  padding: 0px;
+  text-align:center;
+  position: relative;
+  top:50px;
+  font-weight: 400;
+}
+
+h3.color-red{
+  color: #FB5E5E;
+}
+
+h3.color-blue{
+  color: #4A70EB
+}
+
+h3.color-dark-grey{
+  color:#222;
+}
+
+section.skills .graph-component .graph{
+  float: left;
+  margin:0;
+  padding:0;
+  position: absolute;
+  bottom: -19px;
+  left: 100px;
+
+}
+
+section.skills .graph-component aside{
+  float: left;
+  margin-top: 60px;
+}
+
+section.skills .graph-component aside ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  padding-right: 20px;
+
+}
+
+section.skills .graph-component aside ul li{
+  padding: 20px 0;
+  font-size: 12px;
+}
+
+section.skills .graph-component .graph ul{
+  padding: 0;
+  margin:0;
+}
+
+section.skills .graph-component .graph ul li{
+  display: inline-block;
+  list-style-type: none;
+  width:30px;
+  padding-right:5px;
+  position: relative;
+}
+
+section.skills .graph-component .graph ul li div{
+  width: 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+section.skills .graph-component .graph ul li span{
+  transform: rotate(50deg);
+  display: inline-block;
+  width: 150px;
+  font-size: 12px;
+  text-align: left;
+  position: relative;
+  top: 60px;
+  left: -10px;
+}
+
+section.skills .graph-component .graph ul li span.tooltip{
+  visibility: hidden;
+  position: absolute;
+  top:-50px;
+  left:-82px;
+  transform: none;
+  width:200px;
+}
+
+section.skills .graph-component .graph ul li:hover > span.tooltip{
+  visibility: visible;
+  padding:10px 25px;
+  border-radius: 3px;
+  color:#fff;
+  background-color: #333;
+  z-index: 100;
+}
+
+section.skills .graph-component .graph ul li:hover > span.tooltip:after{
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+
+.graph .column-one{
+  background-color: #FFAC41;
+}
+
+.graph .column-two{
+  background-color: #38BAF0;
+}
+
+.graph .column-three{
+  background-color: #69D12B;
+}
+
+.graph .column-four{
+  background-color: #FA8BB0;
+}
+
+.graph .column-five{
+  background-color: #EFE211;
+}
+
+
+.ten{
+  height:20px;
+}
+
+.twenty{
+  height:40px;
+}
+
+.thirty{
+  height:60px;
+}
+
+.forty{
+  height:80px;
+}
+
+.fifty{
+  height:100px;
+}
+
+.sixty{
+  height:120px;
+}
+
+.seventy{
+  height:140px;
+}

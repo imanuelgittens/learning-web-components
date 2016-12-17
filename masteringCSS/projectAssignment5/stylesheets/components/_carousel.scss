@@ -1,0 +1,336 @@
+.carouselComponent2{
+  position: relative;
+
+}
+
+.carouselComponent2 .carousel-item{
+
+  line-height: 500px;
+}
+
+.carouselComponent2 .carousel-item label{
+  vertical-align: middle;
+  color: #fff;
+}
+
+
+
+
+.carouselComponent2 .carousel-item .content{
+  line-height: 20px;
+  display: none;
+  height: 500px;
+  overflow: hidden;
+  text-align: left;
+  color:#fff;
+  font-weight: 400;
+  padding: 10px 40px;
+
+}
+
+.carouselComponent2 .carousel-item .content img{
+  width:100%;
+}
+
+.carouselComponent2 .carousel-item .content .test{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.carouselComponent2 .carousel-item .content .info{
+  /*padding: 10px 40px;*/
+}
+.carouselComponent2 .carousel-item .content h3{
+  padding: 0;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.carouselComponent2 .carousel-item label.forward{
+  float: right;
+  width:30px;
+  font-size:30px;
+  padding: 0;
+  display: none;
+}
+.carouselComponent2 .carousel-item label.forward:hover, label.back:hover{
+  color:#E05FB0!important;
+}
+
+
+.carouselComponent2 .carousel-item label.back{
+  float: left;
+  width:30px;
+  font-size:30px;
+  padding: 0;
+  display: none;
+}
+
+.carouselComponent2 .carousel-item .bullets{
+  line-height: 20px;
+  text-align: center;
+  display: none;
+}
+
+.carouselComponent2 .carousel-item .bullets label{
+  width: 1px;
+  padding: 0 10px;
+}
+
+.carouselComponent2 .carousel-item .links a{
+  color: #999;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.carouselComponent2 .carousel-item .links{
+  padding: 20px 0;
+}
+
+.carouselComponent2 .carousel-item .links a:hover{
+  cursor: pointer;
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]:checked ~ .bullets{
+  display: block;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-button:checked ~ .bullets > label[for="first-button"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-button:checked ~ .bullets > label[for="second-button"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-button:checked ~ .bullets > label[for="third-button"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-button:checked ~ .bullets > label[for="fourth-button"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-calc:checked ~ .bullets > label[for="first-calc"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-calc:checked ~ .bullets > label[for="second-calc"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-calc:checked ~ .bullets > label[for="third-calc"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-calc:checked ~ .bullets > label[for="fourth-calc"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-team:checked ~ .bullets > label[for="first-team"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-team:checked ~ .bullets > label[for="second-team"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-team:checked ~ .bullets > label[for="third-team"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-team:checked ~ .bullets > label[for="fourth-team"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-cart:checked ~ .bullets > label[for="first-cart"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-cart:checked ~ .bullets > label[for="second-cart"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-cart:checked ~ .bullets > label[for="third-cart"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-cart:checked ~ .bullets > label[for="fourth-cart"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-profile:checked ~ .bullets > label[for="first-profile"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-profile:checked ~ .bullets > label[for="second-profile"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-profile:checked ~ .bullets > label[for="third-profile"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-profile:checked ~ .bullets > label[for="fourth-profile"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-color:checked ~ .bullets > label[for="first-color"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-color:checked ~ .bullets > label[for="second-color"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-color:checked ~ .bullets > label[for="third-color"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-color:checked ~ .bullets > label[for="fourth-color"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-login:checked ~ .bullets > label[for="first-login"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-login:checked ~ .bullets > label[for="second-login"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-login:checked ~ .bullets > label[for="third-login"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-login:checked ~ .bullets > label[for="fourth-login"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-creditCard:checked ~ .bullets > label[for="first-creditCard"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-creditCard:checked ~ .bullets > label[for="second-creditCard"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-creditCard:checked ~ .bullets > label[for="third-creditCard"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-creditCard:checked ~ .bullets > label[for="fourth-creditCard"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-questionnaire:checked ~ .bullets > label[for="first-questionnaire"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-questionnaire:checked ~ .bullets > label[for="second-questionnaire"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-questionnaire:checked ~ .bullets > label[for="third-questionnaire"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-questionnaire:checked ~ .bullets > label[for="fourth-questionnaire"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-scheduler:checked ~ .bullets > label[for="first-scheduler"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-scheduler:checked ~ .bullets > label[for="second-scheduler"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-scheduler:checked ~ .bullets > label[for="third-scheduler"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-scheduler:checked ~ .bullets > label[for="fourth-scheduler"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-search:checked ~ .bullets > label[for="first-search"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-search:checked ~ .bullets > label[for="second-search"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-search:checked ~ .bullets > label[for="third-search"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-search:checked ~ .bullets > label[for="fourth-search"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-shipping:checked ~ .bullets > label[for="first-shipping"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-shipping:checked ~ .bullets > label[for="second-shipping"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-shipping:checked ~ .bullets > label[for="third-shipping"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-shipping:checked ~ .bullets > label[for="fourth-shipping"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-signup:checked ~ .bullets > label[for="first-signup"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-signup:checked ~ .bullets > label[for="second-signup"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-signup:checked ~ .bullets > label[for="third-signup"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-signup:checked ~ .bullets > label[for="fourth-signup"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#first-accordion:checked ~ .bullets > label[for="first-accordion"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#second-accordion:checked ~ .bullets > label[for="second-accordion"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#third-accordion:checked ~ .bullets > label[for="third-accordion"]{
+  color: #E05FB0;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]#fourth-accordion:checked ~ .bullets > label[for="fourth-accordion"]{
+  color: #E05FB0;
+}
+
+
+
+
+
+.carouselComponent2 .carousel-item input[type="radio"]:checked ~ label.back,
+.carouselComponent2 .carousel-item input[type="radio"]:checked ~ label.forward{
+  display: inline-block;
+  color:#fff;
+}
+
+.carouselComponent2 .carousel-item input[type="radio"]:checked ~ .content{
+  display: table;
+}

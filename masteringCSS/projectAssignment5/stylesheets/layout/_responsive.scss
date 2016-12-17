@@ -1,0 +1,336 @@
+@media (max-width: 600px){
+  /*Skills responsive styles*/
+  .skills .half{
+    width:100%;
+    display: block;
+  }
+
+  section.skills .backend{
+    margin-top: 100px;
+  }
+  /*end Skills responsive styles*/
+
+  /*Projects Responsive Style*/
+
+  .tabComponent .tab > label{
+    width:100%;
+    position: relative;
+
+  }
+
+  /*.tabComponent .tab input[type="radio"]:checked ~ label{
+  background-color: blue;
+}*/
+
+.tabComponent .tab input[type="radio"]:checked ~ label ~ .tabContent{
+  display: block;
+  position: relative;
+  top: 0;
+  background-color: #4C4A4A;
+  width: 100%;
+  min-height: 100%;
+  padding: 50px 20px 20px 20px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  overflow: none;
+}
+
+.carouselComponent2 .carousel-item .content{
+  padding:5px;
+}
+
+.carouselComponent2 .carousel-item label{
+  background-color: transparent;
+}
+
+.tabComponent .tab input[type="radio"]:checked ~ label ~ .tabContent{
+  border-radius: 0;
+}
+
+.tabComponent .tab input[type="radio"]:checked ~ label{
+  border-radius: 0;
+}
+
+/*End Projects responsive styles*/
+}
+
+
+
+@media (max-width: 360px){
+
+  /*Hamburger menu*/
+  header.top-menu{
+    display: none;
+  }
+
+  #fix-bar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 60px;
+    background-color: #4686E6;
+
+  }
+
+  #fix-bar .logo {
+    position: absolute;
+    left: 0;
+    width: 250px;
+    transform: translate3d(-50%, 0, 0);
+    transition: transform 0.5s ease;
+  }
+
+  #fix-bar .logo a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 24px;
+    width: 150px;
+    height: 24px;
+    padding: 18px 16px 18px 24px;
+    box-sizing: content-box;
+  }
+
+  #fix-bar .push {
+    position: relative;
+    left: 0;
+    height: 100%;
+    background-color: #4686E6;
+
+    transition: transform 0.5s ease;
+  }
+
+  .hamburguer {
+    width: 72px;
+    height: 60px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .hamburguer span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 24px;
+    background: #fff;
+    opacity: 1;
+    left: 24px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+  }
+
+  .hamburguer span:nth-child(1) {
+    top: 20px;
+  }
+
+  .hamburguer span:nth-child(2),
+  .hamburguer span:nth-child(3) {
+    top: 28px;
+  }
+
+  .hamburguer span:nth-child(4) {
+    top: 36px;
+  }
+
+  #canvas {
+    position: relative;
+    height: 100%;
+    padding-top: 60px;
+    overflow: hidden;
+  }
+
+  #nav {
+    display: inline-block;
+    overflow-y: scroll;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 0.5s ease;
+    padding-top: 15px;
+    padding-bottom: 60px;
+    background: linear-gradient(to bottom, #4686E6, #B55894);
+  }
+
+  #nav ul{
+    list-style-type: none;
+  }
+
+  #nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 14px 24px;
+    font-weight: 400;
+  }
+
+  #nav a:hover {
+    background-color: #D273B0;
+  }
+
+  #nav .site-menu {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 60px;
+    padding-left:0;
+  }
+
+  #nav .copy {
+    position: absolute;
+    bottom: 5px;
+    padding: 16px 24px;
+    font-size: 12px;
+    line-height: 1.4;
+    color:#fff;
+  }
+
+  #content {
+    /*background-color: #fff;*/
+    overflow-y: scroll;
+    position: relative;
+    left: 0;
+    height: 100%;
+    transition: transform 0.5s ease;
+    transform: translate3d(0, 0, 0);
+    padding: 20px;
+  }
+
+  .mask {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease, z-index 0s 0.5s;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  input#show-menu {
+    display: block;
+    position: absolute;
+    opacity: 0;
+  }
+
+  input#show-menu:checked ~ #fix-bar .push {
+    transform: translate3d(250px, 0, 0);
+  }
+
+  input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(1),
+  input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(4) {
+    top: 28px;
+    width: 0;
+    left: 50%;
+  }
+
+  input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  input#show-menu:checked ~ #fix-bar .hamburguer span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  input#show-menu:checked ~ #canvas .mask {
+    z-index: 1;
+    opacity: 1;
+    transform: translate3d(250px, 0, 0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  input#show-menu:checked ~ #canvas #nav,
+  input#show-menu:checked ~ #fix-bar .logo {
+    transform: translate3d(0, 0, 0);
+  }
+
+  input#show-menu:checked ~ #canvas #content {
+    transform: translate3d(250px, 0, 0);
+  }
+
+  /*responsive accordion in menu styles*/
+
+  div.accordionComponent{
+
+    box-sizing: border-box;
+  }
+
+  article.accordion{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: transparent;
+  }
+
+  article.accordion input[type="checkbox"]{
+    display: none;
+  }
+
+  article.accordion label{
+    color:#fff;
+
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+  article.accordion label:hover{
+    /*background-color: #D273B0;*/
+
+  }
+
+  article.accordion label span{
+    padding: 14px 25px;
+    width: 100%;
+  }
+
+  article.accordion label span:hover{
+    background-color: #D273B0;
+    cursor: pointer;
+  }
+
+  article.accordion div.dropdown-menu-content{
+    height: 0px;
+    background-color: #4686E6;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+
+  }
+
+  article.accordion div.dropdown-menu-content ul{
+
+    padding: 0;
+  }
+
+  article.accordion div.dropdown-menu-content ul li{
+
+  }
+
+  article.accordion div.dropdown-menu-content ul li a{
+    padding-left:10px;
+    width: 100%;
+  }
+
+  article.accordion input[type="checkbox"]:checked ~ label > div.dropdown-menu-content{
+    height: 250px;
+    overflow: auto;
+  }
+
+
+
+  /*End responsive accordion styles*/
+}

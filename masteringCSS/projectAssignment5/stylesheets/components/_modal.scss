@@ -1,0 +1,46 @@
+/*modal styles*/
+
+.modalDialog{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  text-align: center;
+  padding: 200px;
+}
+
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modalDialog .modalInner{
+
+  text-align:center;
+}
+
+.modalDialog .modalInner div.close{
+  text-align: right;
+}
+
+.modalDialog .modalInner div.close a{
+  color: #333;
+  font-size: 40px;
+}
+
+.modalDialog .modalInner h2{
+  color:#AB4E89;
+  font-size: 40px;
+  font-weight: 400;
+  padding-top:50px;
+  /*top:50%;
+  position: absolute;*/
+}
