@@ -38,7 +38,7 @@ body {
   color: #222222;
   font: "Roboto", sans-serif; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, .contact-card .contact-info h2, h5, h6 {
   padding: 0;
   margin: 0; }
 
@@ -203,92 +203,6 @@ body {
     color: #444;
     text-align: center; }
 
-/*Tab styles*/
-section.projects {
-  margin-top: 50px;
-  margin-bottom: 110px; }
-
-.tabComponent {
-  position: relative; }
-  .tabComponent input[type="radio"] {
-    display: none; }
-  .tabComponent label {
-    display: inline-block;
-    width: 25%;
-    padding: 20px;
-    color: #444; }
-    .tabComponent label:hover {
-      cursor: pointer;
-      color: #D273B0; }
-  .tabComponent .tabContent {
-    display: none; }
-
-.tabComponent .tab input[type="radio"]:checked ~ label {
-  background-color: #4C4A4A;
-  color: #D273B0;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px; }
-
-.tabComponent .tab input[type="radio"]:checked ~ label ~ .tabContent {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  background-color: #4C4A4A;
-  width: 75%;
-  min-height: 100%;
-  padding: 50px 20px 20px 20px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  overflow: none; }
-
-/*End tab styles*/
-/*carousel styles*/
-.carouselComponent .carouselItem {
-  position: relative; }
-  .carouselComponent .carouselItem input[type="radio"], .carouselComponent .carouselItem label, .carouselComponent .carouselItem .content {
-    display: none; }
-  .carouselComponent .carouselItem .previous {
-    text-align: left;
-    position: absolute;
-    left: 5%; }
-  .carouselComponent .carouselItem .next {
-    text-align: right;
-    position: absolute;
-    left: 90%; }
-
-.carouselComponent .carouselItem input[type="radio"]:checked ~ label.previous,
-.carouselComponent .carouselItem input[type="radio"]:checked ~ label.next {
-  display: inline-block;
-  width: 6%;
-  border-radius: 5px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5); }
-
-.carouselComponent .carouselItem input[type="radio"]:checked ~ .content {
-  display: block;
-  text-align: center;
-  position: absolute;
-  top: 30px;
-  width: 100%; }
-
-.carouselComponent .carouselItem input[type="radio"]:checked ~ .content .text-content p, h3 {
-  color: #fff;
-  padding: 5px 160px; }
-
-.tabComponent .tab .tabContent .carouselComponent .bullet-nav {
-  text-align: center;
-  padding-top: 400px; }
-
-.tabComponent .tab .tabContent .carouselComponent .bullet-nav .bullet {
-  padding: 5px;
-  background-color: #fff;
-  width: 3px;
-  height: 3px;
-  border-radius: 5px;
-  margin: 20px 2px;
-  display: inline-block; }
-
-/*End carousel styles*/
 /*End Main Content Styles*/
 @media (max-width: 600px) {
   /*Skills responsive styles*/
@@ -845,8 +759,98 @@ section.projects {
   /*top:50%;
   position: absolute;*/ }
 
+/*Tab styles*/
+section.projects {
+  margin-top: 50px;
+  margin-bottom: 110px; }
+
+.tabComponent {
+  position: relative; }
+  .tabComponent input[type="radio"] {
+    display: none; }
+  .tabComponent label {
+    display: inline-block;
+    width: 25%;
+    padding: 20px;
+    color: #444; }
+    .tabComponent label:hover {
+      cursor: pointer;
+      color: #D273B0; }
+  .tabComponent .tabContent {
+    display: none; }
+
+.tabComponent .tab input[type="radio"]:checked ~ label {
+  background-color: #4C4A4A;
+  color: #D273B0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px; }
+
+.tabComponent .tab input[type="radio"]:checked ~ label ~ .tabContent {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #4C4A4A;
+  width: 75%;
+  min-height: 100%;
+  padding: 50px 20px 20px 20px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow: none; }
+
+/*End tab styles*/
+/*carousel styles*/
+.carouselComponent .carouselItem {
+  position: relative; }
+  .carouselComponent .carouselItem input[type="radio"], .carouselComponent .carouselItem label, .carouselComponent .carouselItem .content {
+    display: none; }
+  .carouselComponent .carouselItem .previous {
+    text-align: left;
+    position: absolute;
+    left: 5%; }
+  .carouselComponent .carouselItem .next {
+    text-align: right;
+    position: absolute;
+    left: 90%; }
+
+.carouselComponent .carouselItem input[type="radio"]:checked ~ label.previous,
+.carouselComponent .carouselItem input[type="radio"]:checked ~ label.next {
+  display: inline-block;
+  width: 6%;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.carouselComponent .carouselItem input[type="radio"]:checked ~ .content {
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 30px;
+  width: 100%; }
+
+.carouselComponent .carouselItem input[type="radio"]:checked ~ .content .text-content p, h3 {
+  color: #fff;
+  padding: 5px 160px; }
+
+.tabComponent .tab .tabContent .carouselComponent .bullet-nav {
+  text-align: center;
+  padding-top: 400px; }
+
+.tabComponent .tab .tabContent .carouselComponent .bullet-nav .bullet {
+  padding: 5px;
+  background-color: #fff;
+  width: 3px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 20px 2px;
+  display: inline-block; }
+
+/*End carousel styles*/
 /*about page styles*/
 section.about-me {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
   margin-bottom: 70px; }
@@ -855,11 +859,14 @@ section.about-me {
   position: relative;
   display: block;
   width: 800px; }
-
-.about-gallery .gallery-thumbnails {
-  display: flex;
-  justify-content: center;
-  align-items: bottom; }
+  .about-gallery .gallery-thumbnails {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: bottom; }
 
 .about-gallery-image {
   transition: 2s ease;
@@ -890,131 +897,138 @@ width:100%;
   margin-right: auto;
   margin-bottom: 100px;
   margin-top: 100px; }
+  .contact-card .contact-info {
+    display: inline-block;
+    background-color: #4686E6;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    float: left;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 25px;
+    text-align: left; }
+    .contact-card .contact-info h4, .contact-card .contact-info h2 {
+      color: #fff;
+      font-weight: 300; }
+    .contact-card .contact-info h2 {
+      font-size: 30px; }
+    .contact-card .contact-info .contact-options {
+      margin-top: 20px; }
+    .contact-card .contact-info .contact-email p {
+      color: #fff;
+      text-align: right;
+      padding: 0;
+      line-height: 25px;
+      vertical-align: middle; }
+  .contact-card .contact-description {
+    display: inline-block;
+    width: 50%;
+    background-color: #fff;
+    color: #333;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 45px 25px 44px 25px; }
+    .contact-card .contact-description p {
+      text-align: left;
+      padding: 0;
+      margin: 0; }
 
-.contact-card .contact-info {
-  display: inline-block;
-  background-color: #4686E6;
-  padding: 0;
-  margin: 0;
-  width: 50%;
-  float: left;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  padding: 25px;
-  text-align: left; }
-
-.contact-card .contact-info h2 {
-  color: #fff;
-  font-weight: 300;
-  font-size: 30px; }
-
-.contact-card .contact-info h4 {
-  color: #fff;
-  font-weight: 300; }
-
-.contact-card .contact-info .contact-options {
-  margin-top: 20px; }
-
-.contact-card .contact-info .contact-options .social-profiles {
+.social-profiles {
   float: left;
   display: inline-block; }
-
-.contact-card .contact-info .contact-options .social-profiles a {
-  color: #fff; }
-
-.contact-card .contact-info .contact-options .social-profiles span {
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  display: inline-block;
-  text-align: center; }
-
-.contact-card .contact-info .contact-options .social-profiles span.twitter {
-  background-color: #1DA1F2; }
-
-.contact-card .contact-info .contact-options .social-profiles span.github {
-  background-color: #323131; }
-
-.contact-card .contact-info .contact-options .social-profiles span.facebook {
-  background-color: #3B5998; }
-
-.contact-card .contact-info .contact-options .social-profiles span.linkedIn {
-  background-color: #0177B5; }
-
-.contact-card .contact-info .contact-email p {
-  color: #fff;
-  text-align: right;
-  padding: 0;
-  line-height: 25px;
-  vertical-align: middle; }
-
-.contact-card .contact-description {
-  display: inline-block;
-  width: 50%;
-  background-color: #fff;
-  color: #333;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  padding: 45px 25px 44px 25px; }
-
-.contact-card .contact-description p {
-  text-align: left; }
-
-.contact-card .contact-description p {
-  padding: 0;
-  margin: 0; }
+  .social-profiles a {
+    color: #fff; }
+  .social-profiles span {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center; }
+  .social-profiles .twitter {
+    background-color: #1DA1F2; }
+  .social-profiles .github {
+    background-color: #323131; }
+  .social-profiles .facebook {
+    background-color: #3B5998; }
+  .social-profiles .linkedIn {
+    background-color: #0177B5; }
 
 /*End Contact Page Styles*/
 /*Skills Page Styles*/
-section.skills {
+.skills {
   margin-top: 40px;
   margin-bottom: 70px;
-  text-align: center;
-  /*overflow: hidden;*/ }
+  text-align: center; }
+  .skills .progress {
+    width: 90%;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto; }
+    .skills .progress .complete {
+      width: 65%;
+      height: 100%;
+      background-color: #FB5E5D;
+      display: inline-block;
+      float: left;
+      text-align: left;
+      color: #fff;
+      padding-left: 10px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px; }
+    .skills .progress .remaining {
+      width: 35%;
+      height: 100%;
+      background-color: #4A6FEB;
+      display: inline-block;
+      text-align: right;
+      color: #fff;
+      padding-right: 10px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px; }
 
-section.skills .progress {
-  width: 90%;
-  height: 20px;
-  margin-right: auto;
-  margin-left: auto; }
-
-section.skills .progress .complete {
-  width: 65%;
-  height: 100%;
-  background-color: #FB5E5D;
-  display: inline-block;
-  float: left;
-  text-align: left;
-  color: #fff;
-  padding-left: 10px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px; }
-
-section.skills .progress .remaining {
-  width: 35%;
-  height: 100%;
-  background-color: #4A6FEB;
-  display: inline-block;
-  text-align: right;
-  color: #fff;
-  padding-right: 10px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px; }
-
-section.skills .graph-component {
+.graph-component {
   border-bottom: 1px solid #999;
   width: 300px;
   height: 300px;
   position: relative;
   margin: 0 auto; }
-
-section.skills .graph-component h3 {
-  padding: 0px;
-  text-align: center;
-  position: relative;
-  top: 50px;
-  font-weight: 400; }
+  .graph-component h3 {
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    font-weight: 400; }
+  .graph-component .graph {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: -19px;
+    left: 100px; }
+    .graph-component .graph li {
+      display: inline-block;
+      list-style-type: none;
+      width: 30px;
+      padding-right: 5px;
+      position: relative; }
+  .graph-component aside {
+    float: left;
+    margin-top: 60px; }
+    .graph-component aside ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      padding-right: 20px; }
+      .graph-component aside ul li {
+        padding: 20px 0;
+        font-size: 12px; }
+        .graph-component aside ul li div {
+          width: 30px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px; }
 
 h3.color-red {
   color: #FB5E5E; }
@@ -1024,45 +1038,6 @@ h3.color-blue {
 
 h3.color-dark-grey {
   color: #222; }
-
-section.skills .graph-component .graph {
-  float: left;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  bottom: -19px;
-  left: 100px; }
-
-section.skills .graph-component aside {
-  float: left;
-  margin-top: 60px; }
-
-section.skills .graph-component aside ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  padding-right: 20px; }
-
-section.skills .graph-component aside ul li {
-  padding: 20px 0;
-  font-size: 12px; }
-
-section.skills .graph-component .graph ul {
-  padding: 0;
-  margin: 0; }
-
-section.skills .graph-component .graph ul li {
-  display: inline-block;
-  list-style-type: none;
-  width: 30px;
-  padding-right: 5px;
-  position: relative; }
-
-section.skills .graph-component .graph ul li div {
-  width: 30px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px; }
 
 section.skills .graph-component .graph ul li span {
   transform: rotate(50deg);

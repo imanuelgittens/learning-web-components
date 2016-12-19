@@ -1,62 +1,90 @@
 /*Skills Page Styles*/
 
-section.skills{
+.skills{
   margin-top:40px;
   margin-bottom: 70px;
   text-align:center;
-  /*overflow: hidden;*/
+  .progress{
+    width:90%;
+    height: 20px;
+    margin-right: auto;
+    margin-left:auto;
+    .complete{
+      width:65%;
+      height: 100%;
+      background-color: #FB5E5D;
+      display: inline-block;
+      float: left;
+      text-align:left;
+      color:#fff;
+      padding-left:10px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .remaining{
+      width:35%;
+      height: 100%;
+      background-color: #4A6FEB;
+      display: inline-block;
+      text-align:right;
+      color:#fff;
+      padding-right: 10px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
 }
 
-section.skills .progress{
-  width:90%;
-  height: 20px;
-  margin-right: auto;
-  margin-left:auto;
-
-}
-
-section.skills .progress .complete{
-  width:65%;
-  height: 100%;
-  background-color: #FB5E5D;
-  display: inline-block;
-  float: left;
-  text-align:left;
-  color:#fff;
-  padding-left:10px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-
-section.skills .progress .remaining{
-  width:35%;
-  height: 100%;
-  background-color: #4A6FEB;
-  display: inline-block;
-  text-align:right;
-  color:#fff;
-  padding-right: 10px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-
-section.skills .graph-component{
+.graph-component{
   border-bottom: 1px solid #999;
   width:300px;
   height: 300px;
   position: relative;
   margin:0 auto;
-
+  h3{
+    padding: 0px;
+    text-align:center;
+    position: relative;
+    top:50px;
+    font-weight: 400;
+  }
+  .graph{
+    float: left;
+    margin:0;
+    padding:0;
+    position: absolute;
+    bottom: -19px;
+    left: 100px;
+    li{
+      display: inline-block;
+      list-style-type: none;
+      width:30px;
+      padding-right:5px;
+      position: relative;
+    }
+  }
+  aside{
+    float: left;
+    margin-top: 60px;
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      padding-right: 20px;
+      li{
+        padding: 20px 0;
+        font-size: 12px;
+        div{
+          width: 30px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+      }
+    }
+  }
 }
 
-section.skills .graph-component h3{
-  padding: 0px;
-  text-align:center;
-  position: relative;
-  top:50px;
-  font-weight: 400;
-}
 
 h3.color-red{
   color: #FB5E5E;
@@ -68,54 +96,6 @@ h3.color-blue{
 
 h3.color-dark-grey{
   color:#222;
-}
-
-section.skills .graph-component .graph{
-  float: left;
-  margin:0;
-  padding:0;
-  position: absolute;
-  bottom: -19px;
-  left: 100px;
-
-}
-
-section.skills .graph-component aside{
-  float: left;
-  margin-top: 60px;
-}
-
-section.skills .graph-component aside ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  padding-right: 20px;
-
-}
-
-section.skills .graph-component aside ul li{
-  padding: 20px 0;
-  font-size: 12px;
-}
-
-section.skills .graph-component .graph ul{
-  padding: 0;
-  margin:0;
-}
-
-section.skills .graph-component .graph ul li{
-  display: inline-block;
-  list-style-type: none;
-  width:30px;
-  padding-right:5px;
-  position: relative;
-}
-
-section.skills .graph-component .graph ul li div{
-  width: 30px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
 }
 
 section.skills .graph-component .graph ul li span{

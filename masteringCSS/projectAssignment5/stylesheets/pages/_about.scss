@@ -1,8 +1,7 @@
 /*about page styles*/
 
 section.about-me{
-
-  display: flex;
+  @include display-flex;
   justify-content: center;
   margin-bottom: 70px;
 }
@@ -11,12 +10,11 @@ section.about-me{
   position: relative;
   display: block;
   width:800px;
-
-}
-.about-gallery .gallery-thumbnails{
-  display: flex;
-  justify-content: center;
-  align-items: bottom;
+  .gallery-thumbnails{
+    @include display-flex;
+    justify-content: center;
+    align-items: bottom;
+  }
 }
 
 .about-gallery-image{

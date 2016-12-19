@@ -8,100 +8,80 @@
   margin-right:auto;
   margin-bottom: 100px;
   margin-top: 100px;
+  .contact-info{
+    display: inline-block;
+    background-color: #4686E6;
+    padding:0;
+    margin:0;
+    width: 50%;
+    float: left;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 25px;
+    text-align:left;
+    h4{
+      color: #fff;
+      font-weight:300;
+    }
+    h2{
+      @extend h4;
+      font-size:30px;
+    }
+    .contact-options{
+      margin-top:20px;
 
+    }
+    .contact-email p{
+      color: #fff;
+      text-align: right;
+      padding: 0;
+      line-height: 25px;
+      vertical-align: middle;
+    }
+  }
+  .contact-description{
+    display: inline-block;
+    width:50%;
+    background-color: #fff;
+    color: #333;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 45px 25px 44px 25px;
+    p{
+      text-align: left;
+      padding:0;
+      margin:0;
+    }
+  }
 }
 
-.contact-card .contact-info{
-  display: inline-block;
-
-  background-color: #4686E6;
-  padding:0;
-  margin:0;
-  width: 50%;
-  float: left;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  padding: 25px;
-  text-align:left;
-
-}
-
-.contact-card .contact-info h2{
-  color: #fff;
-  font-weight:300;
-  font-size:30px;
-}
-
-.contact-card .contact-info h4{
-  color: #fff;
-  font-weight:300;
-}
-
-.contact-card .contact-info .contact-options{
-  margin-top:20px;
-
-}
-
-.contact-card .contact-info .contact-options .social-profiles{
-
+.social-profiles{
   float:left;
   display: inline-block;
+  a{
+    color:#fff;
+  }
+  span{
+    padding:5px;
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+  }
+  .twitter{
+    background-color: #1DA1F2;
+  }
+  .github{
+    background-color: #323131;
+  }
+  .facebook{
+    background-color: #3B5998;
+  }
+  .linkedIn{
+    background-color: #0177B5;
+  }
 }
 
-.contact-card .contact-info .contact-options .social-profiles a{
-  color:#fff;
-}
-
-.contact-card .contact-info .contact-options .social-profiles span{
-  padding:5px;
-  width:30px;
-  height:30px;
-  border-radius: 15px;
-  display: inline-block;
-  text-align: center;
-}
-
-.contact-card .contact-info .contact-options .social-profiles span.twitter{
-  background-color: #1DA1F2;
-}
-
-.contact-card .contact-info .contact-options .social-profiles span.github{
-  background-color: #323131;
-}
-
-.contact-card .contact-info .contact-options .social-profiles span.facebook{
-  background-color: #3B5998;
-}
-
-.contact-card .contact-info .contact-options .social-profiles span.linkedIn{
-  background-color: #0177B5;
-}
-
-.contact-card .contact-info .contact-email p{
-  color: #fff;
-  text-align: right;
-  padding: 0;
-  line-height: 25px;
-  vertical-align: middle;
-}
-
-.contact-card .contact-description{
-  display: inline-block;
-  width:50%;
-  background-color: #fff;
-  color: #333;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  padding: 45px 25px 44px 25px;
-}
-
-.contact-card .contact-description p{
-  text-align: left;
-}
-
-.contact-card .contact-description p{
-  padding:0;
-  margin:0;
-}
 
 /*End Contact Page Styles*/
