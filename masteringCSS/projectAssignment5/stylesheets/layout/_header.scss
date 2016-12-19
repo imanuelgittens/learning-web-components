@@ -3,37 +3,29 @@
 // -----------------------------------------------------------------------------
 /*Header styles*/
 
-#show-menu{
-  display: none;
-}
-
-#nav{
-  display: none;
-}
-
-#fix-bar{
+#show-menu, #nav, #fix-bar{
   display: none;
 }
 
 header.top-menu{
-  background: linear-gradient(to right, #4686E6, #B55894);
-
-  border-bottom: 5px solid #D273B0;
+  background: linear-gradient(to right, $color-profile-blue, $color-profile-purple);
+  border-bottom: 5px solid $color-profile-purple;
+  nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
-
-header.top-menu nav{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
 
 header nav section{
-
   width: 33.33%;
-
   text-align: center;
   line-height:50px;
+  .menu-my-id{
+    h3{
+
+    }
+  }
 }
 
 header section.menu-my-id h3{
@@ -44,69 +36,57 @@ header section.menu-my-id h3{
   margin:0;
 }
 
-header section.menu-main ul{
-  margin:0;
-  padding:0;
+.menu-main{
+  li{
+    display: inline;
+    a{
+      color: #fff;
+      font-weight:300;
+      padding: 10px 10px 16px 10px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      text-decoration: none;
+      &:hover{
+        background-color: $color-profile-purple;
+        color:#fff;
+      }
+    }
+    .active{
+      background-color: $color-profile-purple;
+      color:#fff;
+    }
+  }
 }
 
-header section.menu-main ul li{
-  display: inline;
-}
-
-header section.menu-main ul li a{
-  color: #fff;
-  font-weight:300;
-  padding: 10px 10px 16px 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-header section.menu-main ul li a:hover{
-  background-color: #D273B0;
-  color:#fff;
-}
-
-header section.menu-main ul li a.active{
-  background-color: #D273B0;
-  color:#fff;
-}
-
-header section.menu-search{
+.menu-search{
   position:relative;
-}
-
-header section.menu-search label{
-  font-size:10px;
-  color:#fff;
-  position: absolute;
-  top:-16px;
-}
-
-header section.menu-search input{
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  border-bottom: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  line-height: 13px;
-  padding:5px;
-  font-size:13px;
-}
-
-header section.menu-search a{
-  background-color: transparent;
-  border:1px solid #fff;
-  color:#ddd;
-  padding:5px;
-  border-radius:3px;
-  margin-left: 5px;
-  cursor:pointer;
-}
-
-header section.menu-search a:hover{
-  background-color: #fff;
-  color: #D273B0;
+  label{
+    font-size:10px;
+    color:#fff;
+    position: absolute;
+    top:-16px;
+  }
+  input{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    line-height: 13px;
+    padding:5px;
+    font-size:13px;
+  }
+  a{
+    background-color: transparent;
+    border:1px solid #fff;
+    color:#ddd;
+    padding:5px;
+    border-radius:3px;
+    margin-left: 5px;
+    &:hover{
+      background-color: #fff;
+      color: $color-profile-purple;
+    }
+  }
 }

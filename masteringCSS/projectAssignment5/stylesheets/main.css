@@ -1,4 +1,48 @@
 /**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box; }
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: #e50050;
+  text-decoration: none;
+  cursor: pointer; }
+  a:hover, a:active, a:focus {
+    color: #222222;
+    text-decoration: underline; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+input {
+  outline: none; }
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: #222222;
+  font: "Roboto", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0; }
+
+/**
  * Clear inner floats
  */
 .clearfix::after {
@@ -64,23 +108,16 @@
   float: left; }
 
 /*Header styles*/
-#show-menu {
-  display: none; }
-
-#nav {
-  display: none; }
-
-#fix-bar {
+#show-menu, #nav, #fix-bar {
   display: none; }
 
 header.top-menu {
-  background: linear-gradient(to right, #4686E6, #B55894);
+  background: linear-gradient(to right, #4686E6, #D273B0);
   border-bottom: 5px solid #D273B0; }
-
-header.top-menu nav {
-  display: flex;
-  justify-content: center;
-  width: 100%; }
+  header.top-menu nav {
+    display: flex;
+    justify-content: center;
+    width: 100%; }
 
 header nav section {
   width: 33.33%;
@@ -94,62 +131,49 @@ header section.menu-my-id h3 {
   padding: 0 120px;
   margin: 0; }
 
-header section.menu-main ul {
-  margin: 0;
-  padding: 0; }
-
-header section.menu-main ul li {
+.menu-main li {
   display: inline; }
+  .menu-main li a {
+    color: #fff;
+    font-weight: 300;
+    padding: 10px 10px 16px 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-decoration: none; }
+    .menu-main li a:hover {
+      background-color: #D273B0;
+      color: #fff; }
+  .menu-main li .active {
+    background-color: #D273B0;
+    color: #fff; }
 
-header section.menu-main ul li a {
-  color: #fff;
-  font-weight: 300;
-  padding: 10px 10px 16px 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  text-decoration: none;
-  cursor: pointer; }
-
-header section.menu-main ul li a:hover {
-  background-color: #D273B0;
-  color: #fff; }
-
-header section.menu-main ul li a.active {
-  background-color: #D273B0;
-  color: #fff; }
-
-header section.menu-search {
+.menu-search {
   position: relative; }
-
-header section.menu-search label {
-  font-size: 10px;
-  color: #fff;
-  position: absolute;
-  top: -16px; }
-
-header section.menu-search input {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  line-height: 13px;
-  padding: 5px;
-  font-size: 13px; }
-
-header section.menu-search a {
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #ddd;
-  padding: 5px;
-  border-radius: 3px;
-  margin-left: 5px;
-  cursor: pointer; }
-
-header section.menu-search a:hover {
-  background-color: #fff;
-  color: #D273B0; }
+  .menu-search label {
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: -16px; }
+  .menu-search input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    line-height: 13px;
+    padding: 5px;
+    font-size: 13px; }
+  .menu-search a {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #ddd;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 5px; }
+    .menu-search a:hover {
+      background-color: #fff;
+      color: #D273B0; }
 
 /*Footer Styles*/
 footer {
@@ -167,48 +191,41 @@ body {
   background-color: #eee; }
 
 /*Main content styles*/
-section.main-content header {
+.main-content header {
   padding-top: 70px;
   text-align: center; }
+  .main-content header h1 {
+    font-size: 80px;
+    color: #ccc;
+    font-weight: 300; }
+  .main-content header p {
+    padding: 0 100px;
+    color: #444;
+    text-align: center; }
 
-section.main-content header h1 {
-  font-size: 80px;
-  color: #ccc;
-  font-weight: 300; }
-
-section.main-content header p {
-  padding: 0 100px;
-  color: #444;
-  text-align: center; }
-
-/*tab styles*/
+/*Tab styles*/
 section.projects {
   margin-top: 50px;
   margin-bottom: 110px; }
 
 .tabComponent {
-  position: relative;
-  /*overflow: hidden;*/ }
-
-.tabComponent .tab input[type="radio"] {
-  display: none; }
-
-.tabComponent .tab label {
-  display: inline-block;
-  width: 25%;
-  padding: 20px;
-  color: #444; }
-
-.tabComponent .tab label:hover {
-  cursor: pointer;
-  color: #E05FB0; }
-
-.tabComponent .tab .tabContent {
-  display: none; }
+  position: relative; }
+  .tabComponent input[type="radio"] {
+    display: none; }
+  .tabComponent label {
+    display: inline-block;
+    width: 25%;
+    padding: 20px;
+    color: #444; }
+    .tabComponent label:hover {
+      cursor: pointer;
+      color: #D273B0; }
+  .tabComponent .tabContent {
+    display: none; }
 
 .tabComponent .tab input[type="radio"]:checked ~ label {
   background-color: #4C4A4A;
-  color: #E05FB0;
+  color: #D273B0;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px; }
 
@@ -222,19 +239,22 @@ section.projects {
   padding: 50px 20px 20px 20px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  /*border-bottom-left-radius: 3px;*/
   overflow: none; }
 
 /*End tab styles*/
 /*carousel styles*/
 .carouselComponent .carouselItem {
   position: relative; }
-
-.carouselComponent .carouselItem input[type="radio"] {
-  display: none; }
-
-.carouselComponent .carouselItem label {
-  display: none; }
+  .carouselComponent .carouselItem input[type="radio"], .carouselComponent .carouselItem label, .carouselComponent .carouselItem .content {
+    display: none; }
+  .carouselComponent .carouselItem .previous {
+    text-align: left;
+    position: absolute;
+    left: 5%; }
+  .carouselComponent .carouselItem .next {
+    text-align: right;
+    position: absolute;
+    left: 90%; }
 
 .carouselComponent .carouselItem input[type="radio"]:checked ~ label.previous,
 .carouselComponent .carouselItem input[type="radio"]:checked ~ label.next {
@@ -243,9 +263,6 @@ section.projects {
   border-radius: 5px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5); }
-
-.carouselComponent .carouselItem .content {
-  display: none; }
 
 .carouselComponent .carouselItem input[type="radio"]:checked ~ .content {
   display: block;
@@ -257,16 +274,6 @@ section.projects {
 .carouselComponent .carouselItem input[type="radio"]:checked ~ .content .text-content p, h3 {
   color: #fff;
   padding: 5px 160px; }
-
-.carouselComponent .carouselItem label.previous {
-  text-align: left;
-  position: absolute;
-  left: 5%; }
-
-.carouselComponent .carouselItem label.next {
-  text-align: right;
-  position: absolute;
-  left: 90%; }
 
 .tabComponent .tab .tabContent .carouselComponent .bullet-nav {
   text-align: center;

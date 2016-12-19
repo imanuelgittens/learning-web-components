@@ -7,24 +7,25 @@ body{
 
 /*Main content styles*/
 
-section.main-content header{
-  padding-top:70px;
-  text-align:center;
+.main-content{
+  header{
+    padding-top:70px;
+    text-align:center;
+    h1{
+      font-size: 80px;
+      color: #ccc;
+      font-weight:300;
+    }
+    p{
+      padding: 0 100px;
+      color:#444;
+      text-align: center;
+    }
+  }
 }
 
-section.main-content header h1{
-  font-size: 80px;
-  color: #ccc;
-  font-weight:300;
-}
 
-section.main-content header p{
-  padding: 0 100px;
-  color:#444;
-  text-align: center;
-}
-
-/*tab styles*/
+/*Tab styles*/
 section.projects{
   margin-top:50px;
   margin-bottom: 110px;
@@ -32,33 +33,28 @@ section.projects{
 
 .tabComponent{
   position: relative;
-  /*overflow: hidden;*/
+  input[type="radio"]{
+    display:none;
+  }
+  label{
+    display: inline-block;
+    width:25%;
+    padding: 20px;
+    color:#444;
+    &:hover{
+      cursor: pointer;
+      color: $color-profile-purple;
+    }
+  }
+  .tabContent{
+    display:none;
+  }
 }
 
-.tabComponent .tab input[type="radio"]{
-  display: none;
-}
-
-.tabComponent .tab label{
-  display: inline-block;
-  width:25%;
-  padding: 20px;
-  color:#444;
-}
-
-.tabComponent .tab label:hover{
-  cursor: pointer;
-  color: #E05FB0;
-}
-
-.tabComponent .tab .tabContent{
-  display: none;
-
-}
 
 .tabComponent .tab input[type="radio"]:checked ~ label{
   background-color: #4C4A4A;
-  color:#E05FB0;
+  color:$color-profile-purple;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
@@ -73,7 +69,6 @@ section.projects{
   padding: 50px 20px 20px 20px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  /*border-bottom-left-radius: 3px;*/
   overflow: none;
 }
 
@@ -82,16 +77,23 @@ section.projects{
 /*carousel styles*/
 
 
-.carouselComponent .carouselItem{
-  position: relative;
-}
-
-.carouselComponent .carouselItem input[type="radio"]{
-  display: none;
-}
-
-.carouselComponent .carouselItem label{
-  display: none;
+.carouselComponent{
+  .carouselItem{
+    position: relative;
+    input[type="radio"], label, .content{
+      display:none;
+    }
+    .previous{
+      text-align:left;
+      position: absolute;
+      left:5%;
+    }
+    .next{
+      text-align:right;
+      position: absolute;
+      left:90%;
+    }
+  }
 }
 
 .carouselComponent .carouselItem input[type="radio"]:checked ~ label.previous,
@@ -103,9 +105,6 @@ section.projects{
   background-color: rgba(0,0,0,0.5);
 }
 
-.carouselComponent .carouselItem .content{
-  display: none;
-}
 
 .carouselComponent .carouselItem input[type="radio"]:checked ~ .content{
   display: block;
@@ -113,32 +112,12 @@ section.projects{
   position: absolute;
   top:30px;
   width:100%;
-
-
 }
 
 .carouselComponent .carouselItem input[type="radio"]:checked ~ .content .text-content p, h3{
   color:#fff;
   padding: 5px 160px;
 }
-
-.carouselComponent .carouselItem label.previous{
-  text-align:left;
-  position: absolute;
-
-  left:5%;
-
-}
-
-.carouselComponent .carouselItem label.next{
-  text-align:right;
-  position: absolute;
-
-  left:90%;
-
-}
-
-
 
 .tabComponent .tab .tabContent .carouselComponent .bullet-nav{
   text-align:center;
