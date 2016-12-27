@@ -1,0 +1,229 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 1, ../sass/base/_base.scss */
+html {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* line 7, ../sass/base/_base.scss */
+body {
+  color: #2B2D42;
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+}
+
+/* line 1, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+/* line 6, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__input {
+  display: none;
+}
+/* line 8, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__input:checked ~ .fullwidth-tabs__tab__label {
+  color: #D90429;
+  font-weight: 600;
+}
+/* line 12, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__input:checked ~ .fullwidth-tabs__tab__content {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+}
+/* line 19, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__input:checked ~ .fullwidth-tabs__tab__line {
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+  width: 100%;
+}
+/* line 24, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__label {
+  display: block;
+  margin: 14px 50px;
+  text-transform: uppercase;
+}
+/* line 29, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__line {
+  z-index: 1000;
+  position: relative;
+  width: 0;
+  height: 5px;
+  background-color: #D90429;
+}
+/* line 36, ../sass/components/_fullwidth-tabs.scss */
+.fullwidth-tabs__tab__content {
+  display: none;
+}
+
+/* line 1, ../sass/components/_tab-area.scss */
+.tab-area {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+/* line 5, ../sass/components/_tab-area.scss */
+.tab-area__content {
+  width: 80%;
+  height: 400px;
+}
+/* line 8, ../sass/components/_tab-area.scss */
+.tab-area__content__json-text {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #EDF2F4;
+  box-shadow: 0 1px 1px #bbb;
+}
+/* line 16, ../sass/components/_tab-area.scss */
+.tab-area__content__json-text:focus {
+  outline: none;
+}
+/* line 21, ../sass/components/_tab-area.scss */
+.tab-area__actions {
+  width: 20%;
+  margin-left: 10px;
+}
+/* line 24, ../sass/components/_tab-area.scss */
+.tab-area__actions__file-label {
+  margin-bottom: 5px;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #EF233C;
+  color: #EDF2F4;
+  font-size: 16px;
+  box-shadow: 0 1px 1px #bbb;
+}
+/* line 33, ../sass/components/_tab-area.scss */
+.tab-area__actions__file-label--uploaded {
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #009966;
+  padding: 20px;
+}
+/* line 38, ../sass/components/_tab-area.scss */
+.tab-area__actions__file-label:hover {
+  cursor: pointer;
+}
+/* line 42, ../sass/components/_tab-area.scss */
+.tab-area__actions__file-input {
+  display: none;
+}
+/* line 45, ../sass/components/_tab-area.scss */
+.tab-area__actions__button {
+  width: 100%;
+  display: block;
+  padding: 10px 0;
+  border: none;
+  margin-bottom: 5px;
+  background-color: #EDF2F4;
+  font-size: 14px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 1px #bbb;
+}
+/* line 55, ../sass/components/_tab-area.scss */
+.tab-area__actions__button:hover {
+  background: #2B2D42;
+  color: #EDF2F4;
+  cursor: pointer;
+}
+/* line 62, ../sass/components/_tab-area.scss */
+.tab-area__validation-result {
+  box-shadow: 0 1px 1px #bbb;
+  background-color: #EDF2F4;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  color: #2B2D42;
+}
+/* line 70, ../sass/components/_tab-area.scss */
+.tab-area__validation-result__icon {
+  font-size: 80px;
+  margin: 0;
+}
+
+/* line 1, ../sass/base/_helpers.scss */
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1180px;
+  width: 1180px;
+}
+@media (max-width: 1180px) {
+  /* line 1, ../sass/base/_helpers.scss */
+  .container {
+    width: 100%;
+  }
+}
+
+/* line 1, ../sass/layout/_header.scss */
+.header {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 20px 0;
+}
+/* line 4, ../sass/layout/_header.scss */
+.header__logo {
+  float: left;
+}
+/* line 6, ../sass/layout/_header.scss */
+.header__logo .header__logo-text {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+/* line 11, ../sass/layout/_header.scss */
+.header__menu {
+  float: right;
+}
+/* line 13, ../sass/layout/_header.scss */
+.header__menu .header__menu-item {
+  color: #8D99AE;
+  padding-left: 15px;
+  font-size: 20px;
+}
+/* line 17, ../sass/layout/_header.scss */
+.header__menu .header__menu-item:hover {
+  color: #EF233C;
+}
+
+/* line 1, ../sass/layout/_footer.scss */
+.footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 4, ../sass/layout/_footer.scss */
+.footer__copyright {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1, ../sass/layout/_body.scss */
+.main-content {
+  margin: 60px 0;
+  height: 75%;
+}

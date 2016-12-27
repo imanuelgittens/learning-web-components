@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Validator</title>
+	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<script src="https://use.fontawesome.com/f2c42a7134.js"></script>
+	
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__logo">
+				<h3 class="header__logo-text">JSON Validator</h3>
+			</div>
+			<nav class="header__menu">
+				<a class="header__menu-item" href="https://github.com" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+				<a class="header__menu-item" href="https://twitter.com/gittensimanuel" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			</nav>
+		</div>
+	</header>
+	<div class="main-content">
+		<div class="container">
+		<div class="fullwidth-tabs">
+
+				<div class="fullwidth-tabs__tab">
+					<input class="fullwidth-tabs__tab__input" type="radio" name="validJSONTabs" id="jsonstring" checked/>
+					<label class="fullwidth-tabs__tab__label" for="jsonstring">Test Area</label>
+					<div class="fullwidth-tabs__tab__line"></div>
+					<div class="fullwidth-tabs__tab__content">
+						<div class="tab-area">
+							<div class="tab-area__content">
+								<textarea class="tab-area__content__json-text" id="jsonText" placeholder="Upload a json file or write some json here..."></textarea>
+							</div>
+							<aside class="tab-area__actions">
+								<label class="tab-area__actions__file-label" for="jsonFile" id="jsonFileLabel">
+									<i class="fa fa-upload" aria-hidden="true"></i>
+									<span class="tab-area__actions__file-span" id="jsonFileSpan">Choose a File</span>
+								</label>
+								<input class="tab-area__actions__file-input" id="jsonFile" type="file"/>
+								<button class="tab-area__actions__button" id="runTest">Validate JSON</button>
+							</aside>
+						</div>
+					</div>
+				</div>
+				<div class="fullwidth-tabs__tab">
+					<input class="fullwidth-tabs__tab__input" type="radio" name="validJSONTabs" id="jsonresult" disabled/>
+					<label class="fullwidth-tabs__tab__label" for="jsonresult">Results</label>
+					<div class="fullwidth-tabs__tab__line"></div>
+					<div class="fullwidth-tabs__tab__content">
+						<div class="tab-area">
+							<div class="tab-area__content">
+								<div class="tab-area__validation-result" id="vResult">
+									<p class="tab-area__validation-result__icon" id="vResultIcon"></p>
+									<h3 class="tab-area__validation-result__text" id="vResultText"></h3>
+								</div>
+							</div>
+							<aside class="tab-area__actions">
+								<button class="tab-area__actions__button" id="testAgain">Test Again</button>
+							</aside>
+						</div>
+						
+					</div>
+				</div>
+
+		</div>
+	</div>
+	</div>
+	<footer class="footer">
+		<p class="footer__copyright">Built by Imanuel Gittens</p>
+	</footer>
+	<script src="js/main.js"></script>
+</body>
+</html>

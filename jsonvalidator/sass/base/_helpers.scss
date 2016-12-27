@@ -1,0 +1,8 @@
+.container{
+  @include center-block;
+  max-width: $max-width;
+  width: $max-width;
+  @media (max-width: $max-width){
+  	width: 100%;
+  }
+}

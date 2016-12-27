@@ -1,0 +1,22 @@
+.header{
+  @include clearfix;
+  padding: 20px 0;
+  &__logo{
+    float: left;
+    .header__logo-text{
+      @include no-whitespace;
+      text-transform: uppercase;
+    }
+  }
+  &__menu{
+    float: right;
+    .header__menu-item{
+      color: $link-color;
+      padding-left: 15px;
+      font-size: 20px;
+      &:hover{
+        color: $highlight-color;
+      }
+    }
+  }
+}
