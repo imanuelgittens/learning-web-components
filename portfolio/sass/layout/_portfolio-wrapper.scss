@@ -1,9 +1,6 @@
 .portfolio-wrapper{
-	@include display-flex(flex);
-	@include flex-direction(column);
-	@include justify-content(center);
-	margin: 3% 7%;
-	min-height: 95vh;
-	height: 95vh;
-	background-color: $white-color;
+	display:block;
+	min-height: 100vh;
+	height: 100vh;
+	color: $color-white;
 }

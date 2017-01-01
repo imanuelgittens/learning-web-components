@@ -1,5 +1,23 @@
-#home > .portfolio__left{
-	background: url("../images/dog.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+#home-block{
+	background-color: $color-home-block;
+}
+
+#about-block{
+	background-color: $color-about-block;
+}
+
+#portfolio-block{
+	background-color: $color-portfolio-block;
+}
+
+#skills-block{
+	background-color: $color-skills-block;
+}
+
+#clients-block{
+	background-color: $color-client-block;
+}
+
+#contact-block{
+	background-color: $color-contact-block;
 }

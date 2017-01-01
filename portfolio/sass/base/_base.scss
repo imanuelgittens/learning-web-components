@@ -1,9 +1,13 @@
-html{
+*{
 	@include box-sizing(border-box);
+}
+
+html{
+	font-size: calc(1em + 1vw);
 }
 
 body{
 	@include no-space;
-	background-color: $background-color;
+	font-family: 'Lato', sans-serif;
 	overflow: auto;
 }
