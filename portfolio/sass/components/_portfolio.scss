@@ -1,16 +1,41 @@
+@include keyframes(fullscreen){
+    /* 25%  {width: 50%; height: 50%;} */
+    /* 50%  {width: 60%; height: 60%;}
+    75%  {width: 75%; height: 75%;}
+    100% {width: 100%; height: 100%;} */
+  /*   50% {right: 0;}
+    100% {bottom: 0;} */
+}
+
 .portfolio{
 	height: 100%;
+	position: relative;
 	&__row{
 		@include display-flex(flex);
 		@include justify-content(flex-start);
 		width:100%;
 		height:50%;
+		
+		@media (max-width: 480px){
+			@include flex-direction(column);
+			height: 100%;
+		}
 		&__block{
 			@include display-flex(flex);
 			@include flex-wrap(wrap);
 			width: 33.33%;
-			height: 100%;
+			height: auto;
 			padding: 3% 3% 1% 3%;
+			position: relative;
+			@media (max-width: 480px){
+				width: 100%;
+			}
+			&:hover{
+				cursor: pointer;
+				box-shadow: 1px 1px 10px #000;
+				z-index: 100;
+				transition: box-shadow 1s;
+			}
 		}
 	}	
 }
@@ -22,14 +47,20 @@
 	&__text{
 		@include no-space;
 		font-weight: 900;
-		font-size: 0.8em;
+		font-size: 0.9em;
 		text-decoration: underline;
 		text-align:center;
+		@media (max-width: 480px){
+			padding-bottom: 10%;
+		}
 	}
 	&__icon{
 		@include no-space;
 		text-align:center;
 		font-size: 3em;
+		@media (max-width: 480px){
+			padding-bottom: 5%;
+		}
 	}
 }
 
@@ -48,5 +79,18 @@
 		span{
 			font-weight: 900;
 		}
+	}
+}
+
+.pblock-content{
+	width: 1px;
+	height:1px;
+	&--active{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width:100vw;
+		height:100vh;
+		transition: all 2s;
 	}
 }
