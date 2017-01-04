@@ -187,6 +187,35 @@ body {
   margin: 0;
 }
 
+/* Placeholder element (dummy that gets animated when we click on an item) */
+/* line 40, ../sass/components/_grid.scss */
+.placeholder {
+  pointer-events: none;
+  position: absolute;
+  width: calc(100% + 5px);
+  height: calc(100vh + 5px);
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: #888;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* line 53, ../sass/components/_grid.scss */
+.placeholder.placeholder--trans-in {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* line 60, ../sass/components/_grid.scss */
+.placeholder.placeholder--trans-out {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
 /* line 1, ../sass/components/_content.scss */
 .content {
   position: absolute;
