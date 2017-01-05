@@ -2,13 +2,33 @@
 	var docElem = window.document.documentElement;
 	var gridItemsContainer = document.querySelector('section.grid');
 	var gridItems = gridItemsContainer.querySelectorAll('.grid__item');
+	var contentItemsContainer = document.querySelector('section.content');
+	var contentItems = contentItemsContainer.querySelectorAll('.content__item');
 	var currentItem = -1;
 
 	function init(){
 		initEvents();
 	}
 
-		function getViewport( axis ) {
+
+	function whichTransitionEvent(el){
+    var t;
+    /*var el = document.createElement('fakeelement');*/
+    var transitions = {
+      'transition':'transitionend',
+      'OTransition':'oTransitionEnd',
+      'MozTransition':'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    }
+
+    for(t in transitions){
+        if( el.style[t] !== undefined ){
+            return transitions[t];
+        }
+    }
+	}
+
+	function getViewport( axis ) {
 		var client, inner;
 		if( axis === 'x' ) {
 			client = docElem['clientWidth'];
@@ -21,6 +41,7 @@
 		
 		return client < inner ? inner : client;
 	}
+
 	function scrollX() { return window.pageXOffset || docElem.scrollLeft; }
 	function scrollY() { return window.pageYOffset || docElem.scrollTop; }
 
@@ -45,6 +66,8 @@
 	}
 
 	function loadContent(item){
+		// disallow scroll
+		unloadScrollBars();
 		// add expanding element/placeholder 
 		var dummy = document.createElement('div');
 		//get position on the screen as well as the width and height of the grid item
@@ -64,7 +87,29 @@
 			dummy.style.WebkitTransform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
 			dummy.style.transform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
 		},25);
+
+		/* Listen for a transition on the dummy element and run callback once complete */
+		var transitionEvent = whichTransitionEvent(dummy);
+		dummy.addEventListener(transitionEvent, function() {
+			/*console.log('Transition complete!  This is the callback, no library needed!');*/
+			dummy.classList.remove('placeholder--trans-in');
+			dummy.classList.add('placeholder--trans-out');
+			// position the content container
+			contentItemsContainer.style.top = scrollY() + 'px';
+			// show the main content container
+			contentItemsContainer.classList.add('content--show');
+			// show content item:
+			contentItems[currentItem].style.backgroundColor = dummy.style.backgroundColor;
+			contentItems[currentItem].classList.add('content__item--show');
+		});
 	}
+
+	//Remove scroll bars to prevent screen jump
+
+	function unloadScrollBars() {
+    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie only
+}
 
 	init();
 

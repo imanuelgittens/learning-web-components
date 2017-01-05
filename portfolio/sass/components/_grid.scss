@@ -97,6 +97,7 @@
 
 /* Placeholder element (dummy that gets animated when we click on an item) */
 .placeholder {
+	@include transform-origin(0,0); 
 	pointer-events: none;
 	position: absolute;
 	width: calc(100vw + 5px);
@@ -104,15 +105,14 @@
 	z-index: 100;
 	top: 0;
 	left: 0;
-	-webkit-transform-origin: 0 0;
-	transform-origin: 0 0;
+	&--trans-in{
+		@include transition(transform, $anim-time);
+		@include transition-timing-function(cubic-bezier(0.165,0.84,0.44,1));
+	}
+	&--trans-out{
+		@include transition(transform, $anim-time);
+	}
 }
 
-.placeholder.placeholder--trans-in {
-	-webkit-transition: -webkit-transform $anim-time;
-	transition: transform $anim-time;
-	-webkit-transition-timing-function: cubic-bezier(0.165,0.84,0.44,1);
-	transition-timing-function: cubic-bezier(0.165,0.84,0.44,1);
-}
 
 

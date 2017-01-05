@@ -201,6 +201,10 @@ body {
 /* Placeholder element (dummy that gets animated when we click on an item) */
 /* line 99, ../sass/components/_grid.scss */
 .placeholder {
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
   pointer-events: none;
   position: absolute;
   width: calc(100vw + 5px);
@@ -208,16 +212,24 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
 }
-
-/* line 111, ../sass/components/_grid.scss */
-.placeholder.placeholder--trans-in {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
+/* line 108, ../sass/components/_grid.scss */
+.placeholder--trans-in {
+  -moz-transition: -moz-transform, 0.5s;
+  -o-transition: -o-transform, 0.5s;
+  -webkit-transition: -webkit-transform, 0.5s;
+  transition: transform, 0.5s;
+  -moz-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* line 112, ../sass/components/_grid.scss */
+.placeholder--trans-out {
+  -moz-transition: -moz-transform, 0.5s;
+  -o-transition: -o-transform, 0.5s;
+  -webkit-transition: -webkit-transform, 0.5s;
+  transition: transform, 0.5s;
 }
 
 /* line 1, ../sass/components/_content.scss */
@@ -233,17 +245,16 @@ body {
   z-index: 400;
   overflow: hidden;
 }
-
-/* line 13, ../sass/components/_content.scss */
-.content.content--show {
+/* line 11, ../sass/components/_content.scss */
+.content--show {
   height: 100vh;
   pointer-events: auto;
   visibility: visible;
-  color: #fff;
+  color: #F4F4F4;
 }
 
 /* scroll helper wrap */
-/* line 21, ../sass/components/_content.scss */
+/* line 20, ../sass/components/_content.scss */
 .scroll-wrap {
   position: absolute;
   width: 100%;
@@ -256,8 +267,9 @@ body {
 }
 
 /* single content item */
-/* line 33, ../sass/components/_content.scss */
+/* line 32, ../sass/components/_content.scss */
 .content__item {
+  color: #F4F4F4;
   position: absolute;
   top: 0;
   width: 100%;
@@ -267,28 +279,28 @@ body {
   padding: 60px 60px 80px 60px;
   pointer-events: none;
   font-size: 0.85em;
-  background: #000;
 }
-/* line 44, ../sass/components/_content.scss */
+/* line 43, ../sass/components/_content.scss */
 .content__item p {
   max-width: 1200px;
   margin: 1em auto;
   text-align: justify;
 }
-/* line 49, ../sass/components/_content.scss */
+/* line 48, ../sass/components/_content.scss */
 .content__item p:first-of-type {
   font-size: 1.35em;
 }
-
-/* line 54, ../sass/components/_content.scss */
-.content__item.content__item--show {
+/* line 51, ../sass/components/_content.scss */
+.content__item--show {
+  -moz-transition: opacity, 0.6s;
+  -o-transition: opacity, 0.6s;
+  -webkit-transition: opacity, 0.6s;
+  transition: opacity, 0.6s;
   height: auto;
   min-height: 100vh;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  -webkit-transition: opacity 0.6s;
-  transition: opacity 0.6s;
 }
 
 /* Layout */
