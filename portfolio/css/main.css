@@ -30,6 +30,12 @@ body {
   height: 100vh;
 }
 
+/* line 1, ../sass/base/_helpers.scss */
+.container {
+  max-width: 960px;
+  margin: 0px auto;
+}
+
 /* Components */
 /* line 1, ../sass/components/_grid.scss */
 .grid {
@@ -301,6 +307,20 @@ body {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+/* line 62, ../sass/components/_content.scss */
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  cursor: pointer;
+  padding: 20px 30px;
+  border: none;
+  background: none;
+  color: #DDD;
+  font-size: 18px;
 }
 
 /* Layout */
