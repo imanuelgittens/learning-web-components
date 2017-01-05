@@ -66,20 +66,24 @@ body {
   transform: translate(-50%, -50%);
 }
 /* line 24, ../sass/components/_grid.scss */
+.grid__item .featured-item__text {
+  font-size: 0.8em;
+}
+/* line 27, ../sass/components/_grid.scss */
 .grid__item .featured-item__icon {
   font-size: 3em;
 }
-/* line 27, ../sass/components/_grid.scss */
+/* line 30, ../sass/components/_grid.scss */
 .grid__item .featured-item p {
   padding: 0;
   margin: 0;
 }
-/* line 31, ../sass/components/_grid.scss */
+/* line 34, ../sass/components/_grid.scss */
 .grid__item .title {
   font-size: 0.7em;
   font-weight: bold;
 }
-/* line 35, ../sass/components/_grid.scss */
+/* line 38, ../sass/components/_grid.scss */
 .grid__item .loader {
   height: 2px;
   width: 90%;
@@ -87,7 +91,7 @@ body {
   position: relative;
   background: #F4F4F4;
 }
-/* line 41, ../sass/components/_grid.scss */
+/* line 44, ../sass/components/_grid.scss */
 .grid__item .loader::before {
   -moz-transform: scale3d(0, 1, 1);
   -webkit-transform: scale3d(0, 1, 1);
@@ -108,16 +112,16 @@ body {
   left: 0;
   top: -1px;
 }
-/* line 54, ../sass/components/_grid.scss */
+/* line 57, ../sass/components/_grid.scss */
 .grid__item .excerpt {
   font-size: 0.5em;
 }
-/* line 56, ../sass/components/_grid.scss */
+/* line 59, ../sass/components/_grid.scss */
 .grid__item .excerpt span {
   font-weight: bold;
 }
 
-/* line 63, ../sass/components/_grid.scss */
+/* line 66, ../sass/components/_grid.scss */
 .grid-item--loading .featured-item {
   -moz-transform: margin;
   -webkit-transform: margin;
@@ -133,7 +137,7 @@ body {
   margin-top: -5%;
   opacity: 0;
 }
-/* line 70, ../sass/components/_grid.scss */
+/* line 73, ../sass/components/_grid.scss */
 .grid-item--loading .title {
   -moz-transform: translate(0, -20px);
   -webkit-transform: translate(0, -20px);
@@ -148,7 +152,7 @@ body {
   transition-delay: 1.17s;
   opacity: 0;
 }
-/* line 76, ../sass/components/_grid.scss */
+/* line 79, ../sass/components/_grid.scss */
 .grid-item--loading .excerpt {
   -moz-transform: translate(0, -20px);
   -webkit-transform: translate(0, -20px);
@@ -163,7 +167,7 @@ body {
   transition-delay: 1.24s;
   opacity: 0;
 }
-/* line 82, ../sass/components/_grid.scss */
+/* line 85, ../sass/components/_grid.scss */
 .grid-item--loading .loader {
   -moz-transform: translate(0, -20px);
   -webkit-transform: translate(0, -20px);
@@ -178,7 +182,7 @@ body {
   transition-delay: 1.14s;
   opacity: 0;
 }
-/* line 87, ../sass/components/_grid.scss */
+/* line 90, ../sass/components/_grid.scss */
 .grid-item--loading .loader::before {
   -moz-transition: -moz-transform, 1s;
   -o-transition: -o-transform, 1s;
@@ -190,6 +194,28 @@ body {
   transform: scale3d(1, 1, 1);
   -moz-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Placeholder element (dummy that gets animated when we click on an item) */
+/* line 99, ../sass/components/_grid.scss */
+.placeholder {
+  pointer-events: none;
+  position: absolute;
+  width: calc(100vw + 5px);
+  height: calc(100vh + 5px);
+  z-index: 100;
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* line 111, ../sass/components/_grid.scss */
+.placeholder.placeholder--trans-in {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
   -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }

@@ -21,6 +21,9 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		&__text{
+			font-size: 0.8em;
+		}
 		&__icon{
 			font-size: 3em;
 		}
@@ -90,6 +93,26 @@
 			@include transition-timing-function(cubic-bezier(0.165,0.84,0.44,1));
 		}
 	}
+}
+
+/* Placeholder element (dummy that gets animated when we click on an item) */
+.placeholder {
+	pointer-events: none;
+	position: absolute;
+	width: calc(100vw + 5px);
+	height: calc(100vh + 5px);
+	z-index: 100;
+	top: 0;
+	left: 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.placeholder.placeholder--trans-in {
+	-webkit-transition: -webkit-transform $anim-time;
+	transition: transform $anim-time;
+	-webkit-transition-timing-function: cubic-bezier(0.165,0.84,0.44,1);
+	transition-timing-function: cubic-bezier(0.165,0.84,0.44,1);
 }
 
 

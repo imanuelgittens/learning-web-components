@@ -1,5 +1,5 @@
 (function() {
-
+	var docElem = window.document.documentElement;
 	var gridItemsContainer = document.querySelector('section.grid');
 	var gridItems = gridItemsContainer.querySelectorAll('.grid__item');
 	var currentItem = -1;
@@ -7,6 +7,22 @@
 	function init(){
 		initEvents();
 	}
+
+		function getViewport( axis ) {
+		var client, inner;
+		if( axis === 'x' ) {
+			client = docElem['clientWidth'];
+			inner = window['innerWidth'];
+		}
+		else if( axis === 'y' ) {
+			client = docElem['clientHeight'];
+			inner = window['innerHeight'];
+		}
+		
+		return client < inner ? inner : client;
+	}
+	function scrollX() { return window.pageXOffset || docElem.scrollLeft; }
+	function scrollY() { return window.pageYOffset || docElem.scrollTop; }
 
 	function initEvents(){
 		[].slice.call(gridItems).forEach(function(item, pos){
@@ -20,7 +36,8 @@
 				setTimeout(function(){
 					/*item.classList.add('grid-item--animate');*/
 					loadContent(item);
-				},3000);
+
+				},2000);
 				
 
 			});
@@ -36,17 +53,17 @@
 
 		dummy.className = 'placeholder';
 		dummy.classList.add('placeholder--trans-in');
-		dummy.style.top = itemDimensionsPosition.top + 'px';
-		dummy.style.left = itemDimensionsPosition.left + 'px';
-		dummy.style.width = itemDimensionsPosition.width + 'px';
-		dummy.style.height = itemDimensionsPosition.height + 'px';
-		dummy.style.position = 'absolute';
-		dummy.style.backgroundColor = "#fff";
-		console.log(item.style.backgroundColor);
-
+		// set the width/height and position
+		dummy.style.WebkitTransform = 'translate3d(' + (item.offsetLeft) + 'px, ' + (item.offsetTop) + 'px, 0px) scale3d(' + item.offsetWidth/gridItemsContainer.offsetWidth + ',' + item.offsetHeight/getViewport('y') + ',1)';
+		dummy.style.transform = 'translate3d(' + (item.offsetLeft) + 'px, ' + (item.offsetTop) + 'px, 0px) scale3d(' + item.offsetWidth/gridItemsContainer.offsetWidth + ',' + item.offsetHeight/getViewport('y') + ',1)';
+		dummy.style.backgroundColor = window.getComputedStyle(item).backgroundColor;
 		gridItemsContainer.appendChild(dummy);
 
-		
+		setTimeout(function(){
+			// expands the placeholder
+			dummy.style.WebkitTransform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
+			dummy.style.transform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
+		},25);
 	}
 
 	init();
