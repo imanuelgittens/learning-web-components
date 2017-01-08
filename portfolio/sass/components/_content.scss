@@ -45,8 +45,10 @@
 		margin: 1em auto;
 		text-align: justify;
 	}
-	p:first-of-type {
-		font-size: 1.35em;
+	.title{
+		text-transform: uppercase;
+		font-size: 2em;
+		position: relative;
 	}
 	&--show{
 
@@ -56,6 +58,9 @@
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
+	}
+	&__inner{
+		
 	}
 }
 
@@ -71,4 +76,83 @@
 	color: $color-grey;
 	font-size: 18px;
 }
+
+
+#aboutContent-block{
+	.title{
+		h2{
+			&::before{
+				content: 'A';
+				font-size: 3em;
+				position: absolute;
+				left: 1%;
+				bottom: -70%;
+				opacity: 0.3;
+			}
+		}
+	}	
+}
+
+#portfolioContent-block{
+	.title{
+		h2{
+			&::before{
+				content: 'P';
+				font-size: 3em;
+				position: absolute;
+				left: 1%;
+				bottom: -70%;
+				opacity: 0.3;
+			}
+		}
+	}	
+}
+
+#skillsContent-block{
+	.title{
+		h2{
+			&::before{
+				content: 'S';
+				font-size: 3em;
+				position: absolute;
+				left: 1%;
+				bottom: -70%;
+				opacity: 0.3;
+			}
+		}
+	}	
+}
+
+#clientsContent-block{
+	.title{
+		h2{
+			&::before{
+				content: 'C';
+				font-size: 3em;
+				position: absolute;
+				left: 1%;
+				bottom: -70%;
+				opacity: 0.3;
+			}
+		}
+	}	
+}
+
+#contactContent-block{
+	.title{
+		h2{
+			&::before{
+				content: 'C';
+				font-size: 3em;
+				position: absolute;
+				left: 1%;
+				bottom: -70%;
+				opacity: 0.3;
+			}
+		}
+	}	
+}
+
+
+
 

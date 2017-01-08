@@ -1,0 +1,34 @@
+.contact__card__container{
+	@include perspective(800px);
+}
+
+.contactCard{
+	position: relative;
+	@include transition(all, 0.5s, ease-in-out);
+	@include transform-style(preserve-3d);
+	height: 250px;
+	width: 400px;
+	border: 1px solid #333;
+	input{
+		display: none;
+	} 
+	&__back{
+    /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
+    transform: rotateX(180deg);
+	}
+	
+/* 	&:hover{
+		transform: rotateX(180deg);
+	}  */
+}
+
+.face {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    /* prevent the front face from showing through the back */
+    backface-visibility: hidden;
+
+}
+
+

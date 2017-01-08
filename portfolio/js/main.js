@@ -11,22 +11,38 @@
 		initEvents();
 	}
 
+	var onEndTransition = function( el, callback ) {
+		var transitionEvent = whichTransitionEvent(el);
+		var onEndCallbackFn = function( ev ) {
+			if( transitionEvent ) {
+				if( ev.target != this ) return;
+				this.removeEventListener( transitionEvent, onEndCallbackFn );
+			}
+			if( callback && typeof callback === 'function' ) { callback.call(this); }
+		};
+		if( transitionEvent ) {
+			el.addEventListener( transitionEvent, onEndCallbackFn );
+		}
+		else {
+			onEndCallbackFn();
+		}
+	}
+
 
 	function whichTransitionEvent(el){
-    var t;
-    /*var el = document.createElement('fakeelement');*/
-    var transitions = {
-      'transition':'transitionend',
-      'OTransition':'oTransitionEnd',
-      'MozTransition':'transitionend',
-      'WebkitTransition':'webkitTransitionEnd'
-    }
+	    var t;
+	    var transitions = {
+	      'transition':'transitionend',
+	      'OTransition':'oTransitionEnd',
+	      'MozTransition':'transitionend',
+	      'WebkitTransition':'webkitTransitionEnd'
+	    }
 
-    for(t in transitions){
-        if( el.style[t] !== undefined ){
-            return transitions[t];
-        }
-    }
+	    for(t in transitions){
+	        if( el.style[t] !== undefined ){
+	            return transitions[t];
+	        }
+	    }
 	}
 
 	function getViewport( axis ) {
@@ -60,21 +76,13 @@
 					loadContent(item);
 
 				},2000);
-
-
-				
-
 			});
-
-			
-
-
 		});
 
 		closeCtrl.addEventListener('click', function() {
-					// hide content
-					hideContent();
-			});
+			// hide content
+			hideContent();
+		});
 	}
 
 	
@@ -100,80 +108,51 @@
 			// expands the placeholder
 			dummy.style.WebkitTransform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
 			dummy.style.transform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
-		},25);
 
-		/* Listen for a transition on the dummy element and run callback once complete */
-		var transitionEvent = whichTransitionEvent(dummy);
-		dummy.addEventListener(transitionEvent, function() {
-			/*console.log('Transition complete!  This is the callback, no library needed!');*/
-			dummy.classList.remove('placeholder--trans-in');
-			dummy.classList.add('placeholder--trans-out');
-			// position the content container
-			contentItemsContainer.style.top = scrollY() + 'px';
-			// show the main content container
-			contentItemsContainer.classList.add('content--show');
-			// show content item:
-			contentItems[currentItem].style.backgroundColor = dummy.style.backgroundColor;
-			contentItems[currentItem].classList.add('content__item--show');
-		});
+			onEndTransition(dummy, function(){
+				dummy.classList.remove('placeholder--trans-in');
+				dummy.classList.add('placeholder--trans-out');
+				// position the content container
+				contentItemsContainer.style.top = scrollY() + 'px';
+				// show the main content container
+				contentItemsContainer.classList.add('content--show');
+				// show content item:
+				contentItems[currentItem].style.backgroundColor = dummy.style.backgroundColor;
+				contentItems[currentItem].classList.add('content__item--show');
+			});
+		},40);
 	}
 
 	function hideContent(){
 		var gridItem = gridItems[currentItem];
 		var contentItem = contentItems[currentItem];
-		var dummy = gridItemsContainer.querySelector('.placeholder');
-		var transitionEvent = whichTransitionEvent(dummy);
 
 		contentItem.classList.remove('content__item--show');
 		contentItemsContainer.classList.remove('content--show');
 
 		setTimeout(function(){
-			
-			dummy.style.WebkitTransform = 'translate3d(' + gridItem.offsetLeft + 'px, ' + gridItem.offsetTop + 'px, 0px) scale3d(' + gridItem.offsetWidth/gridItemsContainer.offsetWidth + ',' + gridItem.offsetHeight/getViewport('y') + ',1)';
-			dummy.style.transform = 'translate3d(' + gridItem.offsetLeft + 'px, ' + gridItem.offsetTop + 'px, 0px) scale3d(' + gridItem.offsetWidth/gridItemsContainer.offsetWidth + ',' + gridItem.offsetHeight/getViewport('y') + ',1)';
-		});
-
-		current = -1;
-
-		/*setTimeout(function(){
 			var dummy = gridItemsContainer.querySelector('.placeholder');
-			/*var transitionEvent = whichTransitionEvent(dummy);
 
-			
-			
+			/*var transitionEvent = whichTransitionEvent();*/
 
-		}, 25);
-*/
-	/*	setTimeout(function(){
-
-			var dummy = gridItemsContainer.querySelector('.placeholder');
-			var transitionEvent = whichTransitionEvent(dummy);
-			
 			dummy.style.WebkitTransform = 'translate3d(' + gridItem.offsetLeft + 'px, ' + gridItem.offsetTop + 'px, 0px) scale3d(' + gridItem.offsetWidth/gridItemsContainer.offsetWidth + ',' + gridItem.offsetHeight/getViewport('y') + ',1)';
 			dummy.style.transform = 'translate3d(' + gridItem.offsetLeft + 'px, ' + gridItem.offsetTop + 'px, 0px) scale3d(' + gridItem.offsetWidth/gridItemsContainer.offsetWidth + ',' + gridItem.offsetHeight/getViewport('y') + ',1)';
 			
-
-			dummy.addEventListener(transitionEvent, function() {
-				// reset content scroll..
-				console.log(transitionEvent);
+			onEndTransition(dummy, function(){
 				contentItem.parentNode.scrollTop = 0;
 				gridItemsContainer.removeChild(dummy);
-				gridItem.classList.remove('grid__item--loading');
+				gridItem.classList.remove('grid-item--loading');
 			});
-
-		
-
-			current = -1;
-
-		},25);*/
+		}, 25);
+		current = -1;
 	}
 
 	//Remove scroll bars to prevent screen jump
 
 	function unloadScrollBars() {
-    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
-    document.body.scroll = "no"; // ie only
-}
+	    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+	    document.body.scroll = "no"; // ie only
+	}
 
 	init();
 
