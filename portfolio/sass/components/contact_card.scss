@@ -15,7 +15,7 @@
 	@include border-radius(3px);
 	height: $card-height;
 	width: $card-width;
-	border: 1px solid #333;
+	background-color: transparent;
 	label{
 
 		&:hover{
@@ -25,6 +25,20 @@
 	&__back{
     /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
     transform: rotateX(180deg);
+    @include border-radius(3px);
+    background: url("../images/mani.jpg");
+    background-size: cover;
+    position: relative;
+    .name{
+    	@include border-radius(3px);
+    	position: absolute;
+    	top: 85%;
+    	left: 2%;
+    	color: $color-card-link;
+    	background-color: rgba(255, 255, 255, 0.7);
+    	padding: 5px 10px;
+    	font-size: 14px;
+    }
 	}
 	&__front{
 		padding: 20px;
@@ -33,6 +47,7 @@
 		@include display-flex(flex);
 		@include flex-direction(column);
 		@include justify-content(space-around);
+		@include border-radius(3px);
 		&__title{
 			h2{
 				@include no-space;
@@ -60,9 +75,13 @@
 				list-style-type: none;
 
 				li{
-					color: $color-card-link;
+					
 					padding-right: 3%;
 					font-size: 14px;
+					a{
+						color: $color-card-link;
+						text-decoration: none;
+					}
 				}
 			}
 		}
@@ -72,6 +91,9 @@
 			.encyclopedia__info{
 				@include display-flex(flex);
 				@include justify-content(flex-start);
+				&__logo{
+					padding-right: 8%;
+				}
 				p{
 					@include no-space;
 					font-size: 14px;
@@ -79,6 +101,7 @@
 				}
 				a{
 					color: $color-card-link;
+					text-decoration: none;
 				}
 			}
 			.social__links{
