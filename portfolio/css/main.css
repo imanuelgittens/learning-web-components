@@ -7,6 +7,7 @@
 /* Home page */
 /* Grid Items */
 /* Loader */
+/* Contact Card */
 /* Base */
 /* line 1, ../sass/base/_base.scss */
 * {
@@ -401,24 +402,106 @@ body {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  height: 250px;
-  width: 400px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 300px;
+  width: 500px;
   border: 1px solid #333;
 }
-/* line 19, ../sass/components/contact_card.scss */
+/* line 21, ../sass/components/contact_card.scss */
 .contactCard label:hover {
   cursor: pointer;
-  -moz-box-shadow: 0 48px 88px -40px #F4F4F4;
-  -webkit-box-shadow: 0 48px 88px -40px #F4F4F4;
-  box-shadow: 0 48px 88px -40px #F4F4F4;
 }
-/* line 24, ../sass/components/contact_card.scss */
+/* line 25, ../sass/components/contact_card.scss */
 .contactCard__back {
   /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
   transform: rotateX(180deg);
 }
+/* line 29, ../sass/components/contact_card.scss */
+.contactCard__front {
+  padding: 20px;
+  background: url("../images/bg2.png");
+  background-size: cover;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+/* line 37, ../sass/components/contact_card.scss */
+.contactCard__front__title h2 {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 33px;
+}
+/* line 43, ../sass/components/contact_card.scss */
+.contactCard__front__title p {
+  margin-top: 8px;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+/* line 52, ../sass/components/contact_card.scss */
+.contactCard__front__desc p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+/* line 57, ../sass/components/contact_card.scss */
+.contactCard__front__desc ul {
+  display: -webkit-flex;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/* line 62, ../sass/components/contact_card.scss */
+.contactCard__front__desc ul li {
+  color: #EAE0F9;
+  padding-right: 3%;
+  font-size: 14px;
+}
+/* line 69, ../sass/components/contact_card.scss */
+.contactCard__front__footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 72, ../sass/components/contact_card.scss */
+.contactCard__front__footer .encyclopedia__info {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+/* line 75, ../sass/components/contact_card.scss */
+.contactCard__front__footer .encyclopedia__info p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+/* line 80, ../sass/components/contact_card.scss */
+.contactCard__front__footer .encyclopedia__info a {
+  color: #EAE0F9;
+}
+/* line 85, ../sass/components/contact_card.scss */
+.contactCard__front__footer .social__links ul {
+  display: -webkit-flex;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/* line 91, ../sass/components/contact_card.scss */
+.contactCard__front__footer .social__links ul li {
+  padding-right: 3%;
+}
 
-/* line 30, ../sass/components/contact_card.scss */
+/* line 100, ../sass/components/contact_card.scss */
 .face {
   position: absolute;
   width: 100%;
@@ -427,7 +510,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* line 39, ../sass/components/contact_card.scss */
+/* line 108, ../sass/components/contact_card.scss */
 .contact__card__container input[type="radio"]#front:checked ~ .contactCard {
   transform: rotateX(180deg);
 }
