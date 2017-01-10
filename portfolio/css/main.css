@@ -380,9 +380,18 @@ body {
   -moz-perspective: 800px;
   -webkit-perspective: 800px;
   perspective: 800px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+/* line 6, ../sass/components/contact_card.scss */
+.contact__card__container input {
+  display: none;
 }
 
-/* line 5, ../sass/components/contact_card.scss */
+/* line 11, ../sass/components/contact_card.scss */
 .contactCard {
   position: relative;
   -moz-transition: all, 0.5s, ease-in-out;
@@ -395,27 +404,32 @@ body {
   height: 250px;
   width: 400px;
   border: 1px solid #333;
-  /* 	&:hover{
-  		transform: rotateX(180deg);
-  	}  */
 }
-/* line 12, ../sass/components/contact_card.scss */
-.contactCard input {
-  display: none;
+/* line 19, ../sass/components/contact_card.scss */
+.contactCard label:hover {
+  cursor: pointer;
+  -moz-box-shadow: 0 48px 88px -40px #F4F4F4;
+  -webkit-box-shadow: 0 48px 88px -40px #F4F4F4;
+  box-shadow: 0 48px 88px -40px #F4F4F4;
 }
-/* line 15, ../sass/components/contact_card.scss */
+/* line 24, ../sass/components/contact_card.scss */
 .contactCard__back {
   /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
   transform: rotateX(180deg);
 }
 
-/* line 25, ../sass/components/contact_card.scss */
+/* line 30, ../sass/components/contact_card.scss */
 .face {
   position: absolute;
   width: 100%;
   height: 100%;
   /* prevent the front face from showing through the back */
   backface-visibility: hidden;
+}
+
+/* line 39, ../sass/components/contact_card.scss */
+.contact__card__container input[type="radio"]#front:checked ~ .contactCard {
+  transform: rotateX(180deg);
 }
 
 /* Layout */

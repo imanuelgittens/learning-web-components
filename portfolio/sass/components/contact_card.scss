@@ -1,5 +1,11 @@
 .contact__card__container{
 	@include perspective(800px);
+	@include display-flex(flex);
+	@include justify-content(center);
+	margin-top: 5%;
+	input{
+		display: none;
+	}
 }
 
 .contactCard{
@@ -9,17 +15,16 @@
 	height: 250px;
 	width: 400px;
 	border: 1px solid #333;
-	input{
-		display: none;
-	} 
+	label{
+		&:hover{
+			cursor: pointer;
+			@include box-shadow(0 48px 88px -40px $color-white);
+		}
+	}
 	&__back{
     /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
     transform: rotateX(180deg);
 	}
-	
-/* 	&:hover{
-		transform: rotateX(180deg);
-	}  */
 }
 
 .face {
@@ -31,4 +36,11 @@
 
 }
 
+.contact__card__container input[type="radio"]#front:checked ~ .contactCard{
+	transform: rotateX(180deg);
+}
+
+
+
+ 
 
