@@ -559,7 +559,7 @@ body {
   width: 33.33%;
   position: relative;
   height: auto;
-  border: 1px solid #333;
+  border-bottom: 1px solid #F4F4F4;
   margin: 2%;
   font-size: 14px;
 }
@@ -574,15 +574,36 @@ body {
 }
 /* line 18, ../sass/components/_charts.scss */
 .skill__chart__y p {
-  text-align: right;
+  margin: 20px 0px;
   padding-right: 5%;
+  text-align: right;
 }
 /* line 25, ../sass/components/_charts.scss */
+.skill__chart__x {
+  width: 100%;
+}
+/* line 27, ../sass/components/_charts.scss */
 .skill__chart__x .expertise {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-around;
   justify-content: space-around;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  margin: 0;
+  list-style-type: none;
+  padding-left: 10px;
+}
+/* line 35, ../sass/components/_charts.scss */
+.skill__chart__x .expertise__item {
+  width: 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+  background-color: #333;
+  height: 30px;
+  position: relative;
 }
 
 /* Layout */

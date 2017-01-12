@@ -8,7 +8,7 @@
 	width: 33.33%;
 	position: relative;
 	height: auto;
-	border: 1px solid #333;
+	border-bottom: 1px solid $color-white;
 	margin: 2%;
 	font-size: 14px;
 	&__y{
@@ -16,15 +16,31 @@
 		@include flex-direction(column);
 		@include justify-content(space-around);
 		p{
-			text-align: right;
+			margin: 20px 0px;
 			padding-right: 5%;
+			text-align: right;
 		}
 		
 	}
 	&__x{
+		width: 100%;
 		.expertise{
 			@include display-flex(flex);
 			@include justify-content(space-around);
+			@include align-items(flex-end);
+			height: 100%;
+			margin: 0;
+			list-style-type: none;
+			padding-left: 10px;
+			&__item{
+				width: 30px;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+				margin: 0;
+				background-color: #333;
+				height: 30px;
+				position: relative;
+			}
 		}
 	}
 }
