@@ -1,0 +1,30 @@
+.skills__container{
+	@include display-flex(flex);
+}
+
+.skill__chart{
+	@include display-flex(flex);
+	
+	width: 33.33%;
+	position: relative;
+	height: auto;
+	border: 1px solid #333;
+	margin: 2%;
+	font-size: 14px;
+	&__y{
+		@include display-flex(flex);
+		@include flex-direction(column);
+		@include justify-content(space-around);
+		p{
+			text-align: right;
+			padding-right: 5%;
+		}
+		
+	}
+	&__x{
+		.expertise{
+			@include display-flex(flex);
+			@include justify-content(space-around);
+		}
+	}
+}
