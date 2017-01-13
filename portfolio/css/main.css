@@ -8,6 +8,7 @@
 /* Grid Items */
 /* Loader */
 /* Contact Card */
+/* Skill Charts */
 /* Base */
 /* line 1, ../sass/base/_base.scss */
 * {
@@ -601,9 +602,61 @@ body {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   margin: 0;
-  background-color: #333;
   height: 30px;
   position: relative;
+}
+/* line 42, ../sass/components/_charts.scss */
+.skill__chart__x .expertise__item .x-value {
+  transform: rotate(50deg);
+  position: absolute;
+  bottom: -100px;
+  left: -25px;
+  width: 200px;
+}
+
+/* line 55, ../sass/components/_charts.scss */
+.orange {
+  background: #FFAD41;
+}
+
+/* line 59, ../sass/components/_charts.scss */
+.blue {
+  background: #38BAF0;
+}
+
+/* line 63, ../sass/components/_charts.scss */
+.bright-green {
+  background: #69D12B;
+}
+
+/* line 67, ../sass/components/_charts.scss */
+.pink {
+  background: #FA8CB0;
+}
+
+/* line 71, ../sass/components/_charts.scss */
+.yellow {
+  background: #EFE210;
+}
+
+/* line 75, ../sass/components/_charts.scss */
+.moss-green {
+  background: #9FCE57;
+}
+
+/* line 79, ../sass/components/_charts.scss */
+.sea-green {
+  background: #3DC694;
+}
+
+/* line 83, ../sass/components/_charts.scss */
+.dull-purple {
+  background: #8D9EFF;
+}
+
+/* line 87, ../sass/components/_charts.scss */
+.light-purple {
+  background: #CD98FE;
 }
 
 /* Layout */

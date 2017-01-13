@@ -37,10 +37,53 @@
 				border-top-left-radius: 3px;
 				border-top-right-radius: 3px;
 				margin: 0;
-				background-color: #333;
 				height: 30px;
 				position: relative;
+				.x-value{
+					transform: rotate(50deg);
+					position: absolute;
+					bottom: -100px;
+					left: -25px;
+					width: 200px
+				}
 			}
+
 		}
 	}
+}
+
+.orange{
+	background: $color-orange-bar;
+}
+
+.blue{
+	background: $color-blue-bar;
+}
+
+.bright-green{
+	background: $color-bright-green-bar;
+}
+
+.pink{
+	background: $color-pink-bar;
+}
+
+.yellow{
+	background: $color-yellow-bar;
+}
+
+.moss-green{
+	background: $color-moss-green-bar;
+}
+
+.sea-green{
+	background: $color-sea-green-bar;
+}
+
+.dull-purple{
+	background: $color-dull-purple-bar;
+}
+
+.light-purple{
+	background: $color-light-purple-bar;
 }
