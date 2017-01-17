@@ -675,26 +675,32 @@ body {
 }
 
 /* line 5, ../sass/pages/_home.scss */
+#homeContent-block {
+  background: url("../images/imanuel-juggling1.jpg");
+  background-size: cover;
+}
+
+/* line 10, ../sass/pages/_home.scss */
 #about-block {
   background-color: #D8AD43;
 }
 
-/* line 9, ../sass/pages/_home.scss */
+/* line 14, ../sass/pages/_home.scss */
 #portfolio-block {
   background-color: #3CA98A;
 }
 
-/* line 13, ../sass/pages/_home.scss */
+/* line 18, ../sass/pages/_home.scss */
 #skills-block {
   background-color: #12736E;
 }
 
-/* line 17, ../sass/pages/_home.scss */
+/* line 22, ../sass/pages/_home.scss */
 #clients-block {
   background-color: #8F5F8D;
 }
 
-/* line 21, ../sass/pages/_home.scss */
+/* line 26, ../sass/pages/_home.scss */
 #contact-block {
   background-color: #3B2266;
 }
