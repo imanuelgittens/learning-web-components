@@ -9,6 +9,7 @@
 /* Loader */
 /* Contact Card */
 /* Skill Charts */
+/* Portfolio */
 /* Base */
 /* line 1, ../sass/base/_base.scss */
 * {
@@ -657,6 +658,61 @@ body {
 /* line 87, ../sass/components/_charts.scss */
 .light-purple {
   background: #CD98FE;
+}
+
+/* line 1, ../sass/components/_portfolio.scss */
+.portfolio__container {
+  width: 100%;
+}
+
+/* line 5, ../sass/components/_portfolio.scss */
+.tabComponent {
+  width: 100%;
+  position: relative;
+  min-height: 600px;
+}
+/* line 9, ../sass/components/_portfolio.scss */
+.tabComponent__tab {
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 11, ../sass/components/_portfolio.scss */
+.tabComponent__tab label {
+  width: 25%;
+  padding: 15px;
+}
+/* line 15, ../sass/components/_portfolio.scss */
+.tabComponent__tab input {
+  display: none;
+}
+/* line 17, ../sass/components/_portfolio.scss */
+.tabComponent__tab input:checked ~ .tabComponent__tab__content {
+  top: 0px;
+  opacity: 1;
+}
+/* line 21, ../sass/components/_portfolio.scss */
+.tabComponent__tab input:checked ~ label {
+  background-color: #262626;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* line 27, ../sass/components/_portfolio.scss */
+.tabComponent__tab__content {
+  -moz-transition: all, 1s, ease-in-out;
+  -o-transition: all, 1s, ease-in-out;
+  -webkit-transition: all, 1s, ease-in-out;
+  transition: all, 1s, ease-in-out;
+  min-height: 600px;
+  background-color: #262626;
+  padding: 10px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  width: 75%;
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  opacity: 0;
 }
 
 /* Layout */
