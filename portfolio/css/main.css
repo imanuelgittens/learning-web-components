@@ -682,15 +682,16 @@ body {
   padding: 15px;
 }
 /* line 15, ../sass/components/_portfolio.scss */
-.tabComponent__tab input {
+.tabComponent__tab > input {
   display: none;
 }
 /* line 17, ../sass/components/_portfolio.scss */
-.tabComponent__tab input:checked ~ .tabComponent__tab__content {
+.tabComponent__tab > input:checked ~ .tabComponent__tab__content {
   opacity: 1;
+  z-index: 300;
 }
 /* line 21, ../sass/components/_portfolio.scss */
-.tabComponent__tab input:checked ~ label {
+.tabComponent__tab > input:checked ~ label {
   background-color: #262626;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -712,6 +713,31 @@ body {
   top: 0px;
   right: 0px;
   opacity: 0;
+}
+
+/* line 1, ../sass/components/_carousel.scss */
+.carouselComponent {
+  position: relative;
+}
+/* line 4, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems input {
+  display: block;
+}
+/* line 6, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems input:checked + .carousel-content {
+  visibility: visible;
+  right: 0;
+}
+/* line 11, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content {
+  -moz-transition: all, 0.25s, ease-in-out;
+  -o-transition: all, 0.25s, ease-in-out;
+  -webkit-transition: all, 0.25s, ease-in-out;
+  transition: all, 0.25s, ease-in-out;
+  visibility: hidden;
+  position: absolute;
+  right: -5px;
+  top: 0px;
 }
 
 /* Layout */

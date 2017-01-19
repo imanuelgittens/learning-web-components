@@ -1,0 +1,19 @@
+.carouselComponent{
+	position: relative;
+	.carouselItems{
+		input{
+			display: block;
+			&:checked + .carousel-content{
+				visibility: visible;
+				right: 0;
+			}
+		}
+		.carousel-content{
+		  @include transition(all, 0.25s, ease-in-out);
+			visibility: hidden;
+			position: absolute;
+			right: -5px;
+			top: 0px;
+		}
+	}
+}
