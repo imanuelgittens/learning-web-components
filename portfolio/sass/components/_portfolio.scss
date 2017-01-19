@@ -15,7 +15,7 @@
 		input{
 			display: none;
 			&:checked ~ .tabComponent__tab__content{
-				top: 0px;
+				
 				opacity: 1;
 			}
 			&:checked ~ label {
@@ -34,7 +34,7 @@
 			border-bottom-left-radius: 3px;
 			width: 75%;
 			position: absolute;
-			top: -25px;
+			top: 0px;
 			right: 0px;
 			opacity: 0;
 		}

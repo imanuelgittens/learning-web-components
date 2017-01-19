@@ -687,7 +687,6 @@ body {
 }
 /* line 17, ../sass/components/_portfolio.scss */
 .tabComponent__tab input:checked ~ .tabComponent__tab__content {
-  top: 0px;
   opacity: 1;
 }
 /* line 21, ../sass/components/_portfolio.scss */
@@ -710,7 +709,7 @@ body {
   border-bottom-left-radius: 3px;
   width: 75%;
   position: absolute;
-  top: -25px;
+  top: 0px;
   right: 0px;
   opacity: 0;
 }
