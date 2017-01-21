@@ -1,19 +1,133 @@
 .carouselComponent{
+
+	height: 600px;
 	position: relative;
 	.carouselItems{
+		@include display-flex(flex);
+	@include justify-content(flex-end);
+	@include flex-direction(column);
+	@include align-items(center);
+		height: 600px;
+		position:relative;
+		width: 100%;
 		input{
-			display: block;
+		  display: none;
 			&:checked + .carousel-content{
 				visibility: visible;
-				right: 0;
 			}
 		}
 		.carousel-content{
-		  @include transition(all, 0.25s, ease-in-out);
+		  /* @include transition(all, 0.25s, ease-in-out); */
+		  @include display-flex(flex);
+		  @include justify-content(center);
 			visibility: hidden;
 			position: absolute;
-			right: -5px;
+			right: 0px;
 			top: 0px;
+			display: block;
+			width: 100%;
+			height: 100%;
+
+			.back{
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 25px;
+				padding: 0;
+			}
+			.forward{
+				position: absolute;
+				top: 50%;
+				left: 97%;
+				width: 25px;
+				padding: 0;
+			}
+			&__contentWrapper{
+				@include display-flex(flex);
+		    @include justify-content(center);
+		    @include align-items(center);
+		    @include flex-direction(column);
+		    height: 600px;
+		    padding: 0 50px;
+		    .overview{
+		    	@include align-self(flex-start);
+		    	h3{
+			    	font-size: 30px;
+			    	font-weight: 300;
+			    	margin: 5px 0;
+			    }
+			    p{
+			    	font-size: 16px;
+			    }
+			    .highlighted{
+			    	font-weight: 700;
+			    }
+		    }
+		    .project-links{
+		    	font-size: 18px;
+		    	@include align-self(flex-start);
+		    	a{
+		    		color: $color-project-links;
+		    		margin-right: 10px;
+		    		&:hover{
+		    			color: $color-portfolio-block;
+		    		}
+		    	}
+		    }
+		    .project-image{	
+		    	img{
+		    		max-width: 100%;	    	
+		    	}
+		    }
+		    
+			}
 		}
 	}
+	.bullets{
+		z-index: 400;
+		font-size: 16px;
+		label{
+			padding: 5px;
+		}
+	}
+}
+
+
+
+/* Color the carousel bullets */
+
+/* Calculator */
+
+#calcOne:checked ~ .bullets label[for="calcOne"]{
+	color: $color-portfolio-block;
+}
+
+#calcTwo:checked ~ .bullets label[for="calcTwo"]{
+	color: $color-portfolio-block;
+}
+
+#calcThree:checked ~ .bullets label[for="calcThree"]{
+	color: $color-portfolio-block;
+}
+
+#calcFour:checked ~ .bullets label[for="calcFour"]{
+	color: $color-portfolio-block;
+}
+
+/* Collab */
+
+#collabOne:checked ~ .bullets label[for="collabOne"]{
+	color: $color-portfolio-block;
+}
+
+#collabTwo:checked ~ .bullets label[for="collabTwo"]{
+	color: $color-portfolio-block;
+}
+
+#collabThree:checked ~ .bullets label[for="collabThree"]{
+	color: $color-portfolio-block;
+}
+
+#collabFour:checked ~ .bullets label[for="collabFour"]{
+	color: $color-portfolio-block;
 }

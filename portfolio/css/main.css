@@ -717,27 +717,164 @@ body {
 
 /* line 1, ../sass/components/_carousel.scss */
 .carouselComponent {
+  height: 600px;
   position: relative;
 }
-/* line 4, ../sass/components/_carousel.scss */
-.carouselComponent .carouselItems input {
-  display: block;
+/* line 5, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 600px;
+  position: relative;
+  width: 100%;
 }
-/* line 6, ../sass/components/_carousel.scss */
+/* line 13, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems input {
+  display: none;
+}
+/* line 15, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems input:checked + .carousel-content {
   visibility: visible;
-  right: 0;
 }
-/* line 11, ../sass/components/_carousel.scss */
+/* line 19, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content {
-  -moz-transition: all, 0.25s, ease-in-out;
-  -o-transition: all, 0.25s, ease-in-out;
-  -webkit-transition: all, 0.25s, ease-in-out;
-  transition: all, 0.25s, ease-in-out;
+  /* @include transition(all, 0.25s, ease-in-out); */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
   visibility: hidden;
   position: absolute;
-  right: -5px;
+  right: 0px;
   top: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 31, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content .back {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 25px;
+  padding: 0;
+}
+/* line 38, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content .forward {
+  position: absolute;
+  top: 50%;
+  left: 97%;
+  width: 25px;
+  padding: 0;
+}
+/* line 45, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 600px;
+  padding: 0 50px;
+}
+/* line 52, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .overview {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+/* line 54, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .overview h3 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 5px 0;
+}
+/* line 59, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .overview p {
+  font-size: 16px;
+}
+/* line 62, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .overview .highlighted {
+  font-weight: 700;
+}
+/* line 66, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .project-links {
+  font-size: 18px;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+/* line 69, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .project-links a {
+  color: #999999;
+  margin-right: 10px;
+}
+/* line 72, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .project-links a:hover {
+  color: #3CA98A;
+}
+/* line 78, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content__contentWrapper .project-image img {
+  max-width: 100%;
+}
+/* line 86, ../sass/components/_carousel.scss */
+.carouselComponent .bullets {
+  z-index: 400;
+  font-size: 16px;
+}
+/* line 89, ../sass/components/_carousel.scss */
+.carouselComponent .bullets label {
+  padding: 5px;
+}
+
+/* Color the carousel bullets */
+/* Calculator */
+/* line 101, ../sass/components/_carousel.scss */
+#calcOne:checked ~ .bullets label[for="calcOne"] {
+  color: #3CA98A;
+}
+
+/* line 105, ../sass/components/_carousel.scss */
+#calcTwo:checked ~ .bullets label[for="calcTwo"] {
+  color: #3CA98A;
+}
+
+/* line 109, ../sass/components/_carousel.scss */
+#calcThree:checked ~ .bullets label[for="calcThree"] {
+  color: #3CA98A;
+}
+
+/* line 113, ../sass/components/_carousel.scss */
+#calcFour:checked ~ .bullets label[for="calcFour"] {
+  color: #3CA98A;
+}
+
+/* Collab */
+/* line 119, ../sass/components/_carousel.scss */
+#collabOne:checked ~ .bullets label[for="collabOne"] {
+  color: #3CA98A;
+}
+
+/* line 123, ../sass/components/_carousel.scss */
+#collabTwo:checked ~ .bullets label[for="collabTwo"] {
+  color: #3CA98A;
+}
+
+/* line 127, ../sass/components/_carousel.scss */
+#collabThree:checked ~ .bullets label[for="collabThree"] {
+  color: #3CA98A;
+}
+
+/* line 131, ../sass/components/_carousel.scss */
+#collabFour:checked ~ .bullets label[for="collabFour"] {
+  color: #3CA98A;
 }
 
 /* Layout */
