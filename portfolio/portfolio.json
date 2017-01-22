@@ -1,0 +1,38 @@
+var portfolioData = {
+   "about":{
+      "sectionTitle":"About",
+      "sectionSubtitle":"An Optional Subtitle",
+      "fullName":"John Terry",
+      "bioIntro":"I'm a pretty cheerful guy who loves building software applications. I'm particularly interested in E-Commerce applications that can help the Caribbean region. To accomplish my goals I've taken on the challenge of becoming a fullstack developer. My ultimate goal is to be able to build any application (front and backend) fromt he ground up and my it work exactly how I intend. :)"
+   },
+   "contact":{
+      "email":"gittensimanuel@gmail.com",
+      "excerpt": "If you'd like to get in contact with me, see my details below. I'd love to see how we can work together on a future project!"
+   },
+   "portfolio":{
+      "excerpt": "Throughout my studies at Modern Developer, I created many projects for practice while honing my development skills. This page will be used to showcase all the projects I've created so far, and will be updated when I create new projects in the future."
+   },
+   "skills":{
+      "excerpt": "Details about my areas of expertise can be found below. I try to be good at everything relating to web development so that I can assist with a project from start to finish.",
+      "charts":{
+          "js":{"percent":50, "toolTip":"Intermediate"},
+          "html-css":{"percent":90, "toolTip":"Advanced"},
+          "react":{"percent":10, "toolTip":"Beginner"},
+          "jquery":{"percent":20, "toolTip":"Beginner"},
+          "php":{"percent":30, "toolTip":"Intermediate"},
+          "sass":{"percent":50, "toolTip":"Intermediate"},
+          "angular":{"percent":10, "toolTip":"Beginner"},
+          "mysql":{"percent":20, "toolTip":"Beginner"},
+          "wordpress":{"percent":60, "toolTip":"Intermediate"},
+          "node":{"percent":10, "toolTip":"Beginner"},
+          "written":{"percent":70, "toolTip":"Advanced"},
+          "problem":{"percent":70, "toolTip":"Advanced"},
+          "project":{"percent":60, "toolTip":"Intermediate"},
+          "research":{"percent":80, "toolTip":"Advanced"},
+          "speaking":{"percent":80, "toolTip":"Advanced"}
+        }
+      },
+   "clients":{
+      "excerpt": "Some of the awesome cliets that I've had the pleasure of working with throughout my career as a full stack developer. I think you'll know some of them pretty well ;)"
+   }
+}

@@ -7,6 +7,37 @@
 	var closeCtrl = contentItemsContainer.querySelector('.close-button');
 	var currentItem = -1;
 
+	//json data
+	var mydata = portfolioData;
+
+	//Elements that load from json
+	var aboutText = document.getElementById('aboutText');
+	var contactText = document.getElementById('contactExcerpt');
+	var portfolioText = document.getElementById('portfolioExcerpt');
+	var skillsText = document.getElementById('skillsExcerpt');
+	var clientsText = document.getElementById('clientsExcerpt');
+
+
+	function loadText(data){
+		aboutText.innerHTML = data.about.bioIntro;
+		contactText.innerHTML = data.contact.excerpt;
+		portfolioText.innerHTML = data.portfolio.excerpt;
+		skillsText.innerHTML = data.skills.excerpt;
+		clientsText.innerHTML = data.clients.excerpt;
+	}
+
+	loadText(mydata);
+
+	function loadSkills(data){
+		for(var skill in data){
+			var element = document.querySelector('.' + skill + '-skill');
+			element.style.height = data[skill].percent + '%';
+			element.innerHTML += "<style>."+skill+"-skill:hover::after{content: '"+data[skill].toolTip+"';position: absolute; top: -30px; left: -50%; padding: 5px; background: rgba(0,0,0,0.5); border-radius: 3px; z-index: 500;}</style>";
+		}
+	}
+
+	loadSkills(mydata.skills.charts);
+
 	function init(){
 		initEvents();
 	}
@@ -88,6 +119,7 @@
 	
 
 	function loadContent(item){
+
 		// disallow scroll
 		unloadScrollBars();
 		// add expanding element/placeholder 

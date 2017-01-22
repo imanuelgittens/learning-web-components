@@ -285,7 +285,7 @@ body {
   overflow: hidden;
   height: 0;
   opacity: 0;
-  padding: 60px 60px 80px 60px;
+  padding: 60px 60px 120px 60px;
   pointer-events: none;
   font-size: 0.85em;
 }
