@@ -76,6 +76,10 @@
 	color: $color-grey;
 	font-size: 18px;
 	outline: none;
+	&:focus{
+		outline: none;
+		
+	}
 }
 
 

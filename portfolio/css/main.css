@@ -326,9 +326,14 @@ body {
   background: none;
   color: #DDD;
   font-size: 18px;
+  outline: none;
+}
+/* line 79, ../sass/components/_content.scss */
+.close-button:focus {
+  outline: none;
 }
 
-/* line 84, ../sass/components/_content.scss */
+/* line 89, ../sass/components/_content.scss */
 #aboutContent-block .title h2::before {
   content: 'A';
   font-size: 3em;
@@ -338,7 +343,7 @@ body {
   opacity: 0.3;
 }
 
-/* line 99, ../sass/components/_content.scss */
+/* line 104, ../sass/components/_content.scss */
 #portfolioContent-block .title h2::before {
   content: 'P';
   font-size: 3em;
@@ -348,7 +353,7 @@ body {
   opacity: 0.3;
 }
 
-/* line 114, ../sass/components/_content.scss */
+/* line 119, ../sass/components/_content.scss */
 #skillsContent-block .title h2::before {
   content: 'S';
   font-size: 3em;
@@ -358,7 +363,7 @@ body {
   opacity: 0.3;
 }
 
-/* line 129, ../sass/components/_content.scss */
+/* line 134, ../sass/components/_content.scss */
 #clientsContent-block .title h2::before {
   content: 'C';
   font-size: 3em;
@@ -368,7 +373,7 @@ body {
   opacity: 0.3;
 }
 
-/* line 144, ../sass/components/_content.scss */
+/* line 149, ../sass/components/_content.scss */
 #contactContent-block .title h2::before {
   content: 'C';
   font-size: 3em;

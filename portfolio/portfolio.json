@@ -3,7 +3,7 @@ var portfolioData = {
       "sectionTitle":"About",
       "sectionSubtitle":"An Optional Subtitle",
       "fullName":"John Terry",
-      "bioIntro":"I'm a pretty cheerful guy who loves building software applications. I'm particularly interested in E-Commerce applications that can help the Caribbean region. To accomplish my goals I've taken on the challenge of becoming a fullstack developer. My ultimate goal is to be able to build any application (front and backend) fromt he ground up and my it work exactly how I intend. :)"
+      "bioIntro":"I'm a pretty cheerful guy who loves building software applications. I'm particularly interested in E-Commerce applications that can help the Caribbean region. To accomplish my goals I've taken on the challenge of becoming a fullstack developer. My ultimate goal is to be able to build any application (front and backend) from the ground up and my it work exactly how I intend. :)"
    },
    "contact":{
       "email":"gittensimanuel@gmail.com",
