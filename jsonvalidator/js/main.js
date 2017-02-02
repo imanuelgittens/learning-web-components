@@ -26,8 +26,6 @@ function startRead(){
 function convertToString(jsonFile){
 	var reader = new FileReader();
 	reader.readAsText(jsonFile, "UTF-8");
-	// Handle progress, success, and errors
-  /*reader.onprogress = updateProgress;*/
   reader.onload = loaded;
   reader.onerror = errorHandler;
 }
