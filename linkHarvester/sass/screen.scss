@@ -5,6 +5,10 @@
 
 @import "compass";
 
+//abstracts
+@import "abstracts/variables";
+
+
 //base
 @import "base/base",
 				"base/helpers";
@@ -13,3 +17,7 @@
 //components
 
 @import "components/harvester";
+
+//pages
+
+@import "pages/home";
