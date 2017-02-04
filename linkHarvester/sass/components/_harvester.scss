@@ -17,6 +17,10 @@
 		font-weight: 700;
 		font-size: 18px;
 		background-color: $color-upload-button;
+		display: block;
+		text-align:center;
+		line-height: $button-height;
+		vertical-align: middle;
 		&:hover{
 			cursor: pointer;
 		}
@@ -53,5 +57,31 @@
 		&:hover{
 			cursor: pointer;
 		}
+		&:focus{
+			outline: none;
+		}
 	}
+}
+
+#linkArea{
+	list-style-type: none;
+	padding: 0;
+}
+
+#uploadFile{
+	display: none;
+}
+
+.links__item{
+	text-align:center;
+	color: $color-text;
+	background-color: $color-link-bg;
+	padding: 20px 5px;
+	margin: 5px 0;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.tool__desc{
+	text-align:center;
 }
