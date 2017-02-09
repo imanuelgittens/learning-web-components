@@ -40,13 +40,17 @@ html {
   font-weight: 700;
   font-size: 18px;
   background-color: #3398CC;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
 }
-/* line 20, ../sass/components/_harvester.scss */
+/* line 24, ../sass/components/_harvester.scss */
 .fileUpload__button:hover {
   cursor: pointer;
 }
 
-/* line 27, ../sass/components/_harvester.scss */
+/* line 31, ../sass/components/_harvester.scss */
 .inputData__textarea {
   height: 400px;
   border: none;
@@ -57,12 +61,12 @@ html {
   resize: none;
   overflow-y: scroll;
 }
-/* line 36, ../sass/components/_harvester.scss */
+/* line 40, ../sass/components/_harvester.scss */
 .inputData__textarea:focus {
   outline: none;
 }
 
-/* line 43, ../sass/components/_harvester.scss */
+/* line 47, ../sass/components/_harvester.scss */
 .getLinks__button {
   width: 100%;
   height: 50px;
@@ -74,9 +78,40 @@ html {
   font-size: 18px;
   background-color: #33CB98;
 }
-/* line 53, ../sass/components/_harvester.scss */
+/* line 57, ../sass/components/_harvester.scss */
 .getLinks__button:hover {
   cursor: pointer;
+}
+/* line 60, ../sass/components/_harvester.scss */
+.getLinks__button:focus {
+  outline: none;
+}
+
+/* line 66, ../sass/components/_harvester.scss */
+#linkArea {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* line 71, ../sass/components/_harvester.scss */
+#uploadFile {
+  display: none;
+}
+
+/* line 75, ../sass/components/_harvester.scss */
+.links__item {
+  text-align: center;
+  color: #ffffff;
+  background-color: #9ACCCD;
+  padding: 20px 5px;
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* line 85, ../sass/components/_harvester.scss */
+.tool__desc {
+  text-align: center;
 }
 
 /* line 1, ../sass/pages/_home.scss */
