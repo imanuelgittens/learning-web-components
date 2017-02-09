@@ -1,4 +1,4 @@
-.contact__card__container{
+.contact-card-container{
 	@include perspective(800px);
 	@include display-flex(flex);
 	@include justify-content(center);
@@ -16,12 +16,12 @@
 	height: $card-height;
 	width: $card-width;
 	background-color: transparent;
-	label{
+	/* label{
 
 		&:hover{
 			cursor: pointer;
 		}
-	}
+	} */
 	&__back{
     /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
     transform: rotateX(180deg);
@@ -128,7 +128,11 @@
     backface-visibility: hidden;
 }
 
-.contact__card__container input[type="radio"]#front:checked ~ .contactCard{
+.face:hover{
+	cursor: pointer;
+}
+
+.contact-card-container input[type="radio"]#front:checked ~ .contactCard{
 	transform: rotateX(180deg);
 }
 

@@ -384,7 +384,7 @@ body {
 }
 
 /* line 1, ../sass/components/_contact_card.scss */
-.contact__card__container {
+.contact-card-container {
   -moz-perspective: 800px;
   -webkit-perspective: 800px;
   perspective: 800px;
@@ -395,7 +395,7 @@ body {
   margin-top: 5%;
 }
 /* line 6, ../sass/components/_contact_card.scss */
-.contact__card__container input {
+.contact-card-container input {
   display: none;
 }
 
@@ -415,10 +415,12 @@ body {
   height: 300px;
   width: 500px;
   background-color: transparent;
-}
-/* line 21, ../sass/components/_contact_card.scss */
-.contactCard label:hover {
-  cursor: pointer;
+  	/* label{
+  
+  		&:hover{
+  			cursor: pointer;
+  		}
+  	} */
 }
 /* line 25, ../sass/components/_contact_card.scss */
 .contactCard__back {
@@ -549,7 +551,12 @@ body {
 }
 
 /* line 131, ../sass/components/_contact_card.scss */
-.contact__card__container input[type="radio"]#front:checked ~ .contactCard {
+.face:hover {
+  cursor: pointer;
+}
+
+/* line 135, ../sass/components/_contact_card.scss */
+.contact-card-container input[type="radio"]#front:checked ~ .contactCard {
   transform: rotateX(180deg);
 }
 
