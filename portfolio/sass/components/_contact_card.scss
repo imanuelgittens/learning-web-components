@@ -16,12 +16,6 @@
 	height: $card-height;
 	width: $card-width;
 	background-color: transparent;
-	/* label{
-
-		&:hover{
-			cursor: pointer;
-		}
-	} */
 	&__back{
     /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
     transform: rotateX(180deg);
@@ -29,7 +23,7 @@
     background: url("../images/mani.jpg");
     background-size: cover;
     position: relative;
-    .name{
+    /* .name{
     	@include border-radius(3px);
     	position: absolute;
     	top: 85%;
@@ -38,7 +32,7 @@
     	background-color: rgba(255, 255, 255, 0.7);
     	padding: 5px 10px;
     	font-size: 14px;
-    }
+    } */
 	}
 	&__front{
 		padding: 20px;
@@ -48,21 +42,7 @@
 		@include flex-direction(column);
 		@include justify-content(space-around);
 		@include border-radius(3px);
-		&__title{
-			h2{
-				@include no-space;
-				font-weight: 400;
-			font-size: 33px;
 
-			}
-			p{
-				margin-top: 8px;
-				font-weight: 300;
-			font-size: 18px;
-			margin-bottom: 0;
-			}
-			
-		}
 		&__desc{
 			p{
 				font-size: 16px;
@@ -117,6 +97,27 @@
 				}
 			}
 		}
+	}
+	&__title{
+			@include no-space;
+			font-weight: 400;
+		font-size: 33px;		
+	}
+	&__position{
+		margin-top: 8px;
+			font-weight: 300;
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	&__nameBubble{
+		@include border-radius(3px);
+  	position: absolute;
+  	top: 85%;
+  	left: 2%;
+  	color: $color-card-link;
+  	background-color: rgba(255, 255, 255, 0.7);
+  	padding: 5px 10px;
+  	font-size: 14px;
 	}
 }
 

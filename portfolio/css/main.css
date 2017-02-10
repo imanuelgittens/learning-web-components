@@ -415,14 +415,8 @@ body {
   height: 300px;
   width: 500px;
   background-color: transparent;
-  	/* label{
-  
-  		&:hover{
-  			cursor: pointer;
-  		}
-  	} */
 }
-/* line 25, ../sass/components/_contact_card.scss */
+/* line 19, ../sass/components/_contact_card.scss */
 .contactCard__back {
   /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
   transform: rotateX(180deg);
@@ -432,21 +426,18 @@ body {
   background: url("../images/mani.jpg");
   background-size: cover;
   position: relative;
+  /* .name{
+  	@include border-radius(3px);
+  	position: absolute;
+  	top: 85%;
+  	left: 2%;
+  	color: $color-card-link;
+  	background-color: rgba(255, 255, 255, 0.7);
+  	padding: 5px 10px;
+  	font-size: 14px;
+  } */
 }
-/* line 32, ../sass/components/_contact_card.scss */
-.contactCard__back .name {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  position: absolute;
-  top: 85%;
-  left: 2%;
-  color: #7E3DE5;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  font-size: 14px;
-}
-/* line 43, ../sass/components/_contact_card.scss */
+/* line 37, ../sass/components/_contact_card.scss */
 .contactCard__front {
   padding: 20px;
   background: url("../images/bg2.png");
@@ -461,27 +452,13 @@ body {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 52, ../sass/components/_contact_card.scss */
-.contactCard__front__title h2 {
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-size: 33px;
-}
-/* line 58, ../sass/components/_contact_card.scss */
-.contactCard__front__title p {
-  margin-top: 8px;
-  font-weight: 300;
-  font-size: 18px;
-  margin-bottom: 0;
-}
-/* line 67, ../sass/components/_contact_card.scss */
+/* line 47, ../sass/components/_contact_card.scss */
 .contactCard__front__desc p {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 3px;
 }
-/* line 72, ../sass/components/_contact_card.scss */
+/* line 52, ../sass/components/_contact_card.scss */
 .contactCard__front__desc ul {
   display: -webkit-flex;
   display: flex;
@@ -489,46 +466,46 @@ body {
   margin: 0;
   list-style-type: none;
 }
-/* line 77, ../sass/components/_contact_card.scss */
+/* line 57, ../sass/components/_contact_card.scss */
 .contactCard__front__desc ul li {
   padding-right: 3%;
   font-size: 14px;
 }
-/* line 81, ../sass/components/_contact_card.scss */
+/* line 61, ../sass/components/_contact_card.scss */
 .contactCard__front__desc ul li a {
   color: #7E3DE5;
   text-decoration: none;
 }
-/* line 88, ../sass/components/_contact_card.scss */
+/* line 68, ../sass/components/_contact_card.scss */
 .contactCard__front__footer {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 91, ../sass/components/_contact_card.scss */
+/* line 71, ../sass/components/_contact_card.scss */
 .contactCard__front__footer .encyclopedia__info {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
-/* line 94, ../sass/components/_contact_card.scss */
+/* line 74, ../sass/components/_contact_card.scss */
 .contactCard__front__footer .encyclopedia__info__logo {
   padding-right: 8%;
 }
-/* line 97, ../sass/components/_contact_card.scss */
+/* line 77, ../sass/components/_contact_card.scss */
 .contactCard__front__footer .encyclopedia__info p {
   padding: 0;
   margin: 0;
   font-size: 14px;
 }
-/* line 102, ../sass/components/_contact_card.scss */
+/* line 82, ../sass/components/_contact_card.scss */
 .contactCard__front__footer .encyclopedia__info a {
   color: #7E3DE5;
   text-decoration: none;
 }
-/* line 108, ../sass/components/_contact_card.scss */
+/* line 88, ../sass/components/_contact_card.scss */
 .contactCard__front__footer .social__links ul {
   display: -webkit-flex;
   display: flex;
@@ -536,12 +513,39 @@ body {
   margin: 0;
   list-style-type: none;
 }
-/* line 114, ../sass/components/_contact_card.scss */
+/* line 94, ../sass/components/_contact_card.scss */
 .contactCard__front__footer .social__links ul li {
   padding-right: 3%;
 }
+/* line 101, ../sass/components/_contact_card.scss */
+.contactCard__title {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 33px;
+}
+/* line 106, ../sass/components/_contact_card.scss */
+.contactCard__position {
+  margin-top: 8px;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+/* line 112, ../sass/components/_contact_card.scss */
+.contactCard__nameBubble {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: absolute;
+  top: 85%;
+  left: 2%;
+  color: #7E3DE5;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  font-size: 14px;
+}
 
-/* line 123, ../sass/components/_contact_card.scss */
+/* line 124, ../sass/components/_contact_card.scss */
 .face {
   position: absolute;
   width: 100%;
@@ -550,12 +554,12 @@ body {
   backface-visibility: hidden;
 }
 
-/* line 131, ../sass/components/_contact_card.scss */
+/* line 132, ../sass/components/_contact_card.scss */
 .face:hover {
   cursor: pointer;
 }
 
-/* line 135, ../sass/components/_contact_card.scss */
+/* line 136, ../sass/components/_contact_card.scss */
 .contact-card-container input[type="radio"]#front:checked ~ .contactCard {
   transform: rotateX(180deg);
 }
