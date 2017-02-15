@@ -23,16 +23,6 @@
     background: url("../images/mani.jpg");
     background-size: cover;
     position: relative;
-    /* .name{
-    	@include border-radius(3px);
-    	position: absolute;
-    	top: 85%;
-    	left: 2%;
-    	color: $color-card-link;
-    	background-color: rgba(255, 255, 255, 0.7);
-    	padding: 5px 10px;
-    	font-size: 14px;
-    } */
 	}
 	&__front{
 		padding: 20px;
@@ -43,60 +33,43 @@
 		@include justify-content(space-around);
 		@include border-radius(3px);
 
-		&__desc{
-			p{
-				font-size: 16px;
-				font-weight: 400;
-				margin-bottom: 3px;
-			}
-			ul{
-				@include display-flex(flex);
-				@include no-space;
-				list-style-type: none;
-
-				li{
-					
-					padding-right: 3%;
-					font-size: 14px;
-					a{
-						color: $color-card-link;
-						text-decoration: none;
-					}
-				}
-			}
-		}
-		&__footer{
+		
+		
+	}
+	&__footer{
 			@include display-flex(flex);
 			@include justify-content(space-between);
-			.encyclopedia__info{
-				@include display-flex(flex);
-				@include justify-content(flex-start);
-				&__logo{
-					padding-right: 8%;
-				}
-				p{
-					@include no-space;
-					font-size: 14px;
-
-				}
-				a{
-					color: $color-card-link;
-					text-decoration: none;
-				}
-			}
-			.social__links{
-				ul{
-					@include display-flex(flex);
-					@include no-space;
-
-					list-style-type: none;
-
-					li{
-						padding-right: 3%;
-					}
-				}
-			}
 		}
+	&__encyclopedia{
+		@include display-flex(flex);
+				@include justify-content(flex-start);
+	}
+	&__encyclopediaLogo{
+		padding-right: 8%;
+	}
+	&__encyclopediaLink{
+		@include no-space;
+					font-size: 14px;
+					margin: 0px!important
+	}
+	&__excerpt{
+		font-size: 16px;
+				font-weight: 400;
+				margin-bottom: 3px;
+				margin-top: 0;
+	}
+	&__info{
+			@include display-flex(flex);
+				@include no-space;
+				list-style-type: none;
+	}
+	&__infoItem{
+		  padding-right: 3%;
+			font-size: 14px;
+	}
+	&__link{
+		color: $color-card-link;
+		text-decoration: none;
 	}
 	&__title{
 			@include no-space;
@@ -108,6 +81,12 @@
 			font-weight: 300;
 		font-size: 18px;
 		margin-bottom: 0;
+	}
+	&__social{
+		@include display-flex(flex);
+					@include no-space;
+
+					list-style-type: none;
 	}
 	&__nameBubble{
 		@include border-radius(3px);
