@@ -9,32 +9,32 @@
 }
 
 .contactCard{
-	position: relative;
+
 	@include transition(all, 0.5s, ease-in-out);
 	@include transform-style(preserve-3d);
 	@include border-radius(3px);
-	height: $card-height;
-	width: $card-width;
 	background-color: transparent;
+	height: $card-height;
+	position: relative;
+	width: $card-width;
 	&__back{
     /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
-    transform: rotateX(180deg);
-    @include border-radius(3px);
+		@include border-radius(3px);
+
+
     background: url("../images/mani.jpg");
     background-size: cover;
     position: relative;
+		transform: rotateX(180deg);
 	}
 	&__front{
-		padding: 20px;
-		background: url("../images/bg2.png");
-		background-size: cover;
 		@include display-flex(flex);
 		@include flex-direction(column);
 		@include justify-content(space-around);
 		@include border-radius(3px);
-
-		
-		
+		background: url("../images/bg2.png");
+		background-size: cover;
+		padding: 20px;
 	}
 	&__footer{
 			@include display-flex(flex);
@@ -42,15 +42,15 @@
 		}
 	&__encyclopedia{
 		@include display-flex(flex);
-				@include justify-content(flex-start);
+		@include justify-content(flex-start);
 	}
 	&__encyclopediaLogo{
 		padding-right: 8%;
 	}
 	&__encyclopediaLink{
 		@include no-space;
-					font-size: 14px;
-					margin: 0px!important
+		font-size: 14px;
+		margin: 0px!important
 	}
 	&__excerpt{
 		font-size: 16px;

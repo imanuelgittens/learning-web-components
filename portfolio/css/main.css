@@ -2,6 +2,556 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* Vendors */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
+/* line 13, ../sass/vendors/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 27, ../sass/vendors/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 35, ../sass/vendors/_normalize.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 49, ../sass/vendors/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 62, ../sass/vendors/_normalize.scss */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 72, ../sass/vendors/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 81, ../sass/vendors/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 92, ../sass/vendors/_normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 105, ../sass/vendors/_normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+/* line 115, ../sass/vendors/_normalize.scss */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 125, ../sass/vendors/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 135, ../sass/vendors/_normalize.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 144, ../sass/vendors/_normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 154, ../sass/vendors/_normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 165, ../sass/vendors/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 173, ../sass/vendors/_normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 182, ../sass/vendors/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 191, ../sass/vendors/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 199, ../sass/vendors/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 203, ../sass/vendors/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 214, ../sass/vendors/_normalize.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 223, ../sass/vendors/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 232, ../sass/vendors/_normalize.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 240, ../sass/vendors/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 252, ../sass/vendors/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 268, ../sass/vendors/_normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 278, ../sass/vendors/_normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 289, ../sass/vendors/_normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 300, ../sass/vendors/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 312, ../sass/vendors/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+/* line 323, ../sass/vendors/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 336, ../sass/vendors/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 350, ../sass/vendors/_normalize.scss */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 359, ../sass/vendors/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 368, ../sass/vendors/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 378, ../sass/vendors/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 388, ../sass/vendors/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 397, ../sass/vendors/_normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 407, ../sass/vendors/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 420, ../sass/vendors/_normalize.scss */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 429, ../sass/vendors/_normalize.scss */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 440, ../sass/vendors/_normalize.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 448, ../sass/vendors/_normalize.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 459, ../sass/vendors/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 1, ../sass/vendors/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 23, ../sass/vendors/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 27, ../sass/vendors/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 30, ../sass/vendors/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 33, ../sass/vendors/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 36, ../sass/vendors/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 41, ../sass/vendors/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /* Abstracts */
 /* Colors */
 /* Home page */
@@ -26,11 +576,11 @@ html {
 
 /* line 10, ../sass/base/_base.scss */
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-family: 'Lato', sans-serif;
-  overflow: auto;
   height: 100vh;
+  overflow: auto;
 }
 
 /* line 1, ../sass/base/_helpers.scss */
@@ -84,8 +634,8 @@ body {
 }
 /* line 30, ../sass/components/_grid.scss */
 .grid__item .featured-item p {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 /* line 34, ../sass/components/_grid.scss */
 .grid__item .title {
@@ -401,7 +951,6 @@ body {
 
 /* line 11, ../sass/components/_contact_card.scss */
 .contactCard {
-  position: relative;
   -moz-transition: all, 0.5s, ease-in-out;
   -o-transition: all, 0.5s, ease-in-out;
   -webkit-transition: all, 0.5s, ease-in-out;
@@ -412,26 +961,24 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  height: 300px;
-  width: 500px;
   background-color: transparent;
+  height: 300px;
+  position: relative;
+  width: 500px;
 }
-/* line 19, ../sass/components/_contact_card.scss */
+/* line 20, ../sass/components/_contact_card.scss */
 .contactCard__back {
   /* initially rotate the element in the back so that when the card is flipped, it faces the viewer */
-  transform: rotateX(180deg);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   background: url("../images/mani.jpg");
   background-size: cover;
   position: relative;
+  transform: rotateX(180deg);
 }
-/* line 27, ../sass/components/_contact_card.scss */
+/* line 30, ../sass/components/_contact_card.scss */
 .contactCard__front {
-  padding: 20px;
-  background: url("../images/bg2.png");
-  background-size: cover;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -441,6 +988,9 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  background: url("../images/bg2.png");
+  background-size: cover;
+  padding: 20px;
 }
 /* line 39, ../sass/components/_contact_card.scss */
 .contactCard__footer {
@@ -462,8 +1012,8 @@ body {
 }
 /* line 50, ../sass/components/_contact_card.scss */
 .contactCard__encyclopediaLink {
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-size: 14px;
   margin: 0px !important;
 }
@@ -478,8 +1028,8 @@ body {
 .contactCard__info {
   display: -webkit-flex;
   display: flex;
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 /* line 66, ../sass/components/_contact_card.scss */
@@ -494,8 +1044,8 @@ body {
 }
 /* line 74, ../sass/components/_contact_card.scss */
 .contactCard__title {
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-weight: 400;
   font-size: 33px;
 }
@@ -510,8 +1060,8 @@ body {
 .contactCard__social {
   display: -webkit-flex;
   display: flex;
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 /* line 91, ../sass/components/_contact_card.scss */
@@ -557,14 +1107,14 @@ body {
 .skill__chart {
   display: -webkit-flex;
   display: flex;
-  width: 33.33%;
-  position: relative;
-  height: auto;
   border-bottom: 1px solid #F4F4F4;
-  margin: 2%;
   font-size: 14px;
+  height: auto;
+  margin: 2%;
+  position: relative;
+  width: 33.33%;
 }
-/* line 14, ../sass/components/_charts.scss */
+/* line 13, ../sass/components/_charts.scss */
 .skill__chart__y {
   display: -webkit-flex;
   display: flex;
@@ -573,17 +1123,17 @@ body {
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
-/* line 18, ../sass/components/_charts.scss */
+/* line 17, ../sass/components/_charts.scss */
 .skill__chart__y p {
   margin: 20px 0px;
   padding-right: 5%;
   text-align: right;
 }
-/* line 25, ../sass/components/_charts.scss */
+/* line 24, ../sass/components/_charts.scss */
 .skill__chart__x {
   width: 100%;
 }
-/* line 27, ../sass/components/_charts.scss */
+/* line 26, ../sass/components/_charts.scss */
 .skill__chart__x .expertise {
   display: -webkit-flex;
   display: flex;
@@ -592,69 +1142,69 @@ body {
   -webkit-align-items: flex-end;
   align-items: flex-end;
   height: 100%;
-  margin: 0;
   list-style-type: none;
+  margin: 0;
   padding-left: 10px;
 }
-/* line 35, ../sass/components/_charts.scss */
+/* line 34, ../sass/components/_charts.scss */
 .skill__chart__x .expertise__item {
-  width: 30px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  margin: 0;
   height: 30px;
+  margin: 0;
   position: relative;
+  width: 30px;
 }
-/* line 42, ../sass/components/_charts.scss */
+/* line 41, ../sass/components/_charts.scss */
 .skill__chart__x .expertise__item .x-value {
-  transform: rotate(50deg);
-  position: absolute;
   bottom: -100px;
   left: -25px;
+  position: absolute;
+  transform: rotate(50deg);
   width: 200px;
 }
 
-/* line 55, ../sass/components/_charts.scss */
+/* line 54, ../sass/components/_charts.scss */
 .orange {
   background: #FFAD41;
 }
 
-/* line 59, ../sass/components/_charts.scss */
+/* line 58, ../sass/components/_charts.scss */
 .blue {
   background: #38BAF0;
 }
 
-/* line 63, ../sass/components/_charts.scss */
+/* line 62, ../sass/components/_charts.scss */
 .bright-green {
   background: #69D12B;
 }
 
-/* line 67, ../sass/components/_charts.scss */
+/* line 66, ../sass/components/_charts.scss */
 .pink {
   background: #FA8CB0;
 }
 
-/* line 71, ../sass/components/_charts.scss */
+/* line 70, ../sass/components/_charts.scss */
 .yellow {
   background: #EFE210;
 }
 
-/* line 75, ../sass/components/_charts.scss */
+/* line 74, ../sass/components/_charts.scss */
 .moss-green {
   background: #9FCE57;
 }
 
-/* line 79, ../sass/components/_charts.scss */
+/* line 78, ../sass/components/_charts.scss */
 .sea-green {
   background: #3DC694;
 }
 
-/* line 83, ../sass/components/_charts.scss */
+/* line 82, ../sass/components/_charts.scss */
 .dull-purple {
   background: #8D9EFF;
 }
 
-/* line 87, ../sass/components/_charts.scss */
+/* line 86, ../sass/components/_charts.scss */
 .light-purple {
   background: #CD98FE;
 }
@@ -748,31 +1298,31 @@ body {
   display: flex;
   -webkit-justify-content: center;
   justify-content: center;
-  visibility: hidden;
+  display: block;
+  height: 100%;
   position: absolute;
   right: 0px;
   top: 0px;
-  display: block;
+  visibility: hidden;
   width: 100%;
-  height: 100%;
 }
-/* line 31, ../sass/components/_carousel.scss */
+/* line 32, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content .back {
-  position: absolute;
-  top: 50%;
   left: 0;
-  width: 25px;
   padding: 0;
-}
-/* line 38, ../sass/components/_carousel.scss */
-.carouselComponent .carouselItems .carousel-content .forward {
   position: absolute;
   top: 50%;
-  left: 97%;
   width: 25px;
-  padding: 0;
 }
-/* line 45, ../sass/components/_carousel.scss */
+/* line 39, ../sass/components/_carousel.scss */
+.carouselComponent .carouselItems .carousel-content .forward {
+  left: 97%;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  width: 25px;
+}
+/* line 46, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper {
   display: -webkit-flex;
   display: flex;
@@ -785,93 +1335,93 @@ body {
   height: 600px;
   padding: 0 50px;
 }
-/* line 52, ../sass/components/_carousel.scss */
+/* line 53, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .overview {
   -webkit-align-self: flex-start;
   align-self: flex-start;
 }
-/* line 54, ../sass/components/_carousel.scss */
+/* line 55, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .overview h3 {
   font-size: 30px;
   font-weight: 300;
   margin: 5px 0;
 }
-/* line 59, ../sass/components/_carousel.scss */
+/* line 60, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .overview p {
   font-size: 16px;
 }
-/* line 62, ../sass/components/_carousel.scss */
+/* line 63, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .overview .highlighted {
   font-weight: 700;
 }
-/* line 66, ../sass/components/_carousel.scss */
+/* line 67, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .project-links {
-  font-size: 18px;
   -webkit-align-self: flex-start;
   align-self: flex-start;
+  font-size: 18px;
 }
-/* line 69, ../sass/components/_carousel.scss */
+/* line 71, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .project-links a {
   color: #999999;
   margin-right: 10px;
 }
-/* line 72, ../sass/components/_carousel.scss */
+/* line 74, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .project-links a:hover {
   color: #3CA98A;
 }
-/* line 78, ../sass/components/_carousel.scss */
+/* line 80, ../sass/components/_carousel.scss */
 .carouselComponent .carouselItems .carousel-content__contentWrapper .project-image img {
   max-width: 100%;
 }
-/* line 86, ../sass/components/_carousel.scss */
+/* line 88, ../sass/components/_carousel.scss */
 .carouselComponent .bullets {
-  z-index: 400;
   font-size: 16px;
+  z-index: 400;
 }
-/* line 89, ../sass/components/_carousel.scss */
+/* line 90, ../sass/components/_carousel.scss */
 .carouselComponent .bullets label {
   padding: 5px;
 }
 
 /* Color the carousel bullets */
 /* Calculator */
-/* line 101, ../sass/components/_carousel.scss */
+/* line 103, ../sass/components/_carousel.scss */
 #calcOne:checked ~ .bullets label[for="calcOne"] {
   color: #3CA98A;
 }
 
-/* line 105, ../sass/components/_carousel.scss */
+/* line 107, ../sass/components/_carousel.scss */
 #calcTwo:checked ~ .bullets label[for="calcTwo"] {
   color: #3CA98A;
 }
 
-/* line 109, ../sass/components/_carousel.scss */
+/* line 111, ../sass/components/_carousel.scss */
 #calcThree:checked ~ .bullets label[for="calcThree"] {
   color: #3CA98A;
 }
 
-/* line 113, ../sass/components/_carousel.scss */
+/* line 115, ../sass/components/_carousel.scss */
 #calcFour:checked ~ .bullets label[for="calcFour"] {
   color: #3CA98A;
 }
 
 /* Collab */
-/* line 119, ../sass/components/_carousel.scss */
+/* line 121, ../sass/components/_carousel.scss */
 #collabOne:checked ~ .bullets label[for="collabOne"] {
   color: #3CA98A;
 }
 
-/* line 123, ../sass/components/_carousel.scss */
+/* line 125, ../sass/components/_carousel.scss */
 #collabTwo:checked ~ .bullets label[for="collabTwo"] {
   color: #3CA98A;
 }
 
-/* line 127, ../sass/components/_carousel.scss */
+/* line 129, ../sass/components/_carousel.scss */
 #collabThree:checked ~ .bullets label[for="collabThree"] {
   color: #3CA98A;
 }
 
-/* line 131, ../sass/components/_carousel.scss */
+/* line 133, ../sass/components/_carousel.scss */
 #collabFour:checked ~ .bullets label[for="collabFour"] {
   color: #3CA98A;
 }
@@ -879,10 +1429,10 @@ body {
 /* Layout */
 /* line 1, ../sass/layout/_portfolio-wrapper.scss */
 .portfolio-wrapper {
-  display: block;
-  min-height: 100vh;
-  height: 100vh;
   color: #F4F4F4;
+  display: block;
+  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Pages */

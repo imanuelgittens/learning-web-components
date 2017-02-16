@@ -4,13 +4,12 @@
 
 .skill__chart{
 	@include display-flex(flex);
-	
-	width: 33.33%;
-	position: relative;
-	height: auto;
 	border-bottom: 1px solid $color-white;
-	margin: 2%;
 	font-size: 14px;
+	height: auto;
+	margin: 2%;
+	position: relative;
+	width: 33.33%;
 	&__y{
 		@include display-flex(flex);
 		@include flex-direction(column);
@@ -29,21 +28,21 @@
 			@include justify-content(space-around);
 			@include align-items(flex-end);
 			height: 100%;
-			margin: 0;
 			list-style-type: none;
+			margin: 0;
 			padding-left: 10px;
 			&__item{
-				width: 30px;
 				border-top-left-radius: 3px;
 				border-top-right-radius: 3px;
-				margin: 0;
 				height: 30px;
+				margin: 0;
 				position: relative;
+				width: 30px;
 				.x-value{
-					transform: rotate(50deg);
-					position: absolute;
 					bottom: -100px;
 					left: -25px;
+					position: absolute;
+					transform: rotate(50deg);
 					width: 200px
 				}
 			}

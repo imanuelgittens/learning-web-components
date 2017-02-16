@@ -4,9 +4,9 @@
 	position: relative;
 	.carouselItems{
 		@include display-flex(flex);
-	@include justify-content(flex-end);
-	@include flex-direction(column);
-	@include align-items(center);
+		@include justify-content(flex-end);
+		@include flex-direction(column);
+		@include align-items(center);
 		height: 600px;
 		position:relative;
 		width: 100%;
@@ -18,77 +18,79 @@
 		}
 		.carousel-content{
 		  /* @include transition(all, 0.25s, ease-in-out); */
-		  @include display-flex(flex);
-		  @include justify-content(center);
-			visibility: hidden;
+		    @include display-flex(flex);
+			@include justify-content(center);
+			display: block;
+			height: 100%;
 			position: absolute;
 			right: 0px;
 			top: 0px;
-			display: block;
+			visibility: hidden;
 			width: 100%;
-			height: 100%;
+
 
 			.back{
+				left: 0;
+				padding: 0;
 				position: absolute;
 				top: 50%;
-				left: 0;
 				width: 25px;
-				padding: 0;
 			}
 			.forward{
+				left: 97%;
+				padding: 0;
 				position: absolute;
 				top: 50%;
-				left: 97%;
 				width: 25px;
-				padding: 0;
 			}
 			&__contentWrapper{
 				@include display-flex(flex);
-		    @include justify-content(center);
-		    @include align-items(center);
-		    @include flex-direction(column);
-		    height: 600px;
-		    padding: 0 50px;
-		    .overview{
-		    	@include align-self(flex-start);
-		    	h3{
-			    	font-size: 30px;
-			    	font-weight: 300;
-			    	margin: 5px 0;
-			    }
-			    p{
-			    	font-size: 16px;
-			    }
-			    .highlighted{
-			    	font-weight: 700;
-			    }
-		    }
-		    .project-links{
-		    	font-size: 18px;
-		    	@include align-self(flex-start);
-		    	a{
-		    		color: $color-project-links;
-		    		margin-right: 10px;
-		    		&:hover{
-		    			color: $color-portfolio-block;
-		    		}
-		    	}
-		    }
-		    .project-image{	
-		    	img{
-		    		max-width: 100%;	    	
-		    	}
-		    }
+				@include justify-content(center);
+				@include align-items(center);
+				@include flex-direction(column);
+				height: 600px;
+				padding: 0 50px;
+				.overview{
+					@include align-self(flex-start);
+					h3{
+						font-size: 30px;
+						font-weight: 300;
+						margin: 5px 0;
+					}
+					p{
+						font-size: 16px;
+					}
+					.highlighted{
+						font-weight: 700;
+					}
+				}
+				.project-links{
+					@include align-self(flex-start);
+					font-size: 18px;
+
+					a{
+						color: $color-project-links;
+						margin-right: 10px;
+						&:hover{
+							color: $color-portfolio-block;
+						}
+					}
+				}
+				.project-image{
+					img{
+						max-width: 100%;
+					}
+				}
 		    
 			}
 		}
 	}
 	.bullets{
-		z-index: 400;
 		font-size: 16px;
 		label{
 			padding: 5px;
 		}
+		z-index: 400;
 	}
 }
 
