@@ -592,7 +592,6 @@ body {
 /* Components */
 /* line 1, ../sass/components/_grid.scss */
 .grid {
-  position: relative;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -600,6 +599,7 @@ body {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   height: 100vh;
+  position: relative;
 }
 
 /* line 9, ../sass/components/_grid.scss */
@@ -610,18 +610,18 @@ body {
   flex-direction: column;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
-  width: 33.33vw;
-  overflow: hidden;
   color: #F4F4F4;
+  overflow: hidden;
   position: relative;
   padding: 15px;
   text-decoration: none;
+  width: 33.33vw;
 }
 /* line 19, ../sass/components/_grid.scss */
 .grid__item .featured-item {
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 /* line 24, ../sass/components/_grid.scss */
@@ -644,11 +644,11 @@ body {
 }
 /* line 38, ../sass/components/_grid.scss */
 .grid__item .loader {
+  background: #F4F4F4;
   height: 2px;
-  width: 90%;
   margin: 5px 0;
   position: relative;
-  background: #F4F4F4;
+  width: 90%;
 }
 /* line 44, ../sass/components/_grid.scss */
 .grid__item .loader::before {
@@ -663,13 +663,13 @@ body {
   -ms-transform-origin: 0% 50%;
   -webkit-transform-origin: 0% 50%;
   transform-origin: 0% 50%;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 3px;
   background: #3399CC;
+  content: '';
+  height: 3px;
   left: 0;
+  position: absolute;
   top: -1px;
+  width: 100%;
 }
 /* line 57, ../sass/components/_grid.scss */
 .grid__item .excerpt {
@@ -764,13 +764,13 @@ body {
   -ms-transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
+  height: calc(100vh + 5px);
+  left: 0;
   pointer-events: none;
   position: absolute;
-  width: calc(100vw + 5px);
-  height: calc(100vh + 5px);
-  z-index: 100;
   top: 0;
-  left: 0;
+  width: calc(100vw + 5px);
+  z-index: 100;
 }
 /* line 108, ../sass/components/_grid.scss */
 .placeholder--trans-in {
@@ -793,35 +793,35 @@ body {
 
 /* line 1, ../sass/components/_content.scss */
 .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
   height: 0;
   /* Avoid second scroll bar in Chrome! */
-  visibility: hidden;
-  z-index: 400;
+  left: 0;
   overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 400;
 }
 /* line 11, ../sass/components/_content.scss */
 .content--show {
+  color: #F4F4F4;
   height: 100vh;
   pointer-events: auto;
   visibility: visible;
-  color: #F4F4F4;
 }
 
 /* scroll helper wrap */
 /* line 20, ../sass/components/_content.scss */
 .scroll-wrap {
-  position: absolute;
-  width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
-  z-index: 1;
   overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -829,27 +829,27 @@ body {
 /* line 32, ../sass/components/_content.scss */
 .content__item {
   color: #F4F4F4;
+  font-size: 0.85em;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 60px 60px 120px 60px;
+  pointer-events: none;
   position: absolute;
   top: 0;
   width: 100%;
-  overflow: hidden;
-  height: 0;
-  opacity: 0;
-  padding: 60px 60px 120px 60px;
-  pointer-events: none;
-  font-size: 0.85em;
 }
 /* line 43, ../sass/components/_content.scss */
 .content__item p {
-  max-width: 1200px;
   margin: 1em auto;
+  max-width: 1200px;
   text-align: justify;
 }
 /* line 48, ../sass/components/_content.scss */
 .content__item .title {
-  text-transform: uppercase;
   font-size: 2em;
   position: relative;
+  text-transform: uppercase;
 }
 /* line 53, ../sass/components/_content.scss */
 .content__item--show {
@@ -860,77 +860,61 @@ body {
   height: auto;
   min-height: 100vh;
   opacity: 1;
-  visibility: visible;
   pointer-events: auto;
+  visibility: visible;
 }
 
-/* line 67, ../sass/components/_content.scss */
+/* line 65, ../sass/components/_content.scss */
 .close-button {
+  background: none;
+  border: none;
+  color: #DDD;
+  cursor: pointer;
+  font-size: 18px;
+  outline: none;
+  padding: 20px 30px;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 100;
-  cursor: pointer;
-  padding: 20px 30px;
-  border: none;
-  background: none;
-  color: #DDD;
-  font-size: 18px;
-  outline: none;
 }
-/* line 79, ../sass/components/_content.scss */
+/* line 77, ../sass/components/_content.scss */
 .close-button:focus {
   outline: none;
 }
 
-/* line 89, ../sass/components/_content.scss */
+/* line 83, ../sass/components/_content.scss */
+.fancy-title, #aboutContent-block .title h2::before, #portfolioContent-block .title h2::before, #skillsContent-block .title h2::before, #clientsContent-block .title h2::before, #contactContent-block .title h2::before {
+  bottom: -70%;
+  font-size: 3em;
+  opacity: 0.3;
+  position: absolute;
+  left: 1%;
+}
+
+/* line 95, ../sass/components/_content.scss */
 #aboutContent-block .title h2::before {
   content: 'A';
-  font-size: 3em;
-  position: absolute;
-  left: 1%;
-  bottom: -70%;
-  opacity: 0.3;
 }
 
-/* line 104, ../sass/components/_content.scss */
+/* line 107, ../sass/components/_content.scss */
 #portfolioContent-block .title h2::before {
   content: 'P';
-  font-size: 3em;
-  position: absolute;
-  left: 1%;
-  bottom: -70%;
-  opacity: 0.3;
 }
 
-/* line 119, ../sass/components/_content.scss */
+/* line 118, ../sass/components/_content.scss */
 #skillsContent-block .title h2::before {
   content: 'S';
-  font-size: 3em;
-  position: absolute;
-  left: 1%;
-  bottom: -70%;
-  opacity: 0.3;
 }
 
-/* line 134, ../sass/components/_content.scss */
+/* line 129, ../sass/components/_content.scss */
 #clientsContent-block .title h2::before {
   content: 'C';
-  font-size: 3em;
-  position: absolute;
-  left: 1%;
-  bottom: -70%;
-  opacity: 0.3;
 }
 
-/* line 149, ../sass/components/_content.scss */
+/* line 140, ../sass/components/_content.scss */
 #contactContent-block .title h2::before {
   content: 'C';
-  font-size: 3em;
-  position: absolute;
-  left: 1%;
-  bottom: -70%;
-  opacity: 0.3;
 }
 
 /* line 1, ../sass/components/_contact_card.scss */
@@ -1034,29 +1018,29 @@ body {
 }
 /* line 66, ../sass/components/_contact_card.scss */
 .contactCard__infoItem {
-  padding-right: 3%;
   font-size: 14px;
+  padding-right: 3%;
 }
-/* line 70, ../sass/components/_contact_card.scss */
+/* line 71, ../sass/components/_contact_card.scss */
 .contactCard__link {
   color: #7E3DE5;
   text-decoration: none;
 }
-/* line 74, ../sass/components/_contact_card.scss */
+/* line 75, ../sass/components/_contact_card.scss */
 .contactCard__title {
   margin: 0;
   padding: 0;
   font-weight: 400;
   font-size: 33px;
 }
-/* line 79, ../sass/components/_contact_card.scss */
+/* line 80, ../sass/components/_contact_card.scss */
 .contactCard__position {
-  margin-top: 8px;
-  font-weight: 300;
   font-size: 18px;
+  font-weight: 300;
   margin-bottom: 0;
+  margin-top: 8px;
 }
-/* line 85, ../sass/components/_contact_card.scss */
+/* line 86, ../sass/components/_contact_card.scss */
 .contactCard__social {
   display: -webkit-flex;
   display: flex;
@@ -1069,22 +1053,22 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #7E3DE5;
+  font-size: 14px;
+  left: 2%;
+  padding: 5px 10px;
   position: absolute;
   top: 85%;
-  left: 2%;
-  color: #7E3DE5;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  font-size: 14px;
 }
 
 /* line 103, ../sass/components/_contact_card.scss */
 .face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   /* prevent the front face from showing through the back */
   backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 /* line 111, ../sass/components/_contact_card.scss */
@@ -1216,9 +1200,9 @@ body {
 
 /* line 5, ../sass/components/_portfolio.scss */
 .tabComponent {
-  width: 100%;
-  position: relative;
   min-height: 600px;
+  position: relative;
+  width: 100%;
 }
 /* line 9, ../sass/components/_portfolio.scss */
 .tabComponent__tab {
@@ -1227,8 +1211,8 @@ body {
 }
 /* line 11, ../sass/components/_portfolio.scss */
 .tabComponent__tab label {
-  width: 25%;
   padding: 15px;
+  width: 25%;
 }
 /* line 15, ../sass/components/_portfolio.scss */
 .tabComponent__tab > input {
@@ -1242,8 +1226,8 @@ body {
 /* line 21, ../sass/components/_portfolio.scss */
 .tabComponent__tab > input:checked ~ label {
   background-color: #262626;
-  border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
 }
 /* line 27, ../sass/components/_portfolio.scss */
 .tabComponent__tab__content {
@@ -1251,17 +1235,17 @@ body {
   -o-transition: all, 1s, ease-in-out;
   -webkit-transition: all, 1s, ease-in-out;
   transition: all, 1s, ease-in-out;
-  min-height: 600px;
   background-color: #262626;
-  padding: 10px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  width: 75%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  min-height: 600px;
   opacity: 0;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 75%;
 }
 
 /* line 1, ../sass/components/_carousel.scss */

@@ -1,25 +1,25 @@
 .grid{
-	position: relative;
 	@include display-flex(flex);
 	@include flex-wrap(wrap);
 	@include justify-content(flex-start);
 	height: 100vh;
+	position: relative;
 }
 
 .grid__item{
 	@include display-flex(flex);
 	@include flex-direction(column);
 	@include justify-content(flex-end);
-	width: $item-width;
+  color: $color-white;
 	overflow: hidden;
-	color: $color-white;
 	position: relative;
 	padding: 15px;
 	text-decoration: none;
+  width: $item-width;
 	.featured-item {
+    left: 50%;
 		position: absolute;
 		top: 50%;
-		left: 50%;
 		transform: translate(-50%, -50%);
 		&__text{
 			font-size: 0.8em;
@@ -36,22 +36,22 @@
 		font-weight: bold;
 	}
 	.loader{
+    background: $color-white;
 		height: 2px;
-		width: 90%;
 		margin: 5px 0;
 		position: relative;
-		background: $color-white;
+    width: 90%;
 		&::before{
 			@include scale3d(0,1,1);
 			@include transform(scale3d);
 			@include transform-origin(0%, 50%);
+      background: $color-loader;
 			content: '';
+      height: 3px;
+      left: 0;
 			position: absolute;
+      top: -1px;
 			width: 100%;
-			height: 3px;
-			background: $color-loader;
-			left: 0;
-			top: -1px;
 		}
 	}
 	.excerpt{
@@ -97,14 +97,14 @@
 
 /* Placeholder element (dummy that gets animated when we click on an item) */
 .placeholder {
-	@include transform-origin(0,0); 
+	@include transform-origin(0,0);
+  height: calc(100vh + 5px);
+  left: 0;
 	pointer-events: none;
 	position: absolute;
+  top: 0;
 	width: calc(100vw + 5px);
-	height: calc(100vh + 5px);
 	z-index: 100;
-	top: 0;
-	left: 0;
 	&--trans-in{
 		@include transition(transform, $anim-time);
 		@include transition-timing-function(cubic-bezier(0.165,0.84,0.44,1));

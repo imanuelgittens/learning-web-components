@@ -3,14 +3,14 @@
 }
 
 .tabComponent{
-	width: 100%;
-	position: relative;
 	min-height: 600px;
+	position: relative;
+	width: 100%;
 	&__tab{
 		@include display-flex(flex);
 		label{
-			width: 25%;
 			padding: 15px;
+			width: 25%;
 		}
 		> input{
 			display: none;
@@ -20,24 +20,23 @@
 			}
 			&:checked ~ label {
 				background-color: $color-current-tab;
-				border-top-left-radius: 3px;
 				border-bottom-left-radius: 3px;
+				border-top-left-radius: 3px;
 			}
 		}
 		&__content{
 			@include transition(all, 1s, ease-in-out);
-			min-height: 600px;
 			background-color: $color-current-tab;
-			padding: 10px;
-			border-top-right-radius: 3px;
-			border-bottom-right-radius: 3px;
 			border-bottom-left-radius: 3px;
-			width: 75%;
-			position: absolute;
-			top: 0px;
-			right: 0px;
+			border-bottom-right-radius: 3px;
+			border-top-right-radius: 3px;
+			min-height: 600px;
 			opacity: 0;
-
+			padding: 10px;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			width: 75%;
 		}
 	}
 }
