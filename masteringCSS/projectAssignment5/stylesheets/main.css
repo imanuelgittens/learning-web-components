@@ -333,7 +333,8 @@ body {
     transition: transform 0.5s ease;
     padding-top: 15px;
     padding-bottom: 60px;
-    background: linear-gradient(to bottom, #4686E6, #B55894); }
+    background: linear-gradient(to bottom, #4686E6, #B55894);
+    z-index: 100; }
 
   #nav ul {
     list-style-type: none; }
