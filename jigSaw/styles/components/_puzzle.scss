@@ -1,0 +1,135 @@
+body{
+  background-color: #0C0C0D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle-board-wrapper{
+  display:inline-flex;
+}
+
+.puzzle-actions{
+  height:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #scramble{
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #17AB5A;
+    border: none;
+    border-radius: 3px;
+    &:focus{
+      outline:none;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  #difficulty{
+    padding: 9px 20px;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 3px;
+    color: #fff;
+    &:focus{
+      outline:none;
+    }
+    option{
+      color: #000;
+    }
+  }
+  #finish-puzzle{
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #0070B5;
+    border: none;
+    border-radius: 3px;
+    &:focus{
+      outline:none;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  #show-hint, #hide-hint{
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #FF9933;
+    border: none;
+    border-radius: 3px;
+    &:focus{
+      outline:none;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}
+#countdown-timer{
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  display: none;
+}
+
+
+
+.puzzle-board{
+  background: url("../assets/images/_Puzzle_solved.png") no-repeat;
+  width: 867px;
+  height: 573px;
+  display:inline-flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+
+
+  &__row{
+    display:flex;
+    margin-bottom: -2px;
+  }
+  &__row-dropzone{
+    width:112.5px;
+    height:95px;
+    border: 1px solid transparent;
+
+    margin-right: 53.5px;
+    &:last-child{
+      margin-right: 0!important;
+    }
+  }
+  &__row-offset{
+    display:flex;
+    margin-left: 0px;
+  }
+}
+
+#puzzle-pieces{
+  width: 400px;
+  height: 573px;
+  overflow-y:auto;
+  display:flex;
+  flex-wrap:wrap;
+  border: 2px dashed #eee;
+  box-sizing: border-box;
+}
+
+[id^="puzzle-piece"]{
+  width:110px;
+  height: 95px;
+}
+
+
+
+
+
+

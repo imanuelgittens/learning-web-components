@@ -1,0 +1,173 @@
+/*@import "base/helpers";*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*  helpers */
+.hidden {
+  display: none; }
+
+.negative-margin {
+  margin-top: -47.5px; }
+
+.shake {
+  animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px; }
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0); } }
+body {
+  background-color: #0C0C0D;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.puzzle-board-wrapper {
+  display: inline-flex; }
+
+.puzzle-actions {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .puzzle-actions #scramble {
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #17AB5A;
+    border: none;
+    border-radius: 3px; }
+    .puzzle-actions #scramble:focus {
+      outline: none; }
+    .puzzle-actions #scramble:hover {
+      cursor: pointer; }
+  .puzzle-actions #difficulty {
+    padding: 9px 20px;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 3px;
+    color: #fff; }
+    .puzzle-actions #difficulty:focus {
+      outline: none; }
+    .puzzle-actions #difficulty option {
+      color: #000; }
+  .puzzle-actions #finish-puzzle {
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #0070B5;
+    border: none;
+    border-radius: 3px; }
+    .puzzle-actions #finish-puzzle:focus {
+      outline: none; }
+    .puzzle-actions #finish-puzzle:hover {
+      cursor: pointer; }
+  .puzzle-actions #show-hint, .puzzle-actions #hide-hint {
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #FF9933;
+    border: none;
+    border-radius: 3px; }
+    .puzzle-actions #show-hint:focus, .puzzle-actions #hide-hint:focus {
+      outline: none; }
+    .puzzle-actions #show-hint:hover, .puzzle-actions #hide-hint:hover {
+      cursor: pointer; }
+
+#countdown-timer {
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  display: none; }
+
+.puzzle-board {
+  background: url("../assets/images/_Puzzle_solved.png") no-repeat;
+  width: 867px;
+  height: 573px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .puzzle-board__row {
+    display: flex;
+    margin-bottom: -2px; }
+  .puzzle-board__row-dropzone {
+    width: 112.5px;
+    height: 95px;
+    border: 1px solid transparent;
+    margin-right: 53.5px; }
+    .puzzle-board__row-dropzone:last-child {
+      margin-right: 0 !important; }
+  .puzzle-board__row-offset {
+    display: flex;
+    margin-left: 0px; }
+
+#puzzle-pieces {
+  width: 400px;
+  height: 573px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px dashed #eee;
+  box-sizing: border-box; }
+
+[id^="puzzle-piece"] {
+  width: 110px;
+  height: 95px; }
+
+/*# sourceMappingURL=jigsaw.css.map */
