@@ -136,7 +136,7 @@ body {
   display: none; }
 
 .puzzle-board {
-  background: url("../assets/images/_Puzzle_solved.png") no-repeat;
+  background: url("../assets/images/solved.png") no-repeat;
   width: 867px;
   height: 573px;
   display: inline-flex;

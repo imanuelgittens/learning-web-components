@@ -55,7 +55,7 @@ function scramble(){
     }
 
    /* console.log(timeRemaining);*/
-    puzzleBoard.style.background = 'url("./assets/images/_Puzzle_bg_unsolved.png")';
+    puzzleBoard.style.background = 'url("./assets/images/unsolved.png")';
     puzzlePiecesArea.innerHTML = '';
 
     var imgSourceArray = ['<img id="puzzle-piece-5" src="assets/images/Group5.png" ondragstart="drag(event)" draggable="true">',
@@ -184,14 +184,14 @@ finishButton.addEventListener('click', finishPuzzle);
 
 function showComplete(){
     var puzzleBoard = document.getElementById('puzzle-board');
-    puzzleBoard.style.background = 'url("./assets/images/_Puzzle_solved.png")';
+    puzzleBoard.style.background = 'url("./assets/images/solved.png")';
 }
 
 
 
 function hideComplete(){
     var puzzleBoard = document.getElementById('puzzle-board');
-    puzzleBoard.style.background = 'url("./assets/images/_Puzzle_bg_unsolved.png")';
+    puzzleBoard.style.background = 'url("./assets/images/unsolved.png")';
 }
 
 var showCompleteButton = document.getElementById('show-hint');
