@@ -1,4 +1,4 @@
-
+'use strict';
 /*drag functions*/
     function allowDrop(event){
         event.preventDefault();
