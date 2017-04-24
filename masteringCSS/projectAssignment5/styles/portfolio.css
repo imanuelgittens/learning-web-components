@@ -1515,8 +1515,37 @@ article.accordion input[type="checkbox"]:checked ~ label > div.dropdown-menu-con
 /*End responsive accordion styles*/
 }
 
+.number-fact{
+	text-align:center;
+	margin-bottom: 70px;
+}
 
+.numberFactTitle{
+	font-size:20px;
+	color: #ccc;
+	font-weight: 300;
+	font-family: "Roboto", sans-serif;
+}
 
+.factString{
+	font-size:25px;
+	color: #aaa;
+	font-weight: 400;
+}
+
+.newNumberFact{
+	padding: 20px;
+	border-radius: 3px;
+	background-color:#4786E6;
+	color: #fff;
+	transition: all 0.1s;
+	border: none;
+}
+
+.newNumberFact:hover{
+	cursor: pointer;
+	box-shadow: 1px 1px 10px -3px #000;
+}
 
 
 
