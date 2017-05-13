@@ -1611,5 +1611,15 @@ article.accordion input[type="checkbox"]:checked ~ label > div.dropdown-menu-con
 	background-color: #B55995;
 }
 
+/*cookies message*/
+
+.cookie-message{
+	padding: 10px;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #333;
+	display:inline-block;
+}
+
 
 

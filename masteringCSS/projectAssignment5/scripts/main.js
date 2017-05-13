@@ -86,3 +86,26 @@ window.addEventListener('scroll', function(event){
             removeStickSideMenu();
     }
 });
+
+
+/*Cookies*/
+
+function setVisitedCookie(){
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    document.cookie = 'visited=yes;expires='+ tomorrow.toUTCString();
+}
+
+function checkCookies(){
+    var cookies = document.cookie;
+    var cookieMessage = document.querySelector('.cookie-message');
+    var testCookie = cookies.indexOf('visited=');
+    if(testCookie >= 0){
+        cookieMessage.innerHTML = 'Great to see you again!';
+    }else{
+        setVisitedCookie();
+        cookieMessage.innerHTML = 'First Visit? Welcome!';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkCookies);
