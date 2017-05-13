@@ -190,7 +190,8 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #eee; }
 
-/*Main content styles*/
+/*overall content block styles*/
+/*Main content for each sectio styles*/
 .main-content header {
   padding-top: 70px;
   text-align: center; }

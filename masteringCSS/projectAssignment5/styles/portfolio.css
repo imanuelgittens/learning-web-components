@@ -5,7 +5,7 @@
 }
 
 .container{
-	width:1170px;
+	max-width:1170px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -149,7 +149,21 @@ header section.menu-search a:hover{
 }
 
 
-/*End header styles
+/*End header styles*/
+
+/*Overall  content div styles*/
+.overall-content{
+	display: flex;
+}
+
+.content-body{
+	width: 75%;
+}
+
+.content-sidebar{
+	width: 25%;
+}
+/*end overall content div styles*/
 
 /*Main content styles*/
 
@@ -1547,6 +1561,55 @@ article.accordion input[type="checkbox"]:checked ~ label > div.dropdown-menu-con
 	box-shadow: 1px 1px 10px -3px #000;
 }
 
+
+/*sidebar styles*/
+.sticky{
+	position: fixed;
+	top: 20px;
+}
+.content-sidebar{
+	padding-top: 90px;
+}
+
+@media (max-width:500px){
+	.content-body{
+		width: 100%;
+	}
+	.content-sidebar{
+		display: none;
+	}
+}
+
+.quickLinks{
+	list-style-type: none;
+}
+
+.quickLinks li{
+	margin: 20px 0;
+}
+
+.quickLinks li a{
+	text-decoration: none;
+	padding: 5px 35px;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.quickLinks li a[href="#about"]{
+	background-color: #4685E5;
+}
+
+.quickLinks li a[href="#projects"]{
+	background-color: #6F74C7;
+}
+
+.quickLinks li a[href="#skills"]{
+	background-color: #9067AF;
+}
+
+.quickLinks li a[href="#contact"]{
+	background-color: #B55995;
+}
 
 
 

@@ -1,11 +1,12 @@
 var screenWidth = document.querySelector('.screen-width');
 screenWidth.innerHTML = "Total Screen Width: " + screen.width + "px.";
 
-
-console.log('hello');
+/*smooth scroll */
 var menu = document.querySelector('.menu-main');
+var sideMenu = document.querySelector('.quickLinks');
 var menuLinks = menu.getElementsByTagName('a');
-var i;
+var sideMenuLinks = sideMenu.getElementsByTagName('a');
+var i, j;
 
 /*functions*/
 
@@ -25,9 +26,9 @@ function currentYPosition(){
 function elmYPosition(eID) {
     var elm = document.getElementById(eID);
     /* Get the position of the element on the page from the top */
-    var rect = elm.getBoundingClientRect();
-    var y = rect.top;
+    var y = elm.offsetTop;
     return y;
+
 }
 
 function smoothScroll(eID) {
@@ -55,7 +56,33 @@ function smoothScroll(eID) {
 }
 
 /*Attach event listeners*/
-
+//main menu
 for(i=0; i < menuLinks.length; i++){
     addClickEvent(menuLinks[i]);
 }
+
+//side menu
+for(j=0; j < sideMenuLinks.length; j++){
+    addClickEvent(sideMenuLinks[j]);
+}
+/*End smooth scroll*/
+
+/*sticky side menu*/
+function stickSideMenu(event){
+    sideMenu.classList.add('sticky');
+}
+
+function removeStickSideMenu(event){
+    sideMenu.classList.remove('sticky');
+}
+
+
+
+window.addEventListener('scroll', function(event){
+    var currentPosition = window.scrollY;
+    if(currentPosition > 200) {
+            stickSideMenu();
+    }else{
+            removeStickSideMenu();
+    }
+});
