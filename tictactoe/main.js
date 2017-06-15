@@ -15,9 +15,11 @@
         this.$middleRow = this.$el.find('.game__board-row--middle');
         this.$bottomRow = this.$el.find('.game__board-row--bottom');
         this.$gameBoardPositions = this.$el.find('.board-square');
+        this.$restart = this.$el.find('.game__restart');
       },
       bindEvents: function () {
         this.$gameBoard.on('click', '.board-square',  this.handleBoardClick.bind(this));
+        this.$restart.on('click', this.restart.bind(this));
       },
       handleBoardClick: function(event){
         var $targetElement = $(event.target);
@@ -130,29 +132,22 @@
             }
           }
         }
-        // console.log(this.boardTopRow);
-        // console.log(this.boardMiddleRow);
-        // console.log(this.boardBottomRow);
         return gameover;
       },
       aiMove: function(){
         var moveRowNum = this.aiMoveRow();
         var moveRowIndex;
-        // console.log(moveRowNum);
         if(moveRowNum === 0){
           moveRowIndex = this.aiMoveIndex(this.boardTopRow);
-          console.log(moveRowIndex);
           this.boardTopRow[moveRowIndex] = 0; //make move
           this.$topRow[0].children[moveRowIndex].innerHTML = '<img src="img/O.png">';
         }else{
           if(moveRowNum === 1){
             moveRowIndex = this.aiMoveIndex(this.boardMiddleRow);
-            // console.log(moveRowIndex);
             this.boardMiddleRow[moveRowIndex] = 0; //make move
             this.$middleRow[0].children[moveRowIndex].innerHTML = '<img src="img/O.png">';
           }else{
             moveRowIndex = this.aiMoveIndex(this.boardBottomRow);
-            // console.log(moveRowIndex);
             this.boardBottomRow[moveRowIndex] = 0; //make move
             this.$bottomRow[0].children[moveRowIndex].innerHTML = '<img src="img/O.png">';
           }
@@ -215,6 +210,14 @@
           index = Math.floor(Math.random() * 3);
         }
         return index;
+      },
+      restart: function(){
+        $.each(this.$gameBoardPositions, function(index, value){
+          value.innerHTML = '';
+          this.boardTopRow = [];
+          this.boardMiddleRow = [];
+          this.boardBottomRow = [];
+        });
       }
     }
 
