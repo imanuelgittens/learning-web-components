@@ -5,8 +5,8 @@
 
     isEmailAddress: function (input) {
 
-      if (!input) {
-        throw "Missing Parameter in isEmailAddress function: 'input'.";
+      if(input.length === 0){
+        throw 'Missing parameter "input".';
       }
 
       if (input.indexOf("@") < 1) {
@@ -37,11 +37,25 @@
 
       //Phone number for Trinidad and Tobago is of the form 1 868 XXX XXXX
 
-      if (!input) {
-        throw "Missing Parameter in isPhoneNumber function: 'input'.";
+      if (input.length === 0) {
+        throw 'Missing Parameter in isPhoneNumber function: "input".';
       }
 
-      var phoneParts = input.split(" ");
+      if(input.length < 11){
+        throw 'Too short to be a valid phone number.'
+      }
+      var phoneParts = [];
+      if(input.indexOf(' ') > 0){
+        phoneParts = input.split(' ');
+      }else if(input.indexOf('-') > 0){
+        phoneParts = input.split('-');
+      }else{
+        phoneParts[0] = input.slice(0,1);
+        phoneParts[1] = input.slice(1,4);
+        phoneParts[2] = input.slice(4,7);
+        phoneParts[3] = input.slice(7);
+      }
+
       var countryCode = phoneParts[0];
       var areaCode = phoneParts[1];
       var firstPartPhone = phoneParts[2];
@@ -71,8 +85,8 @@
     },
 
     withoutSymbols: function (input) {
-      if (!input) {
-        throw "Missing Parameter in withoutSymbols function: 'input'.";
+      if (input.length === 0) {
+        throw 'Missing Parameter in withoutSymbols function: "input".';
       }
 
       //if the uppercase version of a character is equal to the lowercase version then it is a symbol not a letter.
@@ -96,31 +110,33 @@
 
       }
 
-      return result;
+      if(result === input){
+        return true;
+      }else{
+        return false;
+      }
     },
 
     isDate: function (input) {
 
       if (!input) {
-        throw "Missing Parameter in isDate function: 'input'.";
+        throw 'Missing Parameter in isDate function: "input".';
       }
-
-      if (Date.parse(input)) {
+      if(Date.parse(input)) {
         return true;
+      }else {
+        return false;
       }
-
-      return false;
-
     },
 
     isBeforeDate: function (input, reference) {
 
-      if (!input) {
-        throw "Missing Parameter in isBeforeDate function: 'input'.";
+      if (input.length === 0) {
+        throw 'Missing Parameter in isBeforeDate function: "input".';
       }
 
-      if (!reference) {
-        throw "Missing Parameter in isDate function: 'reference'.";
+      if (reference.length === 0) {
+        throw 'Missing Parameter in isDate function: "reference".';
       }
 
       var date1 = Date.parse(input);
@@ -143,20 +159,20 @@
     isAfterDate: function (input, reference) {
 
       if (!input) {
-        throw "Missing Parameter in isBeforeDate function: 'input'.";
+        throw 'Missing Parameter in isAfterDate function: "input".';
       }
 
       if (!reference) {
-        throw "Missing Parameter in isDate function: 'reference'.";
+        throw 'Missing Parameter in isAfterDate function: "reference".';
       }
 
       var date1 = Date.parse(input);
       var date2 = Date.parse(reference);
       if (!date1) {
-        throw "Invalid date format - " + input;
+        throw 'Invalid date format - ' + input;
       } else {
         if (!date2) {
-          throw "Invalid date format - " + reference;
+          throw 'Invalid date format - ' + reference;
         } else {
           if (date1 > date2) {
             return true;
@@ -169,13 +185,13 @@
 
     isBeforeToday: function (input) {
 
-      if (!input) {
-        throw "Missing Parameter in isBeforeDate function: 'input'.";
+      if (input.length === 0) {
+        throw 'Missing Parameter in isBeforeDate function: "input".';
       }
 
       var date = Date.parse(input);
       if (!date) {
-        throw "Invalid date format - " + input;
+        throw 'Invalid date format - ' + input;
       } else {
         if (date < Date.now()) {
           return true;
@@ -188,7 +204,7 @@
     isAfterToday: function (input) {
 
       if (!input) {
-        throw "Missing Parameter in isAfterDate function: 'input'.";
+        throw 'Missing Parameter in isAfterDate function: "input".';
       }
 
       var date = Date.parse(input);
@@ -204,15 +220,10 @@
     },
 
     isEmpty: function (input) {
-
-      if (!input) {
-        throw "Missing Parameter in isEmpty function: 'input'.";
-      }
-
       var i;
 
       if (input === null || input === undefined) {
-        return false;
+        throw 'Missing Parameter in isEmpty function: "input".';
       }
 
       if (input.length === 0) {
@@ -230,13 +241,16 @@
     },
 
     contains: function (inputString, wordsArray) {
-      if (!inputString) {
-        throw "Missing Parameter in contains function: 'inputString'.";
+      if(inputString === undefined && wordsArray === undefined){
+        throw 'No parameters entered.'
       }
-      if (!inputString) {
-        throw "Missing Parameter in contains function: 'wordsArray'.";
+      if (inputString === undefined || inputString === null || inputString.length === 0) {
+        throw 'Missing Parameter in contains function: "inputString".';
       }
-      var i, j, k;
+      if (wordsArray === undefined) {
+        throw 'Missing Parameter in contains function: "wordsArray".';
+      }
+      var i, k;
       var result = true;
 
       for (i = 0; i < inputString.length; i++) {//remove symbols
@@ -258,11 +272,14 @@
     },
 
     lacks: function (inputString, wordsArray) {
-      if (!inputString) {
-        throw "Missing Parameter in lacks function: 'inputString'.";
+      if(inputString === undefined && wordsArray === undefined){
+        throw 'No parameters entered.'
       }
-      if (!inputString) {
-        throw "Missing Parameter in lacks function: 'wordsArray'.";
+      if (inputString === undefined || inputString === null || inputString.length === 0) {
+        throw 'Missing Parameter in lacks function: "inputString".';
+      }
+      if (wordsArray === undefined) {
+        throw 'Missing Parameter in lacks function: "wordsArray".';
       }
       var i, j, k;
       var result = false;
@@ -286,25 +303,36 @@
     },
 
     isComposedof: function (input, arr) {
-      if (!inputString) {
-        throw "Missing Parameter in isComposedof function: 'input'.";
+      if(input === undefined && arr === undefined){
+        throw 'No parameters entered.'
       }
-      if (!arr) {
-        throw "Missing Parameter in isComposedof function: 'arr'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in lacks function: "input".';
       }
-      var i, j;
-      result = true;
+      if (arr === undefined) {
+        throw 'Missing Parameter in lacks function: "arr".';
+      }
+      var i;
+      var result = true;
+      input = input.toLowerCase();
+      var wordUsed = [];
+      var testString = '';
       for (i = 0; i < arr.length; i++) {
-        if (input.indexOf(arr[i]) !== -1) {
-          input = input.split(arr[i]).join("");
-
+        var wordIndex = input.indexOf(arr[i]);
+        if (wordIndex === -1) {
+          result = false
+        }else{
+          wordUsed.push(arr[i]);
         }
       }
+      if(input.indexOf(' ') === -1){
+        testString = wordUsed.join('');
+      }else{
+        testString = wordUsed.join(' ');
+      }
 
-      for (j = 0; j < input.length; j++) {
-        if (input.charAt(j).toLowerCase() !== input.charAt(j).toUpperCase()) {
-          result = false;
-        }
+      if(testString !== input){
+        result = false;
       }
 
       return result;
@@ -313,8 +341,14 @@
 
     isLength: function (input, n) {
 
-      if (!input) {
-        throw "Missing Parameter in isLength function: 'input'.";
+      if(input === undefined && n === undefined){
+        throw 'No parameters entered.'
+      }
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isLength function: "input".';
+      }
+      if (n === undefined) {
+        throw 'Missing Parameter in isLength function: "n".';
       }
 
       return input.length <= n;
