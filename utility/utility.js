@@ -356,54 +356,66 @@
 
     isOfLength: function (input, n) {
 
-      if (!input) {
-        throw "Missing Parameter in isOfLength function: 'input'.";
+      if(input === undefined && n === undefined){
+        throw 'No parameters entered.'
+      }
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isLength function: "input".';
+      }
+      if (n === undefined) {
+        throw 'Missing Parameter in isLength function: "n".';
       }
 
       return input.length >= n;
     },
 
     countWords: function (inputString) {
-      if (!inputString) {
-        throw "Missing Parameter in countWords function: 'inputString'.";
+      if (inputString === undefined || inputString === null || inputString.length === 0) {
+        throw 'Missing Parameter in countWords function: "inputString".';
       }
-      var i;
-      for (i = 0; i < inputString.length; i++) {//remove symbols
-
-        if (inputString.charAt(i).toLowerCase() === inputString.charAt(i).toUpperCase()) {
-          inputString = inputString.split(inputString.charAt(i)).join(" ").trim();
-        }
-      }
-
-      var words = inputString.toLowerCase().split(' ');
-      return words.length;
+      var wordsArray = inputString.split(' ');
+      return wordsArray.length;
     },
 
     lessWordsThan: function (input, n) {
-      if (!input) {
-        throw "Missing Parameter in lessWordsThan function: 'input'.";
+      if(input === undefined && n === undefined){
+        throw 'No parameters entered.'
+      }
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in lessWordsThan function: "input".';
+      }
+      if (n === undefined) {
+        throw 'Missing Parameter in lessWordsThan function: "n".';
       }
 
-      if (!n) {
-        throw "Missing Parameter in lessWordsThan function: 'n'.";
-      }
       return this.countWords(input) <= n;
     },
 
     moreWordsThan: function (input, n) {
-      if (!input) {
-        throw "Missing Parameter in moreWordsThan function: 'input'.";
+      if(input === undefined && n === undefined){
+        throw 'No parameters entered.'
       }
-
-      if (!n) {
-        throw "Missing Parameter in moreWordsThan function: 'n'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in moreWordsThan function: "input".';
+      }
+      if (n === undefined) {
+        throw 'Missing Parameter in moreWordsThan function: "n".';
       }
       return this.countWords(input) >= n;
     },
 
     isBetween: function (input, floor, ceil) {
-      if (!input) {
-        throw "Missing Parameter in isBetween function: 'input'.";
+      if(input === undefined && floor === undefined && ceil === undefined){
+        throw 'No parameters entered.'
+      }
+      if (input === undefined || input === null) {
+        throw 'Missing Parameter in isBetween function: "input".';
+      }
+      if (floor === undefined || floor === null) {
+        throw 'Missing Parameter in isBetween function: "floor".';
+      }
+      if (ceil === undefined || ceil === null) {
+        throw 'Missing Parameter in isBetween function: "ceil".';
       }
 
       return (input >= floor && input <= ceil);
@@ -411,31 +423,27 @@
 
     isAlphanumeric: function (input) {
 
-      if (input.length === 0) {
-        return true;
-      }
-
-      if (!input) {
-        throw "Missing Parameter in isAlphanumeric function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isAlphanumeric function: "input".';
       }
 
       var result = true;
       var i, char;
+      var re = /[A-Za-z0-9\s]/
 
       for (i = 0; i < input.length; i++) {
         char = input.charAt(i);
-        if ((char.toLowerCase() === char.toUpperCase())) {
+        if(re.test(char) === false){
           result = false;
         }
       }
-
       return result;
     },
 
     isCreditCard: function (input) {
 
-      if (!input) {
-        throw "Missing Parameter in isCreditCard function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isCreditCard function: "input".';
       }
 
       var noHyphens, i;
@@ -450,7 +458,6 @@
           for (i = 0; i < noHyphens.length; i++) {
             var char = noHyphens.charAt(i);
             if ((parseInt(char).toString() !== char) && (char.toLowerCase() === char.toUpperCase())) { //check if char is not a number or if char is a symbol
-              console.log(char);
               result = false;
             }
           }
@@ -462,7 +469,6 @@
           for (i = 0; i < input.length; i++) {
             char = input.charAt(i);
             if ((parseInt(char).toString() !== char) && (char.toLowerCase() === char.toUpperCase())) { //check if char is not a number or if char is a symbol
-              console.log(char);
               result = false;
             }
           }
@@ -474,8 +480,8 @@
     },
 
     isHex: function isHex (input) {
-      if (!input) {
-        throw "Missing Parameter in isCreditCard function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isHex function: "input".';
       }
 
       var i, char;
@@ -505,8 +511,8 @@
 
     isRGB: function (input) {
 
-      if (!input) {
-        throw "Missing Parameter in isRGB function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isRGB function: "input".';
       }
 
       var firstPart = input.slice(0, 4); //test for 'rgb(' at the start
@@ -531,107 +537,24 @@
 
     },
 
-    isHSL: function (input) {
-
-      if (!input) {
-        throw "Missing Parameter in isHSL function: 'input'.";
-      }
-
-      var firstPart = input.slice(0, 4); //test for 'rgb(' at the start
-      var lastPart = input.charAt(input.length - 1); //test for ')' at the end
-      var colorCode = input.slice(4, input.length - 1); //get content that is inside the brackets
-      var codeValues = colorCode.split(","); //break string apart by colors
-      var i, colorNum;
-      var result = true;
-
-      if (firstPart === "hsl(" && lastPart === ")") {
-
-        for (i = 0; i < codeValues.length; i++) { // try to convert all code values from a string to a number
-          codeValues[i] = Number(codeValues[i].trim());
-        }
-
-        if (!isNaN(codeValues[0])) {//ensure that value is a number
-          if (codeValues[0] < 0 || codeValues[0] > 360) {
-            result = false;
-          }
-        } else {
-          result = false
-        }
-
-        if (!isNaN(codeValues[1])) {//ensure that value is a number
-          if (codeValues[1] < 0 || codeValues[1] > 1) {
-            result = false;
-          }
-        } else {
-          result = false;
-        }
-
-        if (!isNaN(codeValues[2])) {//ensure that value is a number
-          if (codeValues[2] < 0 || codeValues[2] > 1) {
-            result = false;
-          }
-        } else {
-          result = false;
-        }
-      } else {
-        result = false;
-      }
-
-      return result;
-
-    },
-
-    isColor: function (input) {
-
-      if (!input) {
-        throw "Missing Parameter in isColor function: 'input'.";
-      }
-
-      if (this.isHex(input) && this.RGB(input) && this.isHSL(input)) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-
     isTrimmed: function (input) {
 
-      if (!input) {
-        throw "Missing Parameter in isTrimmed function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in isTrimmed function: "input".';
       }
 
       var newString = input.split(" ");
-      if (newString.indexOf('') !== -1) {
+      if(newString.indexOf('') !== -1) {
         return false;
       } else {
         return true;
       }
-    },
-
-    by: function(list, index, callback){
-
-      if(!list){
-        throw "Missing Parameter in by function: 'list'.";
-      }
-
-      if(!index){
-        throw "Missing Parameter in by function: 'index'.";
-      }
-
-      if(!callback){
-        throw "Missing Parameter in by function: 'callback'.";
-      }
-
-      for(var i = index-1; i <= list.length; i+=index){
-        callback(list[i]);
-      }
-
     },
 
     keys: function(input){
 
-      if(!input){
-        throw "Missing Parameter in keys function: 'input'.";
+      if (input === undefined || input === null || Object.keys(input).length === 0) {
+        throw 'Missing Parameter in keys function: "input".';
       }
 
       if(input instanceof Object){
@@ -644,8 +567,8 @@
 
     values: function(input){
 
-      if(!input){
-        throw "Missing Parameter in values function: 'input'.";
+      if (input === undefined || input === null || Object.keys(input).length === 0) {
+        throw 'Missing Parameter in values function: "input".';
       }
 
       if(input instanceof Object){
@@ -658,8 +581,8 @@
 
     pairs: function(input){
 
-      if(!input){
-        throw "Missing Parameter in pairs function: 'input'.";
+      if (input === undefined || input === null || Object.keys(input).length === 0) {
+        throw 'Missing Parameter in pairs function: "input".';
       }
 
       var result = [];
@@ -671,7 +594,7 @@
           result.push(input[item]);
         }
       }else{
-
+        throw "Please provide an object to this function.";
       }
 
       return result;
@@ -680,15 +603,14 @@
 
     shuffle: function(input){
 
-      if(!input){
-        throw "Missing Parameter in pairs function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in pairs function: "input". or array is empty.';
       }
 
       var index, temp;
 
       if(input instanceof Array){
-        var counter = input.length;
-        counter--;
+        var counter = input.length - 1;
         while(counter > 0){
           index = Math.floor(Math.random() * counter);
           temp = input[counter];
@@ -703,31 +625,9 @@
       return input;
     },
 
-    pluralize: function(n, word, pluralWord){
-
-      if(pluralWord){
-        if(n === 1){
-          return word;
-        }else{
-          if(n == 2){
-            return pluralWord;
-          }
-        }
-      }else{
-        if(n === 1){
-          return word;
-        }else{
-          if(n != 1){
-            return word+"s";
-          }
-        }
-      }
-
-    },
-
     toDash: function(input){
-      if(!input){
-        throw "Missing Parameter in pairs toDash function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in toDash function: "input".';
       }
 
       var i;
@@ -740,8 +640,6 @@
             result += input.charAt(i).toLowerCase();
           }
         }
-      }else{
-        throw "Please provide a non-empty string.";
       }
 
       return result;
@@ -750,8 +648,8 @@
     },
 
     toCamel: function(input){
-      if(!input){
-        throw "Missing Parameter in pairs toCamel function: 'input'.";
+      if (input === undefined || input === null || input.length === 0) {
+        throw 'Missing Parameter in toCamel function: "input".';
       }
 
       var i;
@@ -765,8 +663,6 @@
             result += input.charAt(i).toLowerCase();
           }
         }
-      }else{
-        throw "Please provide a non-empty string.";
       }
 
       return result;
@@ -775,13 +671,16 @@
     },
 
     has: function(obj, search){
-      if(!obj){
-        throw "Missing Parameter in has function: 'obj'.";
+      if(obj === undefined && search === undefined){
+        throw 'No parameters entered.'
+      }
+      if (obj === undefined || obj === null || Object.keys(obj).length === 0) {
+        throw 'Missing Parameter in has function: "obj".';
+      }
+      if (search === undefined || search.length === 0) {
+        throw 'Missing Parameter in has function: "search".';
       }
 
-      if(!search){
-        throw "Missing Parameter in has function: 'search'.";
-      }
 
       var key;
       var result = false;
@@ -797,15 +696,18 @@
     },
 
     pick: function(obj, keysArr){
-      if(!obj){
-        throw "Missing Parameter in pick function: 'obj'.";
+      if(obj === undefined && keysArr === undefined){
+        throw 'No parameters entered.'
+      }
+      if (obj === undefined || obj === null || Object.keys(obj).length === 0) {
+        throw 'Missing Parameter in pick function: "obj".';
+      }
+      if (keysArr === undefined || keysArr.length === 0) {
+        throw 'Missing Parameter in pick function: "keysArr".';
       }
 
-      if(!search){
-        throw "Missing Parameter in pick function: 'keysArr'.";
-      }
 
-      var key, i;
+      var i;
       var result = {};
 
       for(i = 0; i < keysArr.length; i++){
