@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Plain Movie DB JavaScript App</title>
+        <script src="src/c/initialize.js"></script>
+        <script src="src/m/Movie.js"></script>
+        <script src="src/v/createMovie.js"></script>
+        <script>
+            window.addEventListener('load', mv.v.createMovie.setupUserInterface);
+        </script>
+    </head>
+    <body>
+        <h1>Movie Database: Create a new movie record.</h1>
+        <form id="addMovie">
+            <label for="movieNo">Movie Number</label>
+            <input type="text" id="movieNo" name="movieNumber" required/><br/>
+            <label for="movieTitle">Movie Title</label>
+            <input type="text" id="movieTitle" name="movieTitle" required/><br/>
+            <label for="movieLength">Movie Length</label>
+            <input type="text" id="movieLength" name="movieLength" required/><br/>
+            <label for="movieDateReleased">Date Released</label>
+            <input type="text" id="movieDateReleased" name="movieDateReleased" required/><br/>
+            <button type="button" name="commit">Save</button>
+        </form>
+    <nav>
+        <a href="index.html">Back to Home</a>
+    </nav>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Plain Movie DB JavaScript App</title>
+        <script src="src/c/initialize.js"></script>
+        <script src="src/m/Movie.js"></script>
+    </head>
+    <body>
+        <h1>Movie Database</h1>
+        <h3>A Minimal Plain JavaScript App</h3>
+        <p>This is the first project of the Architecting Frontend Application Course. </p>
+        <p>This app supports the following operations:</p>
+        <ul>
+            <li><a href="createMovie.html"><button>Create</button></a> a new movie record.</li>
+            <li><a href="updateMovie.html"><button>Update</button></a> an existing movie record.</li>
+            <li><a href="deleteMovie.html"><button>Delete</button></a> an existing  movie record.</li>
+            <li><a href="retrieveAndListAllMovies.html"><button>Retrieve</button></a> and list all movie records.</li>
+        </ul>
+        <hr/>
+        <ul>
+            <li><button onclick="mv.m.Movie.createTestData()">Generate</button> test data.</li>
+            <li><button onclick="mv.m.Movie.clearData()">Clear</button> database.</li>
+        </ul>
+        <p>For playing with the app, you may first want to <button>Generate Test Data</button> and view it with <button>Retrieve and List All Movie Records</button>. For viewing status messages and errors, turn on the JavaScript console.</p>
+    </body>
+</html>

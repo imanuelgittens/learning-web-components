@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Plain Movie DB JavaScript App</title>
+    <script src="src/c/initialize.js"></script>
+    <script src="src/m/Movie.js"></script>
+    <script src="src/v/retrieveAndListAllMovies.js"></script>
+    <script>
+      window.addEventListener('load', mv.v.retrieveAndListAllMovies.setupUserInterface);
+    </script>
+</head>
+<body>
+    <h1>Movie Database: Retrieve and List All Movie Records</h1>
+    <table id="allMovies">
+        <thead>
+            <tr>
+                <th>Movie Number</th>
+                <th>Movie Title</th>
+                <th>Movie Length</th>
+                <th>Date Released</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+<nav>
+    <a href="index.html">Back to Home</a>
+</nav>
+</body>
+</html>
