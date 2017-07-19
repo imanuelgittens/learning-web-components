@@ -512,21 +512,21 @@ mv.m.Movie.destroy = function(movieNo){
 mv.m.Movie.createTestData = function(){
   try{
     mv.m.Movie.instances["1"] = new mv.m.Movie({
-      movieNo: 1,
-      title:'Sinbad',
-      movieLength:'1h 15min',
-      dateReleased: 'Jul 7th 1999',
-      rating: mv.m.MovieRatingEL.PG,
-      genres: [mv.m.GenreEl.ANIMATION, mv.m.GenreEl.FAMILY]
+      _movieNo: 1,
+      _title:'Sinbad',
+      _movieLength:'1h 15min',
+      _dateReleased: 'Jul 7th 1999',
+      _rating: mv.m.MovieRatingEL.PG,
+      _genres: [mv.m.GenreEl.ANIMATION, mv.m.GenreEl.FAMILY]
     });
 
     mv.m.Movie.instances["2"] = new mv.m.Movie({
-      movieNo: 2,
-      title:'Bambi',
-      movieLength:'1h 30min',
-      dateReleased: 'Jul 19th 1995',
-      rating: mv.m.MovieRatingEL.PG,
-      genres: [mv.m.GenreEl.ANIMATION, mv.m.GenreEl.FAMILY]
+      _movieNo: 2,
+      _title:'Bambi',
+      _movieLength:'1h 30min',
+      _dateReleased: 'Jul 19th 1995',
+      _rating: mv.m.MovieRatingEL.PG,
+      _genres: [mv.m.GenreEl.ANIMATION, mv.m.GenreEl.FAMILY]
     });
 
     mv.m.Movie.saveAll();
