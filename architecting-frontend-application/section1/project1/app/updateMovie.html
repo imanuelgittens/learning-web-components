@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Plain Movie DB JavaScript App</title>
+    <script src="lib/browserShims.js"></script>
     <script src="lib/util.js"></script>
     <script src="lib/errorTypes.js"></script>
+    <script src="lib/eNUMERATIONS.js"></script>
     <script src="src/c/initialize.js"></script>
     <script src="src/m/Movie.js"></script>
     <script src="src/v/updateMovie.js"></script>
@@ -16,10 +18,10 @@
 </head>
 <body>
 <h1>Movie Database: Update Movie Record</h1>
-<form id="updateMovie">
+<!--<form id="updateMovie">
     <label for="movieSelect">Select Movie To Update</label>
     <select name="movieSelect" id="movieSelect">
-        <option value="">---</option>
+        <option value="">-&#45;&#45;</option>
     </select><br/>
     <label for="movieNo">Movie Number</label>
     <input type="text" id="movieNo" name="movieNumber" readonly/><br/>
@@ -30,6 +32,33 @@
     <label for="movieDateReleased">Date Released</label>
     <input type="text" id="movieDateReleased" name="movieDateReleased"/><br/>
     <button type="submit" name="commit">Update</button>
+</form>-->
+<form id="updateMovie">
+    <div>
+        <label for="movieSelect">Select Movie To Update</label>
+        <select name="movieSelect" id="movieSelect">
+            <option value="">-&#45;&#45;</option>
+        </select>
+    </div>
+    <div><label>Movie Number:
+        <input name="movieNo" id="movieNo" type="text" size="10" />
+    </label></div>
+    <div><label>Movie Title:
+        <input name="movieTitle" id="movieTitle" type="text" size="20" />
+    </label></div>
+    <div><label>Movie Rating:
+        <select name="movieRating" id="movieRating"></select>
+    </label></div>
+    <div><label>Movie Genres:
+        <select name="movieGenres" id="movieGenres" multiple="multiple" rows="4"></select>
+    </label></div>
+    <div><label>Movie Length:
+        <input type="text" id="movieLength" name="movieLength" size="10"/>
+    </label></div>
+    <div><label>Date Released:
+        <input type="text" id="movieDateReleased" name="movieDateReleased" size="10"/>
+    </label></div>
+    <div><button type="submit" name="commit">Update</button></div>
 </form>
 <nav>
     <a href="index.html">Back to Home</a>
