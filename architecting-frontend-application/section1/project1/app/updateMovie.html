@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <title>Plain Movie DB JavaScript App</title>
+    <script src="lib/util.js"></script>
+    <script src="lib/errorTypes.js"></script>
     <script src="src/c/initialize.js"></script>
     <script src="src/m/Movie.js"></script>
     <script src="src/v/updateMovie.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
     <script>
       window.addEventListener('load', mv.v.updateMovie.setupUserInterface);
     </script>
@@ -18,14 +22,14 @@
         <option value="">---</option>
     </select><br/>
     <label for="movieNo">Movie Number</label>
-    <input type="text" id="movieNo" name="movieNumber" required readonly/><br/>
+    <input type="text" id="movieNo" name="movieNumber" readonly/><br/>
     <label for="movieTitle">Movie Title</label>
-    <input type="text" id="movieTitle" name="movieTitle" required/><br/>
+    <input type="text" id="movieTitle" name="movieTitle"/><br/>
     <label for="movieLength">Movie Length</label>
-    <input type="text" id="movieLength" name="movieLength" required/><br/>
+    <input type="text" id="movieLength" name="movieLength"/><br/>
     <label for="movieDateReleased">Date Released</label>
-    <input type="text" id="movieDateReleased" name="movieDateReleased" required/><br/>
-    <button type="button" name="commit">Update</button>
+    <input type="text" id="movieDateReleased" name="movieDateReleased"/><br/>
+    <button type="submit" name="commit">Update</button>
 </form>
 <nav>
     <a href="index.html">Back to Home</a>
