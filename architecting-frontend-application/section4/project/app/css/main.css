@@ -1,0 +1,48 @@
+/*Home page styles*/
+.home-actions{
+    margin-top: 70px;
+}
+
+.home-actions__action{
+    width: 100%;
+    padding: 50px 0;
+}
+
+/*learning unit page styles*/
+#listLearnUnits{
+    width: 100%;
+}
+
+/*miscellaneous styles*/
+
+.columns{
+    margin-bottom: 0!important;
+}
+
+.manageEntity{
+    margin-top: 70px;
+}
+
+.createData{
+    background-color: #3273DC;
+    color: #fff;
+    width: 100%;
+}
+
+.createData:hover{
+    background-color: #1C51A5!important;
+    color: #fff;
+    cursor: pointer;
+}
+
+.clearData{
+    background-color: #FF2B56;
+    color: #fff;
+    width: 100%;
+}
+
+.clearData:hover{
+    background-color: #DE002D!important;
+    color: #fff;
+    cursor: pointer;
+}

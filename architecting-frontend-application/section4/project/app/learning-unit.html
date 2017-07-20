@@ -1,0 +1,168 @@
+<html>
+<head>
+    <title>Vocabulary Training App</title>
+    <script src="lib/browserShims.js"></script>
+    <script src="lib/utils.js"></script>
+    <script src="lib/errorTypes.js"></script>
+    <script src="src/c/app.js"></script>
+    <script src="src/m/LearningUnit.js"></script>
+    <script src="src/v/learning-unit.js"></script>
+    <script src="src/c/learning-units.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<section class="hero is-primary">
+    <div class="container">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Vocabulary Training App - Manage Learning Units
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="manageEntity">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters main-content">
+
+
+                        <div class="tabs is-centered" data-bulma="tabs">
+                            <ul>
+                                <li class="is-active"><a data-tab="#listLearnUnits">List Learning Units</a></li>
+                                <li><a data-tab="#createLearnUnit">Create Learning Unit</a></li>
+                                <li><a data-tab="#updateLearnUnit">Update Learning Unit</a></li>
+                                <li><a data-tab="#deleteLearnUnit">Delete Learning Unit</a></li>
+                            </ul>
+                        </div>
+
+
+                        <section class="section" id="listLearnUnits">
+                            <h3 class="title">
+                                All Learning Units
+                            </h3>
+                            <table id="allLearningUnits" class="table is-bordered is-striped all-learning-units">
+                                <thead>
+                                    <tr>
+                                        <th>Learning Unit Id</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--Learning Unit Listing-->
+                                </tbody>
+                            </table>
+                        </section>
+                        <section class="section" id="createLearnUnit">
+                            <h3 class="title">
+                                Create Learning Unit
+                            </h3>
+                            <form id="addLearnUnit">
+                                <div class="field">
+                                    <label for="learnUnitID" class="label">Learn Unit ID</label>
+                                    <div class="control">
+                                        <input id="learnUnitID" name="learnUnitID" class="input" type="text" placeholder="ID">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="learnUnitTitle" class="label">Learn Unit Title</label>
+                                    <div class="control">
+                                        <input id="learnUnitTitle" name="learnUnitTitle" class="input" type="text" placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="learnUnitDesc" class="label">Learn Unit Description</label>
+                                    <div class="control">
+                                        <input id="learnUnitDesc" name="learnUnitDesc" class="input" type="text" placeholder="Description">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-primary" name="commit" type="submit">Submit</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </section>
+                        <section class="section" id="updateLearnUnit">
+                            <h3 class="title">
+                                Update Learning Unit
+                            </h3>
+                            <form id="updateLearnUnitForm">
+                                <div class="field">
+                                    <label for="selectLearnUnit" class="label">Select A Learning Unit</label>
+                                    <div class="select">
+                                        <select id="selectLearnUnit" name="selectLearnUnit"></select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="updateUnitID" class="label">Learn Unit ID</label>
+                                    <div class="control">
+                                        <input id="updateUnitID" name="updateUnitID" class="input" type="text" placeholder="ID" disabled>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="updateUnitTitle" class="label">Learn Unit Title</label>
+                                    <div class="control">
+                                        <input id="updateUnitTitle" name="updateUnitTitle" class="input" type="text" placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="updateUnitDesc" class="label">Learn Unit Description</label>
+                                    <div class="control">
+                                        <input id="updateUnitDesc" name="updateUnitDesc" class="input" type="text" placeholder="Description">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-primary" name="commit" type="submit">Submit</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </section>
+                        <section class="section" id="deleteLearnUnit">
+                            <h3 class="title">
+                                Delete Learning Unit
+                            </h3>
+                            <form id="deleteLearnUnitForm">
+                                <div class="field">
+                                    <label for="selectLearnUnitToDelete" class="label">Select A Learning Unit To Delete</label>
+                                    <div class="select">
+                                        <select id="selectLearnUnitToDelete" name="selectLearnUnitToDelete"></select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-primary" name="commit" type="submit">Delete</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+
+            <div class="column is-one-quarter sidebar">
+                <nav class="panel">
+                    <p class="panel-heading">Quick Navigation</p>
+                    <a class="panel-block" href="index.html">Home</a>
+                    <a class="panel-block is-active" href="learning-unit.html">Manage Learning Units</a>
+                    <a class="panel-block" href="course.html">Manage Courses</a>
+                    <a class="panel-block" href="translation-problem.html">Manage Translation Problems</a>
+                    <a class="panel-block" href="rendering-unit.html">Manage Rendering Forms</a>
+                    <button class="panel-block createData" onclick="vt.c.app.generateTestData()">Generate Test Data</button>
+                    <button class="panel-block clearData" onclick="vt.c.app.clearData()">Clear Database Data</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="lib/bulma.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", vt.c.LearningUnits.manage.initialize);
+  window.addEventListener("beforeunload", vt.v.LearningUnits.manage.exit);
+</script>
+</body>
+</html>
