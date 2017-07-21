@@ -3,9 +3,13 @@
     <title>Vocabulary Training App</title>
     <script src="lib/browserShims.js"></script>
     <script src="lib/utils.js"></script>
-    <script src="lib/browserShims.js"></script>
+    <script src="lib/errorTypes.js"></script>
     <script src="src/c/app.js"></script>
     <script src="src/m/LearningUnit.js"></script>
+    <script src="src/m/Course.js"></script>
+    <script src="src/m/TranslationProblem.js"></script>
+    <script src="src/v/course.js"></script>
+    <script src="src/c/courses.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css" />
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -15,14 +19,139 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Vocabulary Training App - Chapter 4 Project.
+                    Vocabulary Training App - Manage Translation Problems
                 </h1>
-                <h2 class="subtitle">
-                    This is the project for the chapter 4 of the Bov Academy - Architecting Front End Web Applications Course.
-                </h2>
             </div>
         </div>
     </div>
 </section>
+<section class="manageEntity">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters main-content">
+
+
+                <div class="tabs is-centered" data-bulma="tabs">
+                    <ul>
+                        <li class="is-active"><a data-tab="#listTranslationProblems">List Problems</a></li>
+                        <li><a data-tab="#createTranslationProblem">Create Problem</a></li>
+                        <li><a data-tab="#updateTranslationProblem">Update Problem</a></li>
+                        <li><a data-tab="#deleteTranslationProblem">Delete Problem</a></li>
+                    </ul>
+                </div>
+
+
+                <section class="section" id="listTranslationProblems">
+                    <h3 class="title">
+                        All Translation Problems
+                    </h3>
+                    <table id="allTranslationProblems" class="table is-bordered is-striped all-translation-problems">
+                        <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Target</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--Translation Problem Listing-->
+                        </tbody>
+                    </table>
+                </section>
+                <section class="section" id="createTranslationProblem">
+                    <h3 class="title">
+                        Create Translation Problem
+                    </h3>
+                    <form id="addTranslationProblem">
+                        <div class="field">
+                            <label for="source" class="label">Source</label>
+                            <div class="control">
+                                <input id="source" name="source" class="input" type="text" placeholder="Source">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="targets" class="label">Targets</label>
+                            <div class="control">
+                                <input id="targets" name="targets" class="input" type="text" placeholder="Targets">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" name="commit" type="submit">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+                <section class="section" id="updateTranslationProblem">
+                    <h3 class="title">
+                        Update Translation Problem
+                    </h3>
+                    <form id="updateTranslationProblemForm">
+                        <div class="field">
+                            <label for="selectTranslationProblem" class="label">Select A Translation Problems</label>
+                            <div class="select">
+                                <select id="selectTranslationProblem" name="selectTranslationProblem"></select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="updateSource" class="label">Source</label>
+                            <div class="control">
+                                <input id="updateSource" name="updateSource" class="input" type="text" placeholder="Source" disabled>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="updateTarget" class="label">Target</label>
+                            <div class="control">
+                                <input id="updateTarget" name="updateTarget" class="input" type="text" placeholder="Target">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" name="commit" type="submit">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+                <section class="section" id="deleteTranslationProblem">
+                    <h3 class="title">
+                        Delete Translation Problem
+                    </h3>
+                    <form id="deleteTranslationProblemForm">
+                        <div class="field">
+                            <label for="selectTranslationProblemToDelete" class="label">Select A Translation Problem To Delete</label>
+                            <div class="select">
+                                <select id="selectTranslationProblemToDelete" name="selectTranslationProblemToDelete"></select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" name="commit" type="submit">Delete</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="column is-one-quarter sidebar">
+                <nav class="panel">
+                    <p class="panel-heading">Quick Navigation</p>
+                    <a class="panel-block" href="index.html">Home</a>
+                    <a class="panel-block" href="learning-unit.html">Manage Learning Units</a>
+                    <a class="panel-block" href="course.html">Manage Courses</a>
+                    <a class="panel-block is-active" href="translation-problem.html">Manage Translation Problems</a>
+                    <a class="panel-block" href="rendering-unit.html">Manage Rendering Forms</a>
+                    <button class="panel-block createData" onclick="vt.c.app.generateTestData()">Generate Test Data</button>
+                    <button class="panel-block clearData" onclick="vt.c.app.clearData()">Clear Database Data</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="lib/bulma.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", vt.c.Courses.manage.initialize);
+  window.addEventListener("beforeunload", vt.v.Courses.manage.exit);
+</script>
 </body>
 </html>
