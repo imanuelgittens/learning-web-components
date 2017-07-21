@@ -24,6 +24,7 @@ vt.v.RenderingForms.retrieveAndListAll = {
       row = tableBodyEl.insertRow(-1);
       row.insertCell(-1).textContent = rf.name;
       row.insertCell(-1).textContent = rf.description;
+      row.insertCell(-1).textContent = vt.m.RenderingModelEL.enumIndexesToNames( [rf.mode]);
       //row.insertCell(-1).textContent = tp.courseDescription;
     }
   }
@@ -33,6 +34,7 @@ vt.v.RenderingForms.createRenderingForm = {
   setupUserInterface: function(){
     var formEl = document.getElementById('addRenderingForm');
     var saveButton = formEl.commit;
+    var modeSelEl = formEl.selectMode;
     // add event listeners for responsive validation
     formEl.formName.addEventListener("input", function () {
       formEl.formName.setCustomValidity(
@@ -62,6 +64,10 @@ vt.v.RenderingForms.createRenderingForm = {
     //   }
     // });
 
+    //add source and target language enumerations
+    util.fillSelectWithOptionsFromEnumLabels(
+      modeSelEl, vt.m.RenderingModelEL.labels);
+
     // define event handler for saveButton click events
     saveButton.addEventListener("click", this.handleSaveButtonClickEvent);
 
@@ -75,7 +81,8 @@ vt.v.RenderingForms.createRenderingForm = {
     var formEl = document.getElementById('addRenderingForm');
     var slots = {
       name: formEl.formName.value,
-      description: formEl.description.value
+      description: formEl.description.value,
+      mode: formEl.selectMode.value
     };
     // validate all form controls and show error messages
     formEl.formName.setCustomValidity(
@@ -149,6 +156,7 @@ vt.v.RenderingForms.updateRenderingForm = {
   handleRenderingFormSelectChangeEvent: function () {
     var formEl = document.getElementById('updateRenderingFormForm');
     var selectRenderingFormEl = formEl.selectRenderingForm;
+    var modeSelect = formEl.updateMode;
     var saveButton = formEl.commit;
     var key = selectRenderingFormEl.value;
     var cu=null;
@@ -156,6 +164,10 @@ vt.v.RenderingForms.updateRenderingForm = {
       cu = vt.m.RenderingForm.instances[key];
       formEl.updateName.value = cu.name;
       formEl.updateDescription.value = cu.description;
+      // populate the selection list for the mode enum attribute
+      util.fillSelectWithOptionsFromEnumLabels(
+        modeSelect, vt.m.RenderingModelEL.labels);
+      modeSelect.value = cu.mode;
       //formEl.updateCourseDesc.value = cu.courseDescription;
       // set up the single-choice widget for selecting an author
       // util.fillSelectWithOptions( formEl.selectAuthor,
@@ -176,7 +188,8 @@ vt.v.RenderingForms.updateRenderingForm = {
     var formEl = document.getElementById('updateRenderingFormForm');
     var slots = {
       name: formEl.updateName.value,
-      description: formEl.updateDescription.value
+      description: formEl.updateDescription.value,
+      mode: formEl.updateMode.value
       // courseDescription: formEl.updateCourseDesc.value
     };
     // validate all form controls and show error messages

@@ -18,11 +18,11 @@ vt.c.app = {
       vt.m.LearningUnit.instances['2'] = new vt.m.LearningUnit({learnUnitId: 2, learnUnitTitle: 'Months, Days, Times', learnUnitDescription: 'Translations dealing with dates and times'});
       vt.m.LearningUnit.instances['3'] = new vt.m.LearningUnit({learnUnitId: 3, learnUnitTitle: 'At Work', learnUnitDescription: 'Translations for things at work'});
       vt.m.LearningUnit.saveAll();
-      vt.m.Course.instances['1'] = new vt.m.Course({courseId: 1, courseTitle: 'Course 1', courseDescription: 'The first course'});
-      vt.m.Course.instances['2'] = new vt.m.Course({courseId: 2, courseTitle: 'Course 2', courseDescription: 'The second course'});
-      vt.m.Course.instances['3'] = new vt.m.Course({courseId: 3, courseTitle: 'Course 3',courseDescription: 'The third course'});
+      vt.m.Course.instances['1'] = new vt.m.Course({courseId: 1, courseTitle: 'Course 1', courseDescription: 'The first course', availableSourceLang: [vt.m.SourceLangEL.DE], availableTargetLang: [vt.m.SourceLangEL.EN]});
+      vt.m.Course.instances['2'] = new vt.m.Course({courseId: 2, courseTitle: 'Course 2', courseDescription: 'The second course',availableSourceLang: [vt.m.SourceLangEL.ES], availableTargetLang: [vt.m.SourceLangEL.DE]});
+      vt.m.Course.instances['3'] = new vt.m.Course({courseId: 3, courseTitle: 'Course 3',courseDescription: 'The third course', availableSourceLang: [vt.m.SourceLangEL.FR], availableTargetLang: [vt.m.SourceLangEL.DE]});
       vt.m.Course.saveAll();
-      vt.m.RenderingForm.instances['multiple choice'] = new vt.m.RenderingForm({name: 'multiple choice', description: 'Choose one of several options.'});
+      vt.m.RenderingForm.instances['multiple choice'] = new vt.m.RenderingForm({name: 'multiple choice', description: 'Choose one of several options.', mode: vt.m.RenderingModelEL.SINGLE_PROBLEM});
       vt.m.RenderingForm.saveAll();
       vt.m.TranslationProblem.instances["kitchen"] = new vt.m.TranslationProblem(
         {source:"kitchen", targets:"cocina"});

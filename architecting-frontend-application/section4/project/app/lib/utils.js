@@ -48,6 +48,18 @@ var util = {
     return el;
   },
   /**
+   * Create an option element
+   *
+   * @param {object} slots
+   * @return {object}
+   */
+  createOptionSlots: function (slots) {
+    var el = document.createElement("option");
+    if (slots.text) el.textContent = slots.text;
+    if (slots.value) el.value = slots.value;
+    return el;
+  },
+  /**
    * Create a time element from a Date object
    *
    * @param {object} d
@@ -123,6 +135,49 @@ var util = {
       }
       selectEl.add( optionEl);
     }
+  },
+  /**
+   * Create option elements from a label list, which is an array of strings,
+   * and insert them into a selection list element
+   *
+   * @param {object} selEl  A select(ion list) element
+   * @param {object} labels  An array list of enum labels
+   * @param {boolean} isForOptionalAttribute  A flag for optional enum attributes
+   */
+  fillSelectWithOptionsFromEnumLabels: function (selEl, labels, isForOptionalAttribute) {
+    // delete old content
+    //console.log(selEl)
+    selEl.innerHTML = "";
+    // create "no selection yet" entry in the case of an optional enum attribute
+    if (isForOptionalAttribute) selEl.add( util.createOptionSlots({text:" --- ", value:"-"}));
+    // loop for creating and inserting individual option elements
+    labels.forEach( function (txt,i) {
+
+      var option = util.createOptionSlots({text: txt, value: i+1});
+
+      selEl.add( util.createOptionSlots({text: txt, value: i+1}));
+    });
+  },
+  /**
+   * Create option elements from a label list, which is an array of strings,
+   * and insert them into a selection list element
+   *
+   * @param {object} selEl  A select(ion list) element
+   * @param {object} labels  An array of option text items
+   * @param {object?} selectedIndexes  An array of positive integers
+   */
+  fillMultiSelectWithOptionsFromEnumLabels: function (selEl, labels, selectedIndexes) {
+    // delete old content
+    selEl.innerHTML = "";
+    // loop for creating and inserting individual option elements
+    labels.forEach( function (lbl,i) {
+      var optionEl = util.createOption({text: lbl, value: i+1});
+      if (selectedIndexes && selectedIndexes.includes(i+1)) {
+        // flag the option element with this value as selected
+        optionEl.selected = true;
+      }
+      selEl.add( optionEl);
+    });
   },
   // *************** Multiple Choice Widget ****************************************
   /**

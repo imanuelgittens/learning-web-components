@@ -25,6 +25,8 @@ vt.v.Courses.retrieveAndListAll = {
       row.insertCell(-1).textContent = cu.courseId;
       row.insertCell(-1).textContent = cu.courseTitle;
       row.insertCell(-1).textContent = cu.courseDescription;
+      row.insertCell(-1).textContent = vt.m.SourceLangEL.enumIndexesToNames( cu.availableSourceLang);
+      row.insertCell(-1).textContent = vt.m.TargetLangEL.enumIndexesToNames( cu.availableTargetLang);
     }
   }
 }
@@ -33,6 +35,8 @@ vt.v.Courses.createCourse = {
   setupUserInterface: function(){
     var formEl = document.getElementById('addCourse');
     var saveButton = formEl.commit;
+    var availSourceLangSelEl = formEl.selectSourceLang;
+    var availTargetLangSelEl = formEl.selectTargetLang;
     // add event listeners for responsive validation
     formEl.courseID.addEventListener("input", function () {
       formEl.courseID.setCustomValidity(
@@ -61,6 +65,13 @@ vt.v.Courses.createCourse = {
         formEl.courseDesc.classList.remove('is-danger');
       }
     });
+    //add source and target language enumerations
+    util.fillSelectWithOptionsFromEnumLabels(
+      availSourceLangSelEl, vt.m.SourceLangEL.labels);
+
+    util.fillSelectWithOptionsFromEnumLabels(
+      availTargetLangSelEl, vt.m.TargetLangEL.labels);
+    //console.log(vt.m.SourceLangEL.labels)
 
     // define event handler for saveButton click events
     saveButton.addEventListener("click", this.handleSaveButtonClickEvent);
@@ -76,7 +87,9 @@ vt.v.Courses.createCourse = {
     var slots = {
       courseId: formEl.courseID.value,
       courseTitle: formEl.courseTitle.value,
-      courseDescription: formEl.courseDesc.value
+      courseDescription: formEl.courseDesc.value,
+      availableSourceLang: [formEl.selectSourceLang.value],
+      availableTargetLang: [formEl.selectTargetLang.value]
     };
     // validate all form controls and show error messages
     formEl.courseID.setCustomValidity(
@@ -101,6 +114,8 @@ vt.v.Courses.updateCourse = {
     var formEl = document.getElementById('updateCourseForm');
     var selectCourseEl = formEl.selectCourse;
     var saveButton = formEl.commit;
+    var sourceLangSelect = formEl.updateSourceLang;
+    var targetLangSelect = formEl.updateTargetLang;
 
     //set up the Course selection list
     util.fillSelectWithOptions( selectCourseEl, vt.m.Course.instances, "courseId", {displayProp:"courseTitle", noSelOption: true});
@@ -150,6 +165,8 @@ vt.v.Courses.updateCourse = {
   handleCourseSelectChangeEvent: function () {
     var formEl = document.getElementById('updateCourseForm');
     var selectCourseEl = formEl.selectCourse;
+    var sourceLangSelect = formEl.updateSourceLang;
+    var targetLangSelect = formEl.updateTargetLang;
     var saveButton = formEl.commit;
     var key = selectCourseEl.value;
     var cu=null;
@@ -158,6 +175,13 @@ vt.v.Courses.updateCourse = {
       formEl.updateCourseID.value = cu.courseId;
       formEl.updateCourseTitle.value = cu.courseTitle;
       formEl.updateCourseDesc.value = cu.courseDescription;
+    // populate the selection list for the levelOfDifficulty enum attribute
+      util.fillSelectWithOptionsFromEnumLabels(
+        sourceLangSelect, vt.m.SourceLangEL.labels);
+      util.fillSelectWithOptionsFromEnumLabels(
+        targetLangSelect, vt.m.TargetLangEL.labels);
+      sourceLangSelect.value = cu.availableSourceLang;
+      targetLangSelect.value = cu.availableTargetLang;
       // set up the single-choice widget for selecting an author
       // util.fillSelectWithOptions( formEl.selectAuthor,
       //   vt.m.Person.instances, "personId", {displayProp:"name"});
@@ -178,7 +202,9 @@ vt.v.Courses.updateCourse = {
     var slots = {
       courseId: formEl.updateCourseID.value,
       courseTitle: formEl.updateCourseTitle.value,
-      courseDescription: formEl.updateCourseDesc.value
+      courseDescription: formEl.updateCourseDesc.value,
+      availableSourceLang: [formEl.updateSourceLang.value],
+      availableTargetLang: [formEl.updateTargetLang.value]
     };
     // validate all form controls and show error messages
     // formEl.learnUnitID.setCustomValidity(

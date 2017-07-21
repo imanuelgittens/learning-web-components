@@ -3,6 +3,8 @@
  * @author - Imanuel Gittens
  * */
 
+vt.m.RenderingModelEL = new eNUMERATION("RenderingModelEL", ['SINGLE_PROBLEM','MULTIPLE_PROBLEMS']);
+
 /**
  * @class
  * */
@@ -12,13 +14,13 @@ vt.m.RenderingForm = class{
     //initialize required properties
     this._name = '';
     this._description = '';
-    //this._mode = '';
+    this._mode = '';
     //if constructor is invoked with a non empty slots argument
     if(typeof  slots === 'object' && Object.keys.length > 0){
       //assign properties by invoking implicit setters
       this.name = slots.name;
       this.description = slots.description;
-      //this.mode = slots.mode;
+      this.mode = slots.mode;
     }
   }
 
@@ -84,33 +86,33 @@ vt.m.RenderingForm = class{
     }
   }
 
-  // get courseDescription(){
-  //   return this._courseDescription;
-  // }
-  //
-  // static checkCourseDescription(desc){
-  //   if(!desc){
-  //     return new MandatoryValueConstraintViolation('A course description must be provided!');
-  //   }else{
-  //     return new NoConstraintViolation();
-  //   }
-  // }
-  //
-  // set courseDescription(desc){
-  //   var validationResult = vt.m.Course.checkCourseDescription(desc);
-  //   if(validationResult instanceof NoConstraintViolation){
-  //     this._courseDescription = desc;
-  //   }else{
-  //     throw validationResult;
-  //   }
-  // }
+  get mode(){
+    return this._mode;
+  }
+
+  static checkMode(mode){
+    if(!mode){
+      return new MandatoryValueConstraintViolation('A course mode must be provided!');
+    }else{
+      return new NoConstraintViolation();
+    }
+  }
+
+  set mode(mode){
+    var validationResult = vt.m.RenderingForm.checkMode(mode);
+    if(validationResult instanceof NoConstraintViolation){
+      this._mode = mode;
+    }else{
+      throw validationResult;
+    }
+  }
   /**
    *  Convert object to string
    */
   toString() {
     return "Rendering Form{ Name: " + this.name +
       ", Description: " + this.description +
-      //", Description: " + this.courseDescription +
+      ", Mode: " + this.mode +
       "}";
   }
 
@@ -189,6 +191,14 @@ vt.m.RenderingForm.update = function (slots) {
       rf.description = slots.description;
       updatedProperties.push("description");
     }
+    if (rf.mode !== slots.mode) {
+      rf.mode = slots.mode;
+      updatedProperties.push("mode");
+    }
+    // if (!rf.mode.isEqualTo(slots.mode)) {
+    //   rf.mode = slots.mode;
+    //   updatedProperties.push("mode");
+    // }
     // if (rf.courseDescription !== slots.courseDescription) {
     //   rf.courseDescription = slots.courseDescription;
     //   updatedProperties.push("title");

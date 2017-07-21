@@ -3,6 +3,11 @@
  * @author - Imanuel Gittens
  * */
 
+vt.m.SourceLangEL = new eNUMERATION("SourceLangEL",
+  {"ES":"Spanish","FR":"French","PT":"Portuguese","DE":"German", "IT":"Italian", "EN":"English"});
+vt.m.TargetLangEL = new eNUMERATION("TargetLangEL",
+  {"ES":"Spanish","FR":"French","PT":"Portuguese","DE":"German", "IT":"Italian", "EN":"English"});
+
 /**
  * @class
  * */
@@ -13,12 +18,16 @@ vt.m.Course = class{
     this._courseId = 0;
     this._courseTitle = '';
     this._courseDescription = '';
+    this._availableSourceLang = [];
+    this._availableTargetLang = [];
     //if constructor is invoked with a non empty slots argument
     if(typeof  slots === 'object' && Object.keys.length > 0){
       //assign properties by invoking implicit setters
       this.courseId = slots.courseId;
       this.courseTitle = slots.courseTitle;
       this.courseDescription = slots.courseDescription;
+      this.availableSourceLang = slots.availableSourceLang;
+      this.availableTargetLang = slots.availableTargetLang;
     }
   }
 
@@ -104,6 +113,89 @@ vt.m.Course = class{
       throw validationResult;
     }
   }
+
+  get availableSourceLang() {
+    return this._availableSourceLang;
+  }
+  static checkAvailableSourceLang( asl) {
+    var max = vt.m.SourceLangEL.MAX;
+    if (!util.isIntegerOrIntegerString(asl) || parseInt(asl) < 1 ||
+      parseInt(asl) > max) {
+      return new RangeConstraintViolation(
+        "Any item of the availableSourceLanguages list must be a positive integer " +
+        "not greater than" + max + " !");
+    } else return new NoConstraintViolation();
+  }
+
+  static checkAvailableSourceLangs( langs) {
+    var i=0, constraintViolation=null;
+    if (langs === undefined || (Array.isArray( langs) && langs.length === 0)) {
+      return new MandatoryValueConstraintViolation(
+        "At least one available source language must be chosen/provided!");
+    } else if (!Array.isArray( langs)) {
+      return new RangeConstraintViolation(
+        "The value of availableSourceLanguages must be a list/array!");
+    } else {
+      for (i=0; i < langs.length; i++) {
+        constraintViolation = vt.m.Course.checkAvailableSourceLang( langs[i]);
+        if (!(constraintViolation instanceof NoConstraintViolation)) {
+          return constraintViolation;
+        }
+      }
+      return new NoConstraintViolation();
+    }
+  }
+
+  set availableSourceLang (langs) {
+    var validationResult = vt.m.Course.checkAvailableSourceLangs( langs);
+    if (validationResult instanceof NoConstraintViolation) {
+      this._availableSourceLang = langs;
+    } else {
+      throw validationResult;
+    }
+  }
+
+  get availableTargetLang() {
+    return this._availableTargetLang;
+  }
+  static checkAvailableTargetLang( atl) {
+    var max = vt.m.TargetLangEL.MAX;
+    if (!util.isIntegerOrIntegerString(atl) || parseInt(atl) < 1 ||
+      parseInt(atl) > max) {
+      return new RangeConstraintViolation(
+        "Any item of the availableTargetLanguages list must be a positive integer " +
+        "not greater than" + max + " !");
+    } else return new NoConstraintViolation();
+  }
+
+  static checkAvailableTargetLangs( langs) {
+    var i=0, constraintViolation=null;
+    if (langs === undefined || (Array.isArray( langs) && langs.length === 0)) {
+      return new MandatoryValueConstraintViolation(
+        "At least one available target language must be chosen/provided!");
+    } else if (!Array.isArray( langs)) {
+      return new RangeConstraintViolation(
+        "The value of availableTargetLanguages must be a list/array!");
+    } else {
+      for (i=0; i < langs.length; i++) {
+        constraintViolation = vt.m.Course.checkAvailableTargetLang( langs[i]);
+        if (!(constraintViolation instanceof NoConstraintViolation)) {
+          return constraintViolation;
+        }
+      }
+      return new NoConstraintViolation();
+    }
+  }
+
+  set availableTargetLang (langs) {
+    var validationResult = vt.m.Course.checkAvailableTargetLangs( langs);
+    if (validationResult instanceof NoConstraintViolation) {
+      this._availableTargetLang = langs;
+    } else {
+      throw validationResult;
+    }
+  }
+
   /**
    *  Convert object to string
    */
@@ -111,6 +203,8 @@ vt.m.Course = class{
     return "Course{ No: " + this.courseId +
       ", Title: " + this.courseTitle +
       ", Description: " + this.courseDescription +
+      ", Avail. source lang.: " + this.availableSourceLang.toString() +
+      ", Avail. target lang.: " + this.availableTargetLang.toString() +
       "}";
   }
 
@@ -193,6 +287,15 @@ vt.m.Course.update = function (slots) {
       cu.courseDescription = slots.courseDescription;
       updatedProperties.push("title");
     }
+    if (!cu.availableSourceLang.isEqualTo(slots.availableSourceLang)) {
+      cu.availableSourceLang = slots.availableSourceLang;
+      updatedProperties.push("source lang");
+    }
+    if (!cu.availableTargetLang.isEqualTo(slots.availableTargetLang)) {
+      cu.availableTargetLang = slots.availableTargetLang;
+      updatedProperties.push("target lang");
+    }
+
     // if ("author_id" in slots &&
     //   (!lu.author || lu.author.personId !== parseInt( slots.author_id))) {
     //   lu.author = slots.author_id;
