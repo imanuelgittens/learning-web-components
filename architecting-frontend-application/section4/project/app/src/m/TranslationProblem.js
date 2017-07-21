@@ -157,25 +157,32 @@ vt.m.TranslationProblem.update = function (slots) {
 /**
  *  Delete a TranslationProblem object/record
  */
-// vt.m.TranslationProblem.destroy = function (s) {
-//   var tp = vt.m.TranslationProblem.instances[s],
-//     key="", keys, lu=null, i, j=0;
-//   // delete all problem references from dependent learning units
-//   keys = Object.keys( vt.m.LearningUnit.instances);
-//   for (i=0; i < keys.length; i++) {
-//     key = keys[i];
-//     lu = vt.m.LearningUnit.instances[key];
-//     for(j = lu.problems.length-1; j>=0; j--){
-//       if (lu.problems[j].source === s) {
-//         lu.problems.splice(j, 1);
-//         break;
-//       }
-//     }
-//   }
-//   // delete the translation problem
-//   delete vt.m.TranslationProblem.instances[s];
-//   console.log("TranslationProblem '" + tp.source + "' deleted.");
-// };
+vt.m.TranslationProblem.destroy = function (s) {
+  // var tp = vt.m.TranslationProblem.instances[s],
+  //   key="", keys, tp=null, i, j=0;
+  // // delete all problem references from dependent learning units
+  // keys = Object.keys( vt.m.TranslationProblem.instances);
+  // for (i=0; i < keys.length; i++) {
+  //   key = keys[i];
+  //   tp = vt.m.TranslationProblem.instances[key];
+  //   for(j = tp.problems.length-1; j>=0; j--){
+  //     if (tp.problems[j].source === s) {
+  //       tp.problems.splice(j, 1);
+  //       break;
+  //     }
+  //   }
+  // }
+  // // delete the translation problem
+  // delete vt.m.TranslationProblem.instances[s];
+  // console.log("TranslationProblem '" + tp.source + "' deleted.");
+  if (vt.m.TranslationProblem.instances[s]) {
+    delete vt.m.TranslationProblem.instances[s];
+    console.log("Translation Problem " + s + " deleted");
+  } else {
+    console.log("There is no translation problem with number " + s +
+      " in the database!");
+  }
+};
 /**
  *  Load all author rows and convert them to objects
  */

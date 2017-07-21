@@ -7,8 +7,8 @@
 
 var vt = {
   m: {},
-  v: {Courses: {}, LearningUnits: {}},
-  c: {Courses: {}, LearningUnits: {}}
+  v: {Courses: {}, LearningUnits: {}, TranslationProblems:{}},
+  c: {Courses: {}, LearningUnits: {}, TranslationProblems: {}}
 }
 
 vt.c.app = {
@@ -22,6 +22,23 @@ vt.c.app = {
       vt.m.Course.instances['2'] = new vt.m.Course({courseId: 2, courseTitle: 'Course 2', courseDescription: 'The second course'});
       vt.m.Course.instances['3'] = new vt.m.Course({courseId: 3, courseTitle: 'Course 3',courseDescription: 'The third course'});
       vt.m.Course.saveAll();
+      vt.m.TranslationProblem.instances["kitchen"] = new vt.m.TranslationProblem(
+        {source:"kitchen", targets:"cocina"});
+      vt.m.TranslationProblem.instances["bedroom"] = new vt.m.TranslationProblem(
+        {source:"bedroom", targets:"el cuarto; el dormitorio; la recámara"});
+      vt.m.TranslationProblem.instances["bathroom"] = new vt.m.TranslationProblem(
+        {source:"bathroom", targets:"el cuarto de baño"});
+      vt.m.TranslationProblem.instances["January"] = new vt.m.TranslationProblem(
+        {source:"January", targets:"enero"});
+      vt.m.TranslationProblem.instances["February"] = new vt.m.TranslationProblem(
+        {source:"February", targets:"febrero"});
+      vt.m.TranslationProblem.instances["March"] = new vt.m.TranslationProblem(
+        {source:"March", targets:"marzo"});
+      vt.m.TranslationProblem.instances["Monday"] = new vt.m.TranslationProblem(
+        {source:"Monday", targets:"lunes"});
+      vt.m.TranslationProblem.instances["morning"] = new vt.m.TranslationProblem(
+        {source:"morning", targets:"mañana; matutino"});
+      vt.m.TranslationProblem.saveAll();
     }catch(e){
       console.log(e.constructor.name + ': ' + e.message);
     }
@@ -33,6 +50,8 @@ vt.c.app = {
       vt.m.Course.instances = {};
       localStorage["courses"] = "{}";
       console.log("All data cleared.");
+      vt.m.TranslationProblem.instances = {};
+      localStorage["translation_problems"] = "{}";
     } catch (e) {
       console.log( e.constructor.name + ": " + e.message);
     }
