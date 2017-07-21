@@ -1,6 +1,6 @@
 /**
- * @fileOverview  Contains various controller functions for managing books
- * @author Gerd Wagner
+ * @fileOverview  Contains various controller functions for managing courses
+ * @author Imanuel Gittens
  */
 vt.c.Courses.manage = {
   initialize: function () {

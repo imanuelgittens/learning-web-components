@@ -17,7 +17,6 @@ vt.v.LearningUnits.retrieveAndListAll = {
     var tableBodyEl = document.querySelector('#allLearningUnits > tbody');
     var i, row=null, lu=null,
       keys = Object.keys( vt.m.LearningUnit.instances);
-    //var problemsString="";
     tableBodyEl.innerHTML = "";  // drop old contents
     for (i=0; i < keys.length; i++) {
       lu = vt.m.LearningUnit.instances[keys[i]];
@@ -105,16 +104,6 @@ vt.v.LearningUnits.updateLearningUnit = {
     //set up the LearningUnit selection list
     util.fillSelectWithOptions( selectLearningUnitEl, vt.m.LearningUnit.instances, "learnUnitId", {displayProp:"learnUnitTitle", noSelOption: true});
     selectLearningUnitEl.addEventListener("change", this.handleLearnUnitSelectChangeEvent);
-    // add event listeners for responsive validation
-    // formEl.learnUnitID.addEventListener("input", function () {
-    //   formEl.learnUnitID.setCustomValidity(
-    //     vt.m.LearningUnit.checkLearnUnitAsId( formEl.learnUnitID.value).message);
-    //   if(!formEl.checkValidity()){
-    //     formEl.learnUnitID.classList.add('is-danger');
-    //   }else{
-    //     formEl.learnUnitID.classList.remove('is-danger');
-    //   }
-    // });
     formEl.updateUnitTitle.addEventListener("input", function () {
       formEl.updateUnitTitle.setCustomValidity(
         vt.m.LearningUnit.checkLearnUnitTitle( formEl.updateUnitTitle.value).message);
@@ -158,18 +147,9 @@ vt.v.LearningUnits.updateLearningUnit = {
       formEl.updateUnitID.value = lu.learnUnitId;
       formEl.updateUnitTitle.value = lu.learnUnitTitle;
       formEl.updateUnitDesc.value = lu.learnUnitDescription;
-      // set up the single-choice widget for selecting an author
-      // util.fillSelectWithOptions( formEl.selectAuthor,
-      //   vt.m.Person.instances, "personId", {displayProp:"name"});
-      // formEl.selectAuthor.value = lu.author.personId;
-      // // set up the mutiple-choice widget for translation problems
-      // util.createMultipleChoiceWidget( problemsSelWidget, lu.problems,
-      //   vt.m.TranslationProblem.instances, "source");
       saveButton.disabled = false;
     } else {
       formEl.reset();
-      // formEl.selectAuthor.innerHTML = "";
-      // problemsSelWidget.innerHTML = "";
       saveButton.disabled = true;
     }
   },
@@ -181,8 +161,6 @@ vt.v.LearningUnits.updateLearningUnit = {
       learnUnitDescription: formEl.updateUnitDesc.value
     };
     // validate all form controls and show error messages
-    // formEl.learnUnitID.setCustomValidity(
-    //   vt.m.LearningUnit.checkLearnUnitAsId( formEl.learnUnitID.value).message);
     formEl.updateUnitTitle.setCustomValidity(
       vt.m.LearningUnit.checkLearnUnitTitle( formEl.updateUnitTitle.value).message);
     formEl.updateUnitDesc.setCustomValidity(
@@ -210,7 +188,6 @@ vt.v.LearningUnits.destroy = {
     //set up the LearningUnit selection list
     util.fillSelectWithOptions( selectLearningUnitEl, vt.m.LearningUnit.instances, "learnUnitId", {displayProp:"learnUnitTitle", noSelOption: true});
     deleteButton.addEventListener("click", function () {
-     // var formEl = document.querySelector("section#LearningUnit-D > form");
       vt.m.LearningUnit.destroy( selectLearningUnitEl.value);
       // remove deleted learning unit from select options
       selectLearningUnitEl.remove( selectLearningUnitEl.selectedIndex);
@@ -220,8 +197,5 @@ vt.v.LearningUnits.destroy = {
       e.preventDefault();
       formEl.reset();
     });
-    // document.getElementById("LearningUnit-M").style.display = "none";
-    // document.getElementById("LearningUnit-D").style.display = "block";
-    //formEl.reset();
   }
 };

@@ -17,7 +17,6 @@ vt.v.Courses.retrieveAndListAll = {
     var tableBodyEl = document.querySelector('#allCourses > tbody');
     var i, row=null, cu=null,
       keys = Object.keys( vt.m.Course.instances);
-    //var problemsString="";
     tableBodyEl.innerHTML = "";  // drop old contents
     for (i=0; i < keys.length; i++) {
       cu = vt.m.Course.instances[keys[i]];
@@ -67,11 +66,10 @@ vt.v.Courses.createCourse = {
     });
     //add source and target language enumerations
     util.fillSelectWithOptionsFromEnumLabels(
-      availSourceLangSelEl, vt.m.SourceLangEL.labels);
+      availSourceLangSelEl, vt.m.SourceLangEL.labels, {noSelOption: true});
 
     util.fillSelectWithOptionsFromEnumLabels(
-      availTargetLangSelEl, vt.m.TargetLangEL.labels);
-    //console.log(vt.m.SourceLangEL.labels)
+      availTargetLangSelEl, vt.m.TargetLangEL.labels, {noSelOption: true});
 
     // define event handler for saveButton click events
     saveButton.addEventListener("click", this.handleSaveButtonClickEvent);
@@ -114,22 +112,10 @@ vt.v.Courses.updateCourse = {
     var formEl = document.getElementById('updateCourseForm');
     var selectCourseEl = formEl.selectCourse;
     var saveButton = formEl.commit;
-    var sourceLangSelect = formEl.updateSourceLang;
-    var targetLangSelect = formEl.updateTargetLang;
 
     //set up the Course selection list
     util.fillSelectWithOptions( selectCourseEl, vt.m.Course.instances, "courseId", {displayProp:"courseTitle", noSelOption: true});
     selectCourseEl.addEventListener("change", this.handleCourseSelectChangeEvent);
-    // add event listeners for responsive validation
-    // formEl.learnUnitID.addEventListener("input", function () {
-    //   formEl.learnUnitID.setCustomValidity(
-    //     vt.m.Course.checkCourseAsId( formEl.learnUnitID.value).message);
-    //   if(!formEl.checkValidity()){
-    //     formEl.learnUnitID.classList.add('is-danger');
-    //   }else{
-    //     formEl.learnUnitID.classList.remove('is-danger');
-    //   }
-    // });
     formEl.updateCourseTitle.addEventListener("input", function () {
       formEl.updateCourseTitle.setCustomValidity(
         vt.m.Course.checkCourseTitle( formEl.updateCourseTitle.value).message);
@@ -182,18 +168,9 @@ vt.v.Courses.updateCourse = {
         targetLangSelect, vt.m.TargetLangEL.labels);
       sourceLangSelect.value = cu.availableSourceLang;
       targetLangSelect.value = cu.availableTargetLang;
-      // set up the single-choice widget for selecting an author
-      // util.fillSelectWithOptions( formEl.selectAuthor,
-      //   vt.m.Person.instances, "personId", {displayProp:"name"});
-      // formEl.selectAuthor.value = lu.author.personId;
-      // // set up the mutiple-choice widget for translation problems
-      // util.createMultipleChoiceWidget( problemsSelWidget, lu.problems,
-      //   vt.m.TranslationProblem.instances, "source");
       saveButton.disabled = false;
     } else {
       formEl.reset();
-      // formEl.selectAuthor.innerHTML = "";
-      // problemsSelWidget.innerHTML = "";
       saveButton.disabled = true;
     }
   },
@@ -207,8 +184,6 @@ vt.v.Courses.updateCourse = {
       availableTargetLang: [formEl.updateTargetLang.value]
     };
     // validate all form controls and show error messages
-    // formEl.learnUnitID.setCustomValidity(
-    //   vt.m.Course.checkCourseAsId( formEl.learnUnitID.value).message);
     formEl.updateCourseTitle.setCustomValidity(
       vt.m.Course.checkCourseTitle( formEl.updateCourseTitle.value).message);
     formEl.updateCourseDesc.setCustomValidity(
@@ -236,7 +211,6 @@ vt.v.Courses.destroy = {
     //set up the Course selection list
     util.fillSelectWithOptions( selectCourseEl, vt.m.Course.instances, "courseId", {displayProp:"courseTitle", noSelOption: true});
     deleteButton.addEventListener("click", function () {
-      // var formEl = document.querySelector("section#Course-D > form");
       vt.m.Course.destroy( selectCourseEl.value);
       // remove deleted learning unit from select options
       selectCourseEl.remove( selectCourseEl.selectedIndex);
@@ -246,8 +220,5 @@ vt.v.Courses.destroy = {
       e.preventDefault();
       formEl.reset();
     });
-    // document.getElementById("Course-M").style.display = "none";
-    // document.getElementById("Course-D").style.display = "block";
-    //formEl.reset();
   }
 };

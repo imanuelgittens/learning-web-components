@@ -1,5 +1,5 @@
 /**
- * @fileoverview - definition of model class: TranslationProblem
+ * @fileoverview - definition of model class: Translation Problem
  * @author - Imanuel Gittens
  * */
 
@@ -12,13 +12,11 @@ vt.m.TranslationProblem = class{
     //initialize required properties
     this._source = '';
     this._targets = '';
-    //this._courseDescription = '';
     //if constructor is invoked with a non empty slots argument
     if(typeof  slots === 'object' && Object.keys.length > 0){
       //assign properties by invoking implicit setters
       this.source = slots.source;
       this.targets = slots.targets;
-      //this.courseDescription = slots.courseDescription;
     }
   }
 
@@ -158,23 +156,6 @@ vt.m.TranslationProblem.update = function (slots) {
  *  Delete a TranslationProblem object/record
  */
 vt.m.TranslationProblem.destroy = function (s) {
-  // var tp = vt.m.TranslationProblem.instances[s],
-  //   key="", keys, tp=null, i, j=0;
-  // // delete all problem references from dependent learning units
-  // keys = Object.keys( vt.m.TranslationProblem.instances);
-  // for (i=0; i < keys.length; i++) {
-  //   key = keys[i];
-  //   tp = vt.m.TranslationProblem.instances[key];
-  //   for(j = tp.problems.length-1; j>=0; j--){
-  //     if (tp.problems[j].source === s) {
-  //       tp.problems.splice(j, 1);
-  //       break;
-  //     }
-  //   }
-  // }
-  // // delete the translation problem
-  // delete vt.m.TranslationProblem.instances[s];
-  // console.log("TranslationProblem '" + tp.source + "' deleted.");
   if (vt.m.TranslationProblem.instances[s]) {
     delete vt.m.TranslationProblem.instances[s];
     console.log("Translation Problem " + s + " deleted");

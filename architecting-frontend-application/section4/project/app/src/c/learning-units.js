@@ -1,6 +1,6 @@
 /**
-* @fileOverview  Contains various controller functions for managing books
-* @author Gerd Wagner
+* @fileOverview  Contains various controller functions for managing learning units
+* @author Imanuel Gittens
 */
 vt.c.LearningUnits.manage = {
   initialize: function () {

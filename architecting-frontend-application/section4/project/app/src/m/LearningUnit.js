@@ -193,23 +193,6 @@ vt.m.LearningUnit.update = function (slots) {
       lu.learnUnitDescription = slots.learnUnitDescription;
       updatedProperties.push("title");
     }
-    // if ("author_id" in slots &&
-    //   (!lu.author || lu.author.personId !== parseInt( slots.author_id))) {
-    //   lu.author = slots.author_id;
-    //   updatedProperties.push("author");
-    // }
-    // if ("problemIdRefsToAdd" in slots) {
-    //   updatedProperties.push("problems(added)");
-    //   for (i=0; i < slots.problemIdRefsToAdd.length; i++) {
-    //     lu.addProblem( slots.problemIdRefsToAdd[i]);
-    //   }
-    // }
-    // if ("problemIdRefsToRemove" in slots) {
-    //   updatedProperties.push("problems(removed)");
-    //   for (i=0; i < slots.problemIdRefsToRemove.length; i++) {
-    //     lu.removeProblem( slots.problemIdRefsToRemove[i]);
-    //   }
-    // }
   } catch (e) {
     console.log( e.constructor.name +": "+ e.message);
     noConstraintViolated = false;
