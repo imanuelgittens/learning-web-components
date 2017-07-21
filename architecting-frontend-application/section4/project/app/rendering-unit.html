@@ -3,9 +3,14 @@
     <title>Vocabulary Training App</title>
     <script src="lib/browserShims.js"></script>
     <script src="lib/utils.js"></script>
-    <script src="lib/browserShims.js"></script>
+    <script src="lib/errorTypes.js"></script>
     <script src="src/c/app.js"></script>
     <script src="src/m/LearningUnit.js"></script>
+    <script src="src/m/Course.js"></script>
+    <script src="src/m/TranslationProblem.js"></script>
+    <script src="src/m/RenderingForm.js"></script>
+    <script src="src/v/rendering-form.js"></script>
+    <script src="src/c/rendering-forms.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css" />
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -15,15 +20,139 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Vocabulary Training App - Chapter 4 Project.
+                    Vocabulary Training App - Manage Rendering Forms
                 </h1>
-                <h2 class="subtitle">
-                    This is the project for the chapter 4 of the Bov Academy - Architecting Front End Web Applications Course.
-                </h2>
             </div>
         </div>
     </div>
 </section>
+<section class="manageEntity">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-quarters main-content">
 
+
+                <div class="tabs is-centered" data-bulma="tabs">
+                    <ul>
+                        <li class="is-active"><a data-tab="#listRenderingForms">List Forms</a></li>
+                        <li><a data-tab="#createRenderingForm">Create Form</a></li>
+                        <li><a data-tab="#updateRenderingForm">Update Form</a></li>
+                        <li><a data-tab="#deleteRenderingForm">Delete Form</a></li>
+                    </ul>
+                </div>
+
+
+                <section class="section" id="listRenderingForms">
+                    <h3 class="title">
+                        All Rendering Forms
+                    </h3>
+                    <table id="allRenderingForms" class="table is-bordered is-striped all-rendering-forms">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--Translation Problem Listing-->
+                        </tbody>
+                    </table>
+                </section>
+                <section class="section" id="createRenderingForm">
+                    <h3 class="title">
+                        Create Rendering Form
+                    </h3>
+                    <form id="addRenderingForm">
+                        <div class="field">
+                            <label for="formName" class="label">Name</label>
+                            <div class="control">
+                                <input id="formName" name="formName" class="input" type="text" placeholder="name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="description" class="label">Description</label>
+                            <div class="control">
+                                <input id="description" name="description" class="input" type="text" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" name="commit" type="submit">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+                <section class="section" id="updateRenderingForm">
+                    <h3 class="title">
+                        Update Rendering Form
+                    </h3>
+                    <form id="updateRenderingFormForm">
+                        <div class="field">
+                            <label for="selectRenderingForm" class="label">Select A Rendering Form</label>
+                            <div class="select">
+                                <select id="selectRenderingForm" name="selectRenderingForm"></select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="updateName" class="label">Name</label>
+                            <div class="control">
+                                <input id="updateName" name="updateName" class="input" type="text" placeholder="Name" disabled>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="updateDescription" class="label">Description</label>
+                            <div class="control">
+                                <input id="updateDescription" name="updateDescription" class="input" type="text" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" name="commit" type="submit">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+                <section class="section" id="deleteRenderingForm">
+                    <h3 class="title">
+                        Delete Rendering Form
+                    </h3>
+                    <form id="deleteRenderingFormForm">
+                        <div class="field">
+                            <label for="selectRenderingFormToDelete" class="label">Select A Rendering Form To Delete</label>
+                            <div class="select">
+                                <select id="selectRenderingFormToDelete" name="selectRenderingFormToDelete"></select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" name="commit" type="submit">Delete</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="column is-one-quarter sidebar">
+                <nav class="panel">
+                    <p class="panel-heading">Quick Navigation</p>
+                    <a class="panel-block" href="index.html">Home</a>
+                    <a class="panel-block" href="learning-unit.html">Manage Learning Units</a>
+                    <a class="panel-block" href="course.html">Manage Courses</a>
+                    <a class="panel-block" href="translation-problem.html">Manage Translation Problems</a>
+                    <a class="panel-block is-active" href="rendering-unit.html">Manage Rendering Forms</a>
+                    <button class="panel-block createData" onclick="vt.c.app.generateTestData()">Generate Test Data</button>
+                    <button class="panel-block clearData" onclick="vt.c.app.clearData()">Clear Database Data</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="lib/bulma.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", vt.c.RenderingForms.manage.initialize);
+  window.addEventListener("beforeunload", vt.v.RenderingForms.manage.exit);
+</script>
 </body>
 </html>

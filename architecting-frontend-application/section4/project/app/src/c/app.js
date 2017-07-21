@@ -7,8 +7,8 @@
 
 var vt = {
   m: {},
-  v: {Courses: {}, LearningUnits: {}, TranslationProblems:{}},
-  c: {Courses: {}, LearningUnits: {}, TranslationProblems: {}}
+  v: {Courses: {}, LearningUnits: {}, RenderingForms: {}, TranslationProblems:{}},
+  c: {Courses: {}, LearningUnits: {}, RenderingForms: {}, TranslationProblems: {}}
 }
 
 vt.c.app = {
@@ -22,6 +22,8 @@ vt.c.app = {
       vt.m.Course.instances['2'] = new vt.m.Course({courseId: 2, courseTitle: 'Course 2', courseDescription: 'The second course'});
       vt.m.Course.instances['3'] = new vt.m.Course({courseId: 3, courseTitle: 'Course 3',courseDescription: 'The third course'});
       vt.m.Course.saveAll();
+      vt.m.RenderingForm.instances['multiple choice'] = new vt.m.RenderingForm({name: 'multiple choice', description: 'Choose one of several options.'});
+      vt.m.RenderingForm.saveAll();
       vt.m.TranslationProblem.instances["kitchen"] = new vt.m.TranslationProblem(
         {source:"kitchen", targets:"cocina"});
       vt.m.TranslationProblem.instances["bedroom"] = new vt.m.TranslationProblem(
