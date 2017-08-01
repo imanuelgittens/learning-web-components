@@ -15,7 +15,7 @@ vt.v.LearningUnits.manage = {
 vt.v.LearningUnits.retrieveAndListAll = {
   setupUserInterface: function(){
     var tableBodyEl = document.querySelector('#allLearningUnits > tbody');
-    var i, row=null, lu=null,
+    var i, row=null, lu=null, courseString='',
       keys = Object.keys( vt.m.LearningUnit.instances);
     tableBodyEl.innerHTML = "";  // drop old contents
     for (i=0; i < keys.length; i++) {
@@ -24,6 +24,10 @@ vt.v.LearningUnits.retrieveAndListAll = {
       row.insertCell(-1).textContent = lu.learnUnitId;
       row.insertCell(-1).textContent = lu.learnUnitTitle;
       row.insertCell(-1).textContent = lu.learnUnitDescription;
+      courseString = lu.courses.reduce( function (serialization, probl, i) {
+        return i>0 ? serialization + "<br/>" + probl.toString() : probl.toString();
+      }, "");
+      row.insertCell(-1).innerHTML = courseString;
     }
   }
 }

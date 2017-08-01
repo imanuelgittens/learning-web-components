@@ -13,12 +13,15 @@ vt.m.LearningUnit = class{
     this._learnUnitId = 0;
     this._learnUnitTitle = '';
     this._learnUnitDescription = '';
+    this._courses = [];  // list of objects (from Course)
     //if constructor is invoked with a non empty slots argument
     if(typeof  slots === 'object' && Object.keys.length > 0){
       //assign properties by invoking implicit setters
       this.learnUnitId = slots.learnUnitId;
       this.learnUnitTitle = slots.learnUnitTitle;
       this.learnUnitDescription = slots.learnUnitDescription;
+      // assign object references or ID references
+      this.courses = slots.courses || slots.courseIdRefs;
     }
   }
 
@@ -104,6 +107,61 @@ vt.m.LearningUnit = class{
       throw validationResult;
     }
   }
+
+  get courses() {
+    return this._courses;
+  }
+  static checkCourse( course_id) {
+    var validationResult = null;
+    if (!course_id) {
+      validationResult = new NoConstraintViolation();
+    } else {
+      // invoke foreign key constraint check
+      validationResult =
+        vt.m.Course.checkCourseAsId(course_id);
+    }
+    return validationResult;
+  }
+  addCourse( c) {
+    var validationResult = null, authorIdRefStr = "";
+    // p can be an ID reference or an object reference
+    var course_id = (typeof c !== "object") ? c : c.courseId;
+    //validationResult = vt.m.LearningUnit.checkCourse( course_id);
+    if (course_id) {
+      // add the new translation problem reference
+      this._courses.push(
+        vt.m.Course.instances[course_id]);
+      //console.log(this._courses)
+    } else {
+      throw validationResult;
+    }
+  }
+  static removeCourse( c) {
+    var validationResult=null, i=0;
+    // c can be an ID reference or an object reference
+    var source = (typeof c !== "object") ? c : c.courseId;
+    validationResult = vt.m.LearningUnit.checkCourse( source);
+    if (validationResult instanceof NoConstraintViolation) {
+      // delete the problem reference from the problems list
+      for (i=0; i < this._courses.length; i++) {
+        if (this._courses[i].source === source) this._courses.splice(i, 1);
+      }
+    } else {
+      throw validationResult;
+    }
+  }
+  set courses( c) {
+    var keys = [], i = 0;
+    this._courses = [];
+    if (!Array.isArray(c)) {
+      throw new RangeConstraintViolation(
+        "A list of courses must be provided!");
+    }
+    for (i = 0; i < c.length; i++) {
+      console.log(c[i])
+      this.addCourse(c[i]);
+    }
+  }
   /**
    *  Convert object to string
    */
@@ -111,6 +169,7 @@ vt.m.LearningUnit = class{
     return "LearningUnit{ No: " + this.learnUnitId +
       ", Title: " + this.learnUnitTitle +
       ", Description: " + this.learnUnitDescription +
+      ", Course(s): " + this.courses +
       "}";
   }
 
@@ -128,11 +187,11 @@ vt.m.LearningUnit = class{
             // convert object reference to ID reference
             if (this._author) rec.author_id = this._author.personId;
             break;
-          case "_problems":
+          case "_courses":
             // convert the list of object references to ID references
-            rec.problemIdRefs = [];
-            this._problems.forEach( function (problem) {
-              rec.problemIdRefs.push( problem.source);
+            rec.courseIdRefs = [];
+            this._courses.forEach( function (course) {
+              rec.problemIdRefs.push( course.courseId);
             });
             break;
           default:

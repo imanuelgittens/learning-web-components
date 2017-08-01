@@ -317,13 +317,30 @@ vt.m.Course.update = function (slots) {
  * @method
  */
 vt.m.Course.destroy = function (courseNo) {
-  if (vt.m.Course.instances[courseNo]) {
-    delete vt.m.Course.instances[courseNo];
-    console.log("Course " + courseNo + " deleted");
-  } else {
-    console.log("There is no course with number " + courseNo +
-      " in the database!");
+  // if (vt.m.Course.instances[courseNo]) {
+  //   delete vt.m.Course.instances[courseNo];
+  //   console.log("Course " + courseNo + " deleted");
+  // } else {
+  //   console.log("There is no course with number " + courseNo +
+  //     " in the database!");
+  // }
+
+  var c = vt.m.Course.instances[courseNo],
+    key="", keys=[], lu=null, i=0, j=0;
+  // delete all course references from learning units
+  keys = Object.keys( vt.m.LearningUnit.instances);
+  for (i=0; i < keys.length; i++) {
+    key = keys[i];
+    lu = vt.m.LearningUnit.instances[key];
+    for(j = lu.courses.length-1; j>=0; j--){
+      if (lu.courses[j].source === c) {
+        lu.courses.splice(j, 1);
+        break;
+      }
+    }
   }
+  // delete the course
+  delete vt.m.Course.instances[c];
 };
 
 /**

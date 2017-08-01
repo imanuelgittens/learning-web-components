@@ -14,10 +14,7 @@ var vt = {
 vt.c.app = {
   generateTestData: function(){
     try{
-      vt.m.LearningUnit.instances['1'] = new vt.m.LearningUnit({learnUnitId: 1, learnUnitTitle: 'At Home', learnUnitDescription: 'Translations for things around the house'});
-      vt.m.LearningUnit.instances['2'] = new vt.m.LearningUnit({learnUnitId: 2, learnUnitTitle: 'Months, Days, Times', learnUnitDescription: 'Translations dealing with dates and times'});
-      vt.m.LearningUnit.instances['3'] = new vt.m.LearningUnit({learnUnitId: 3, learnUnitTitle: 'At Work', learnUnitDescription: 'Translations for things at work'});
-      vt.m.LearningUnit.saveAll();
+
       vt.m.Course.instances['1'] = new vt.m.Course({courseId: 1, courseTitle: 'Course 1', courseDescription: 'The first course', availableSourceLang: [vt.m.SourceLangEL.DE], availableTargetLang: [vt.m.SourceLangEL.EN]});
       vt.m.Course.instances['2'] = new vt.m.Course({courseId: 2, courseTitle: 'Course 2', courseDescription: 'The second course',availableSourceLang: [vt.m.SourceLangEL.ES], availableTargetLang: [vt.m.SourceLangEL.DE]});
       vt.m.Course.instances['3'] = new vt.m.Course({courseId: 3, courseTitle: 'Course 3',courseDescription: 'The third course', availableSourceLang: [vt.m.SourceLangEL.FR], availableTargetLang: [vt.m.SourceLangEL.DE]});
@@ -41,6 +38,10 @@ vt.c.app = {
       vt.m.TranslationProblem.instances["morning"] = new vt.m.TranslationProblem(
         {source:"morning", targets:"mañana; matutino"});
       vt.m.TranslationProblem.saveAll();
+      vt.m.LearningUnit.instances['1'] = new vt.m.LearningUnit({learnUnitId: 1, learnUnitTitle: 'At Home', learnUnitDescription: 'Translations for things around the house', courses: [1,2]});
+      vt.m.LearningUnit.instances['2'] = new vt.m.LearningUnit({learnUnitId: 2, learnUnitTitle: 'Months, Days, Times', learnUnitDescription: 'Translations dealing with dates and times', courses: [3,1]});
+      vt.m.LearningUnit.instances['3'] = new vt.m.LearningUnit({learnUnitId: 3, learnUnitTitle: 'At Work', learnUnitDescription: 'Translations for things at work', courses: [2,3]});
+      vt.m.LearningUnit.saveAll();
     }catch(e){
       console.log(e.constructor.name + ': ' + e.message);
     }
