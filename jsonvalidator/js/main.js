@@ -1,3 +1,5 @@
+'use strict';
+
 var testButton = document.getElementById('runTest');
 var uploadFileButton = document.getElementById('jsonFile');
 var testAgainButton = document.getElementById('testAgain');
