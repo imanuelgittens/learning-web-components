@@ -243,7 +243,7 @@ var puzzleModule = (function() {
     }
 
     function endGameWinner() {
-        var audio = new Audio('../assets/sounds/win.wav');
+        var audio = new Audio('./assets/sounds/win.wav');
         audio.play();
         setTimeout(function() {
             if (!alert("Congratulations!!!! You're a winner!")) {
@@ -253,7 +253,7 @@ var puzzleModule = (function() {
     }
 
     function endGameLoser() {
-        var audio = new Audio('../assets/sounds/lose.wav');
+        var audio = new Audio('./assets/sounds/lose.wav');
         audio.play();
         setTimeout(function() {
             if (!alert('Sorry...You gotta try again!')) {
