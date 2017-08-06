@@ -15,7 +15,6 @@ var puzzleModule = (function() {
         event.preventDefault();
         var data = event.dataTransfer.getData('text');
         var targetElement = event.target;
-        console.log(targetElement);
         if (targetElement.dataset.empty === 'true') {
             event.target.appendChild(document.getElementById(data));
             var completeTest = checkComplete();
