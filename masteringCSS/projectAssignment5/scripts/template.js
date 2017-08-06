@@ -1,28 +1,28 @@
 (function($, Handlebars) {
   'use strict';
   // Grab the template script
-  var theTemplateScript = $('#portfolio-template').html();
+  let theTemplateScript = $('#portfolio-template').html();
 
   //about partial
-  var aboutStr = $('#about-partial').html();
+  let aboutStr = $('#about-partial').html();
   Handlebars.registerPartial('about', aboutStr);
 
   //projects partial
-  var projectsStr = $('#project-partial').html();
+  let projectsStr = $('#project-partial').html();
   Handlebars.registerPartial('projects', projectsStr);
 
   //skills partial
-  var skillsStr = $('#skills-partial').html();
+  let skillsStr = $('#skills-partial').html();
   Handlebars.registerPartial('skills', skillsStr);
 
   //contact partial
-  var contactStr = $('#contact-partial').html();
+  let contactStr = $('#contact-partial').html();
   Handlebars.registerPartial('contact', contactStr);
 
   // Compile the template
-  var theTemplate = Handlebars.compile(theTemplateScript);
+  let theTemplate = Handlebars.compile(theTemplateScript);
 
-  var context = {
+  let context = {
     about:
       "I'm a pretty cheerful guy who loves building software applications. I'm particularly interested in E-Commerce applications that can help the Caribbean region. To accomplish my goals I've taken on the challenge of becoming a fullstack developer. My ultimate goal is to be able to build any application (front and backend) fromt he ground up and my it work exactly how I intend. :)",
     projects:
@@ -34,16 +34,16 @@
   };
 
   // Pass our data to the template
-  var theCompiledHtml = theTemplate(context);
+  let theCompiledHtml = theTemplate(context);
 
   // Add the compiled html to the page
   $('#templated-portfolio').html(theCompiledHtml);
 
-  // var templateSource = $('#templated-portfolio').html();
-  // var template = Handlebars.compile(templateSource);
+  // let templateSource = $('#templated-portfolio').html();
+  // let template = Handlebars.compile(templateSource);
   //
-  // var setPortfolio = function(data){
-  //   var html = template({data: data});
+  // let setPortfolio = function(data){
+  //   let html = template({data: data});
   //   $('#templated-portfolio').append(html);
   // }
   //
