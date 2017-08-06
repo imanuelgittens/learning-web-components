@@ -148,14 +148,14 @@ let puzzleModule = (function() {
         for (m = 0; m < boardItems.length; m++) {
             let id = boardItems[m].id.substr(13);
             let nodeItem = boardItems[m].parentNode.removeChild(boardItems[m]);
-            let correctBoardPosition = puzzleBoard.querySelector('#dropzone-' + id);
+            let correctBoardPosition = puzzleBoard.querySelector(`#dropzone-${id}`);
             correctBoardPosition.appendChild(nodeItem);
         }
         for (k = 0; k < items.length; k++) {
             let idNum = items[k].id.substr(13);
 
             let node = piecesShelf.removeChild(items[k]);
-            let correctPosition = puzzleBoard.querySelector('#dropzone-' + idNum);
+            let correctPosition = puzzleBoard.querySelector(`#dropzone-${idNum}`);
             correctPosition.appendChild(node);
         }
         let completeTest = checkComplete();
