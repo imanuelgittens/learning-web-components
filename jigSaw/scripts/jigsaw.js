@@ -1,4 +1,4 @@
-var puzzleModule = (function() {
+let puzzleModule = (function() {
     'use strict';
     /*drag functions*/
 
@@ -7,20 +7,20 @@ var puzzleModule = (function() {
     }
 
     function drag(event) {
-        var id = event.target.id;
+        let id = event.target.id;
         event.dataTransfer.setData('text', id);
     }
 
     function drop(event) {
         event.preventDefault();
-        var data = event.dataTransfer.getData('text');
-        var targetElement = event.target;
+        let data = event.dataTransfer.getData('text');
+        let targetElement = event.target;
         if (targetElement.dataset.empty === 'true') {
             event.target.appendChild(document.getElementById(data));
-            var completeTest = checkComplete();
-            var l;
+            let completeTest = checkComplete();
+            let l;
             if (completeTest) {
-                var puzzleItems = document.querySelectorAll('[id^="puzzle-piece-"]');
+                let puzzleItems = document.querySelectorAll('[id^="puzzle-piece-"]');
                 for (l = 0; l < puzzleItems.length; l++) {
                     puzzleItems[l].classList.add('shake');
                 }
@@ -36,17 +36,17 @@ var puzzleModule = (function() {
 
     /*action functions*/
 
-    var timeRemaining;
+    let timeRemaining;
 
-    var scrambleButton = document.getElementById('scramble');
+    let scrambleButton = document.getElementById('scramble');
 
     function scramble() {
-        var puzzleBoard = document.getElementById('puzzle-board');
-        var puzzlePiecesArea = document.getElementById('puzzle-pieces');
-        var difficulty = document.getElementById('difficulty');
-        var difficultyValue = difficulty.options[difficulty.selectedIndex].value;
-        var startAction = document.getElementById('start-control');
-        var extraAction = document.getElementById('extra-actions');
+        let puzzleBoard = document.getElementById('puzzle-board');
+        let puzzlePiecesArea = document.getElementById('puzzle-pieces');
+        let difficulty = document.getElementById('difficulty');
+        let difficultyValue = difficulty.options[difficulty.selectedIndex].value;
+        let startAction = document.getElementById('start-control');
+        let extraAction = document.getElementById('extra-actions');
 
         if (difficultyValue == 'easy') {
             timeRemaining = 420000;
@@ -61,7 +61,7 @@ var puzzleModule = (function() {
         puzzleBoard.style.background = 'url("./assets/images/unsolved.png")';
         puzzlePiecesArea.innerHTML = '';
 
-        var imgSourceArray = [
+        let imgSourceArray = [
             '<img id="puzzle-piece-5" src="assets/images/Group5.png" ondragstart="puzzleModule.drag(event)" draggable="true">',
             '<img id="puzzle-piece-6" src="assets/images/Group6.png" ondragstart="puzzleModule.drag(event)" draggable="true">',
             '<img id="puzzle-piece-7" src="assets/images/Group7.png" ondragstart="puzzleModule.drag(event)" draggable="true">',
@@ -105,14 +105,14 @@ var puzzleModule = (function() {
             '<img id="puzzle-piece-45" src="assets/images/Group45.png" ondragstart="puzzleModule.drag(event)" draggable="true">'
         ];
 
-        var i;
+        let i;
         //randomize array
         imgSourceArray.sort(function() {
             return 0.5 - Math.random();
         });
 
         for (i = 0; i < imgSourceArray.length; i++) {
-            var puzzlePieceHTML = imgSourceArray[i];
+            let puzzlePieceHTML = imgSourceArray[i];
             puzzlePiecesArea.innerHTML += puzzlePieceHTML;
         }
         startAction.classList.add('hidden');
@@ -126,12 +126,12 @@ var puzzleModule = (function() {
     /*puzzle functions*/
 
     function checkComplete() {
-        var complete = true;
-        var puzzleBoard = document.getElementById('puzzle-board');
-        var j;
+        let complete = true;
+        let puzzleBoard = document.getElementById('puzzle-board');
+        let j;
         for (j = 5; j <= 45; j++) {
-            var dropZone = puzzleBoard.querySelector('#dropzone-' + j);
-            var test = dropZone.querySelector('#puzzle-piece-' + j);
+            let dropZone = puzzleBoard.querySelector('#dropzone-' + j);
+            let test = dropZone.querySelector('#puzzle-piece-' + j);
             if (!test) {
                 complete = false;
             }
@@ -140,25 +140,25 @@ var puzzleModule = (function() {
     }
 
     function finishPuzzle() {
-        var puzzleBoard = document.getElementById('puzzle-board');
-        var piecesShelf = document.getElementById('puzzle-pieces');
-        var boardItems = puzzleBoard.querySelectorAll('[id^="puzzle-piece-"]');
-        var items = piecesShelf.querySelectorAll('[id^="puzzle-piece-"]');
-        var k, l, m;
+        let puzzleBoard = document.getElementById('puzzle-board');
+        let piecesShelf = document.getElementById('puzzle-pieces');
+        let boardItems = puzzleBoard.querySelectorAll('[id^="puzzle-piece-"]');
+        let items = piecesShelf.querySelectorAll('[id^="puzzle-piece-"]');
+        let k, l, m;
         for (m = 0; m < boardItems.length; m++) {
-            var id = boardItems[m].id.substr(13);
-            var nodeItem = boardItems[m].parentNode.removeChild(boardItems[m]);
-            var correctBoardPosition = puzzleBoard.querySelector('#dropzone-' + id);
+            let id = boardItems[m].id.substr(13);
+            let nodeItem = boardItems[m].parentNode.removeChild(boardItems[m]);
+            let correctBoardPosition = puzzleBoard.querySelector('#dropzone-' + id);
             correctBoardPosition.appendChild(nodeItem);
         }
         for (k = 0; k < items.length; k++) {
-            var idNum = items[k].id.substr(13);
+            let idNum = items[k].id.substr(13);
 
-            var node = piecesShelf.removeChild(items[k]);
-            var correctPosition = puzzleBoard.querySelector('#dropzone-' + idNum);
+            let node = piecesShelf.removeChild(items[k]);
+            let correctPosition = puzzleBoard.querySelector('#dropzone-' + idNum);
             correctPosition.appendChild(node);
         }
-        var completeTest = checkComplete();
+        let completeTest = checkComplete();
         if (completeTest) {
             for (l = 0; l < items.length; l++) {
                 items[l].classList.add('shake');
@@ -169,27 +169,27 @@ var puzzleModule = (function() {
         }
     }
 
-    var finishButton = document.getElementById('finish-puzzle');
+    let finishButton = document.getElementById('finish-puzzle');
     finishButton.addEventListener('click', finishPuzzle);
 
     //show completed puzzle
 
     function showComplete() {
-        var puzzleBoard = document.getElementById('puzzle-board');
+        let puzzleBoard = document.getElementById('puzzle-board');
         puzzleBoard.style.background = 'url("./assets/images/solved.png")';
     }
 
     function hideComplete() {
-        var puzzleBoard = document.getElementById('puzzle-board');
+        let puzzleBoard = document.getElementById('puzzle-board');
         puzzleBoard.style.background = 'url("./assets/images/unsolved.png")';
     }
 
-    var showCompleteButton = document.getElementById('show-hint');
+    let showCompleteButton = document.getElementById('show-hint');
     showCompleteButton.addEventListener('mousedown', showComplete);
     showCompleteButton.addEventListener('mouseup', hideComplete);
 
     function countDown(timeRemaining) {
-        var timer = document.getElementById('countdown-timer');
+        let timer = document.getElementById('countdown-timer');
         timer.style.display = 'flex';
         if (timeRemaining === 420000) {
             timer.innerHTML = '07:00';
@@ -206,12 +206,12 @@ var puzzleModule = (function() {
     }
 
     function startTimer() {
-        var timer = document.getElementById('countdown-timer');
-        var presentTime = timer.innerHTML;
-        var l;
-        var timeArray = presentTime.split(':');
-        var m = parseInt(timeArray[0]);
-        var s = checkSecond(parseInt(timeArray[1] - 1));
+        let timer = document.getElementById('countdown-timer');
+        let presentTime = timer.innerHTML;
+        let l;
+        let timeArray = presentTime.split(':');
+        let m = parseInt(timeArray[0]);
+        let s = checkSecond(parseInt(timeArray[1] - 1));
         if (parseInt(s) === 59) {
             m = m - 1;
         }
@@ -242,7 +242,7 @@ var puzzleModule = (function() {
     }
 
     function endGameWinner() {
-        var audio = new Audio('./assets/sounds/win.wav');
+        let audio = new Audio('./assets/sounds/win.wav');
         audio.play();
         setTimeout(function() {
             if (!alert("Congratulations!!!! You're a winner!")) {
@@ -252,7 +252,7 @@ var puzzleModule = (function() {
     }
 
     function endGameLoser() {
-        var audio = new Audio('./assets/sounds/lose.wav');
+        let audio = new Audio('./assets/sounds/lose.wav');
         audio.play();
         setTimeout(function() {
             if (!alert('Sorry...You gotta try again!')) {
