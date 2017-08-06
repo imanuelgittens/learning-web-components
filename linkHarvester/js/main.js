@@ -50,7 +50,7 @@
       for (let i = 0; i < result.links.length; i++) {
         let newLi = document.createElement('li');
         newLi.classList.add('links__item');
-        newLi.innerHTML = result.links[i].linkText + ': ' + result.links[i].url;
+        newLi.innerHTML = `${result.links[i].linkText} : ${result.links[i].url}`;
         linkArea.appendChild(newLi);
       }
     } else {
@@ -103,7 +103,7 @@
 
   //Event listeners
 
-  getLinks.addEventListener('click', function() {
+  getLinks.addEventListener('click', () => {
     let string = document.getElementById('dataInput').value;
     if (string) {
       findEmails(string);
@@ -115,7 +115,7 @@
     }
   });
 
-  uploadFile.addEventListener('change', function(event) {
+  uploadFile.addEventListener('change', event => {
     startRead();
   });
 })();

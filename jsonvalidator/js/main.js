@@ -78,11 +78,11 @@
 		}
 	});
 
-	uploadFileButton.addEventListener('change', function(event) {
+	uploadFileButton.addEventListener('change', event => {
 		startRead();
 	});
 
-	testAgainButton.addEventListener('click', function(event) {
+	testAgainButton.addEventListener('click', event => {
 		let jsonTextArea = document.getElementById('jsonText');
 		let uploadLabelText = document.getElementById('jsonFileSpan');
 		let jsonFileLabel = document.getElementById('jsonFileLabel');
