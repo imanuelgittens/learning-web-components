@@ -14,7 +14,7 @@
 
     function addClickEvent(node) {
         let destinationId = node.getAttribute('href').substr(1);
-        node.addEventListener('click', function(event) {
+        node.addEventListener('click', event => {
             event.preventDefault();
             smoothScroll(destinationId);
         });
@@ -47,7 +47,7 @@
         let timer = 0;
         if (stopY > startY) {
             for (let i = startY; i < stopY; i += step) {
-                setTimeout('window.scrollTo(0, ' + leapY + ')', timer * speed);
+                setTimeout(`window.scrollTo(0,  + ${leapY} + )`, timer * speed);
                 leapY += step;
                 if (leapY > stopY) leapY = stopY;
                 timer++;
@@ -55,7 +55,7 @@
             return;
         }
         for (let j = startY; j > stopY; j -= step) {
-            setTimeout('window.scrollTo(0, ' + leapY + ')', timer * speed);
+            setTimeout(`window.scrollTo(0,  + ${leapY} + )`, timer * speed);
             leapY -= step;
             if (leapY < stopY) leapY = stopY;
             timer++;
@@ -83,7 +83,7 @@
         sideMenu.classList.remove('sticky');
     }
 
-    window.addEventListener('scroll', function(event) {
+    window.addEventListener('scroll', event => {
         let currentPosition = window.scrollY;
         if (currentPosition > 200) {
             stickSideMenu();
