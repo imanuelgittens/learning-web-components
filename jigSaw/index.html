@@ -28,68 +28,68 @@
 
 
   <div class="puzzle-board-wrapper">
-    <div id="puzzle-pieces" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div id="puzzle-pieces" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)">
       <!--puzzle pieces come here-->
     </div>
     <div id="puzzle-board" class="puzzle-board">
       <div class="puzzle-board__row">
-        <div id="dropzone-5" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-6" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-7" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-8" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-9" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-5" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-6" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-7" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-8" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-9" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row-offset negative-margin">
-        <div id="dropzone-10" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-11" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-12" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-13" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-10" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-11" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-12" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-13" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row negative-margin">
-        <div id="dropzone-14" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-15" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-16" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-17" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-18" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-14" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-15" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-16" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-17" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-18" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row-offset negative-margin">
-        <div id="dropzone-19" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-20" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-21" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-22" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-19" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-20" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)"></div>
+        <div id="dropzone-21" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-22" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row negative-margin">
-        <div id="dropzone-23" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-24" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-25" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-26" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-27" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-23" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-24" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-25" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-26" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-27" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row-offset negative-margin">
-        <div id="dropzone-28" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-29" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-30" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-31" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-28" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-29" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-30" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-31" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row negative-margin">
-        <div id="dropzone-32" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-33" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-34" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-35" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-36" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-32" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-33" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-34" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-35" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-36" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row-offset negative-margin">
-        <div id="dropzone-37" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-38" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-39" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-40" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-37" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-38" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-39" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-40" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
       <div class="puzzle-board__row negative-margin">
-        <div id="dropzone-41" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-42" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-43" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-44" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="dropzone-45" class="puzzle-board__row-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="dropzone-41" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-42" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-43" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-44" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
+        <div id="dropzone-45" class="puzzle-board__row-dropzone" ondrop="puzzleModule.drop(event)" ondragover="puzzleModule.allowDrop(event)" data-empty="true"></div>
       </div>
     </div>
 
@@ -97,15 +97,6 @@
   </div>
 
 </div>
-
-
-
-
-
-
-
-
-
 
 <script src="scripts/jigsaw.js"></script>
 </body>
