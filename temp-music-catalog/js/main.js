@@ -1,53 +1,96 @@
-// (function() {
-// 	//api key - c14565b6ac455f6f7f8acf54fe449cde
-// 	//http://api.onemusicapi.com/20151208/track?user_key=myUserKey
-
-// 	function getTracksFromAPI() {
-// 		let apiURL = `http://api.onemusicapi.com/20151208/track?user_key=c14565b6ac455f6f7f8acf54fe449cde
-// 									&title=Pantomime+Horse&artist=Suede`;
-
-// 		let titlesArray = [];
-
-// 		let xhr = new XMLHttpRequest();
-// 		xhr.onload = function() {
-// 			//handle response
-// 			if (xhr.status === 200) {
-// 				console.log(JSON.parse(xhr.response).data);
-// 			}
-// 		};
-
-// 		xhr.open('GET', apiURL);
-// 		xhr.send();
-// 	}
-
-// 	getTracksFromAPI();
-// })();
-
 (function() {
-	'use strict';
-
-	let rootURL = 'http://numbersapi.com';
-
-	function generateFact() {
-		let randomNumber = Math.floor(Math.random() * (200 - 0 + 0) + 0);
+	function getCompaniesFromAPI() {
+		let apiURL = `https://developer.nrel.gov/api/energy-innovations/v1/marketingSummaries/search/technologyCategory?categoryName=Solar%20Photovoltaic&api_key=eK3lLfihVPMN0FVCdM4WkJtkCWmvk7lP57g63x7V`;
 		let xhr = new XMLHttpRequest();
-		//let factTitle = document.querySelector('.numberFactTitle');
-		// let fact = document.querySelector('.factString');
-		xhr.onload = function() {
-			// do something with the response
+		xhr.onload = () => {
+			//handle response
 			if (xhr.status === 200) {
-				// factTitle.innerHTML = 'Here is a fact about the number ' + randomNumber;
-				// fact.innerHTML = xhr.response;
-				console.log(xhr.response);
+				let data = JSON.parse(xhr.response);
+				console.log(data);
+				let company;
+				let marketingSummaries = data._embedded.marketingSummaries;
+				for (company of marketingSummaries) {
+					insertCompanyOnPage(company);
+				}
 			}
 		};
-		xhr.open('GET', rootURL + '/' + randomNumber);
+		xhr.open('GET', apiURL);
 		xhr.send();
 	}
 
-	// document.addEventListener('DOMContentLoaded', generateFact);
+	function insertCompanyOnPage(company) {
+		let companyContainer = document.createElement('div');
+		companyContainer.classList.add('company-information');
+		let companyHTML = `
+        <div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h2 class="panel-title">${company.title}</h2>
+				  </div>
+				  <div class="panel-body">
+				    <div class="company-summary">
+               ${company.summary}
+				    </div>
+				    <div class="company-applications">
+ 								<h4>Applications</h4>
+ 								${company.applications}
+				    </div>
+				    <div class="company-benefits">
+ 								<h4>Benefits</h4>
+ 								${company.benefits}
+				    </div>
+				  </div>
+				</div>
+		`;
+		companyContainer.innerHTML = companyHTML;
+		companyListArea.appendChild(companyContainer);
+	}
 
-	// let factGenerator = document.querySelector('.newNumberFact');
-	// factGenerator.addEventListener('click', generateFact);
-	generateFact();
+	function databaseExists(name, callback) {
+		let dbExists = true;
+		let request = window.indexedDB.open(name);
+		request.onupgradeneeded = () => {
+			if (request.result.version === 1) {
+				dbExists = false;
+				window.indexedDB.deleteDatabase(name);
+				if (callback) {
+					callback(dbExists);
+				}
+			}
+		};
+		request.onsuccess = () => {
+			if (dbExists) {
+				if (callback) {
+					callback(dbExists);
+				}
+			}
+		};
+	}
+
+	function getCompaniesFromIndexedDB() {
+		if ('indexedDB' in window) {
+			console.log('yes');
+			return true;
+		}
+		return false;
+	}
+
+	//HTML Element Variables
+
+	let getCompaniesBtn = document.getElementById('getCompanies');
+	let companyListArea = document.querySelector('.solar-companies__listing .container');
+
+	//Event Listensers
+
+	getCompaniesBtn.addEventListener('click', () => {
+		//get companies when button is clicked
+		//check if database exists
+		databaseExists('solar', dbexists => {
+			if (dbexists) {
+				getCompaniesFromIndexedDB();
+				return true;
+			}
+			getCompaniesFromAPI();
+			return false;
+		});
+	});
 })();
