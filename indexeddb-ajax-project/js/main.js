@@ -1,16 +1,15 @@
 (function() {
-	function getCompaniesFromAPI() {
+	function getSummariesFromAPI() {
 		let apiURL = `https://developer.nrel.gov/api/energy-innovations/v1/marketingSummaries/search/technologyCategory?categoryName=Solar%20Photovoltaic&api_key=eK3lLfihVPMN0FVCdM4WkJtkCWmvk7lP57g63x7V`;
 		let xhr = new XMLHttpRequest();
 		xhr.onload = () => {
 			//handle response
 			if (xhr.status === 200) {
 				let data = JSON.parse(xhr.response);
-				//console.log(data);
 				let company;
 				let marketingSummaries = data._embedded.marketingSummaries;
 				for (company of marketingSummaries) {
-					insertCompanyOnPage(company);
+					insertSummaryOnPage(company);
 				}
 				saveDataToDB(marketingSummaries);
 			}
@@ -19,8 +18,8 @@
 		xhr.send();
 	}
 
-	function saveDataToDB(company) {
-		if ('indexedDB' in window) {
+	function saveDataToDB(summaries) { 
+		console.log('saving')
 			let db;
 			let request = window.indexedDB.open('solar', 1);
 
@@ -30,17 +29,21 @@
 
 			request.onsucces = event => {
 				db = event.target.result;
-				console.log('db opened');
 			};
 
 			request.onupgradeneeded = event => {
 				let db = event.target.result;
 				let objectStore = db.createObjectStore('summaries', { autoIncrement: true });
-			};
-		}
+				objectStore.transaction.oncomplete = event => {
+					let summaryObjectStore = db.transaction('summaries', 'readwrite').objectStore('summaries');
+					for(let i = 0; i < summaries.length; i++){
+						summaryObjectStore.add(summaries[i]);
+					}
+				}
+			};	
 	}
 
-	function insertCompanyOnPage(company) {
+	function insertSummaryOnPage(company) {
 		let companyContainer = document.createElement('div');
 		companyContainer.classList.add('company-information');
 		let companyHTML = `
@@ -88,50 +91,50 @@
 		};
 	}
 
-	function getCompaniesFromIndexedDB() {
+	function getSummariesFromIndexedDB() {
 		if ('indexedDB' in window) {
-			let openRequest = window.indexedDB.open('solar', 1);
-			//console.log(openRequest);
+			let openRequest = window.indexedDB.open('solar');
 			openRequest.onsuccess = function(event) {
 				// work with the db
 				let db = event.target.result;
 
-				let transaction = db.transaction('solar', 'readonly'),
-					objectStore = transaction.objectStore('summaries'),
-					getRequest = objectStore.get(1);
+				let transaction = db.transaction(['summaries']);
+				let objectStore = transaction.objectStore('summaries');
+				let request = objectStore.getAll();
+				let allSummaries;
+				request.onerror = event => {
+					alert(`Error! ${event.target.errorCode}`);
+				}
 
-				getRequest.onsuccess = () => {
-					console.log('success', event.target.result);
-				};
-				//console.log('db Opened!');
+				request.onsuccess = event => {
+					allSummaries = event.target.result;
+					for(let i = 0; i < allSummaries.length; i++){
+						insertSummaryOnPage(allSummaries[i]);
+					}
+				}
 			};
 		}
-		return false;
+		
 	}
 
 	//HTML Element Variables
 
-	let getCompaniesBtn = document.getElementById('getCompanies');
-	let dbBtn = document.getElementById('getDB');
+	let getSummariesBtn = document.getElementById('getCompanies');
 	let companyListArea = document.querySelector('.solar-companies__listing .container');
 
 	//Event Listensers
 
-	dbBtn.addEventListener('click', () => {
-		getCompaniesFromIndexedDB();
-	});
-
-	getCompaniesBtn.addEventListener('click', () => {
-		//get companies when button is clicked
-		//check if database exists
-		// databaseExists('solar', dbexists => {
-		// 	if (dbexists) {
-		// 		getCompaniesFromIndexedDB();
-		// 		return true;
-		// 	}
-		// 	getCompaniesFromAPI();
-		// 	return false;
-		// });
-		getCompaniesFromAPI();
+	getSummariesBtn.addEventListener('click', () => {
+		// get companies when button is clicked
+		// check if database exists
+		databaseExists('solar', dbexists => {
+			if (dbexists) {
+				alert(`Local data found. Requesting from IndexedDB`);
+				getSummariesFromIndexedDB();
+			}else{
+				alert(`No local data. Requesting from API.`);
+				getSummariesFromAPI();
+			}
+		});
 	});
 })();
