@@ -6,16 +6,38 @@
 			//handle response
 			if (xhr.status === 200) {
 				let data = JSON.parse(xhr.response);
-				console.log(data);
+				//console.log(data);
 				let company;
 				let marketingSummaries = data._embedded.marketingSummaries;
 				for (company of marketingSummaries) {
 					insertCompanyOnPage(company);
 				}
+				saveDataToDB(marketingSummaries);
 			}
 		};
 		xhr.open('GET', apiURL);
 		xhr.send();
+	}
+
+	function saveDataToDB(company) {
+		if ('indexedDB' in window) {
+			let db;
+			let request = window.indexedDB.open('solar', 1);
+
+			request.onerror = event => {
+				alert(`Database error! ${event.target.errorCode}`);
+			};
+
+			request.onsucces = event => {
+				db = event.target.result;
+				console.log('db opened');
+			};
+
+			request.onupgradeneeded = event => {
+				let db = event.target.result;
+				let objectStore = db.createObjectStore('summaries', { autoIncrement: true });
+			};
+		}
 	}
 
 	function insertCompanyOnPage(company) {
@@ -68,8 +90,21 @@
 
 	function getCompaniesFromIndexedDB() {
 		if ('indexedDB' in window) {
-			console.log('yes');
-			return true;
+			let openRequest = window.indexedDB.open('solar', 1);
+			//console.log(openRequest);
+			openRequest.onsuccess = function(event) {
+				// work with the db
+				let db = event.target.result;
+
+				let transaction = db.transaction('solar', 'readonly'),
+					objectStore = transaction.objectStore('summaries'),
+					getRequest = objectStore.get(1);
+
+				getRequest.onsuccess = () => {
+					console.log('success', event.target.result);
+				};
+				//console.log('db Opened!');
+			};
 		}
 		return false;
 	}
@@ -77,20 +112,26 @@
 	//HTML Element Variables
 
 	let getCompaniesBtn = document.getElementById('getCompanies');
+	let dbBtn = document.getElementById('getDB');
 	let companyListArea = document.querySelector('.solar-companies__listing .container');
 
 	//Event Listensers
 
+	dbBtn.addEventListener('click', () => {
+		getCompaniesFromIndexedDB();
+	});
+
 	getCompaniesBtn.addEventListener('click', () => {
 		//get companies when button is clicked
 		//check if database exists
-		databaseExists('solar', dbexists => {
-			if (dbexists) {
-				getCompaniesFromIndexedDB();
-				return true;
-			}
-			getCompaniesFromAPI();
-			return false;
-		});
+		// databaseExists('solar', dbexists => {
+		// 	if (dbexists) {
+		// 		getCompaniesFromIndexedDB();
+		// 		return true;
+		// 	}
+		// 	getCompaniesFromAPI();
+		// 	return false;
+		// });
+		getCompaniesFromAPI();
 	});
 })();
