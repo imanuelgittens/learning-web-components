@@ -117,24 +117,51 @@
 		
 	}
 
+	function setVisitedCookie() {
+      let tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.cookie = 'visited=yes;expires=' + tomorrow.toUTCString();
+  }
+
+  function checkCookies() {
+      let cookies = document.cookie;
+      let testCookie = cookies.indexOf('visited=');
+      if (testCookie >= 0) {
+          return true
+      } else {
+          return false;
+      }
+  }
+
 	//HTML Element Variables
 
-	let getSummariesBtn = document.getElementById('getCompanies');
+	//let getSummariesBtn = document.getElementById('getCompanies');
 	let companyListArea = document.querySelector('.solar-companies__listing .container');
 
 	//Event Listensers
 
-	getSummariesBtn.addEventListener('click', () => {
-		// get companies when button is clicked
-		// check if database exists
-		databaseExists('solar', dbexists => {
-			if (dbexists) {
-				alert(`Local data found. Requesting from IndexedDB`);
-				getSummariesFromIndexedDB();
-			}else{
-				alert(`No local data. Requesting from API.`);
-				getSummariesFromAPI();
-			}
-		});
+	document.addEventListener('DOMContentLoaded', () => {
+		if(checkCookies()){
+			alert(`Local data found. Requesting from IndexedDB`);
+			getSummariesFromIndexedDB();
+		}else{
+			alert(`No local data. Requesting from API.`);
+			getSummariesFromAPI();
+			setVisitedCookie();
+		}
 	});
+
+	// getSummariesBtn.addEventListener('click', () => {
+	// 	// get companies when button is clicked
+	// 	// check if database exists
+	// 	databaseExists('solar', dbexists => {
+	// 		if (dbexists) {
+	// 			alert(`Local data found. Requesting from IndexedDB`);
+	// 			getSummariesFromIndexedDB();
+	// 		}else{
+	// 			alert(`No local data. Requesting from API.`);
+	// 			getSummariesFromAPI();
+	// 		}
+	// 	});
+	// });
 })();
