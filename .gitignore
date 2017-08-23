@@ -1,3 +1,5 @@
 *.sublime-workspace
 .idea
 .sass-cache*
+
+*node_modules*
