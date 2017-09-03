@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo Album</title>
+	<script id="photo-template" type="text/x-handlebars-template">
+			{{#each photos}}
+				<div class="photo">
+					<img class="photo__thumbNailURL" src="{{thumbnailUrl}}">
+					<h3 class="photo__title">{{title}}</h3>
+				</div>
+			{{/each}}
+	</script>
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+	<div class="container">
+		<h3>Mustache.js Photo Gallery</h3>
+		<section id="all-photos">
+		</section>
+	</div>
+	
+	<script type="text/javascript" src="scripts/zepto.js"></script>
+	<script type="text/javascript" src="scripts/handlebars.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>

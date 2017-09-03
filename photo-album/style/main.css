@@ -1,0 +1,17 @@
+.container{
+	max-width: 1170px;
+	margin: 0px auto;
+}
+
+#all-photos{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.photo{
+	padding: 5px;
+}
+
+.photo__title{
+	max-width: 150px;
+}
