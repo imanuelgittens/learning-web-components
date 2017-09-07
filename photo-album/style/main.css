@@ -12,6 +12,16 @@
 	padding: 5px;
 }
 
+.photo:hover{
+	cursor: pointer;
+}
+
 .photo__title{
 	max-width: 150px;
+}
+
+#gallery-modal{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
 }
