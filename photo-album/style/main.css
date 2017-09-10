@@ -3,7 +3,7 @@
 	margin: 0px auto;
 }
 
-#all-photos{
+.photo-album-wrapper{
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -19,16 +19,3 @@
 .photo__title{
 	max-width: 150px;
 }
-
-/*Modal background*/
-
-#gallery-modal{
-	display: none
-}
-
-/*Modal img*/
-
-/*#gallery-modal__img{
-	width: auto;
-	height: 350px;
-}*/

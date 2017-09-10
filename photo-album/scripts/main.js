@@ -4,7 +4,9 @@
 	$(document).ready(function(){
 		var photoGallery = {
 			twentyRandomPhotos: [],
+			photoAlbums: [],
 			photosURL: 'data/photos.json',
+			albumsURL: 'data/albums.json',
 			init: function(){
 				this.cacheDom();
 				this.bindEvents();
@@ -20,7 +22,7 @@
 			},
 			fetchPhotos: function(){
 					var galleryObject = this;
-					$.get(this.photosURL, function(response) {
+					$.get(galleryObject.photosURL, function(response) {
 						var i;
 						var random = 0;
 						for(i = 0; i < 20; i++){
@@ -28,14 +30,51 @@
 							galleryObject.twentyRandomPhotos.push(response[random]);
 							response.splice(random, 1);
 						}
-						galleryObject.setPhotos(galleryObject.twentyRandomPhotos);
+						//after fetching photos, we fetch the albums
+						galleryObject.fetchAlbums();
 					});
 					
+			},
+			fetchAlbums: function(){
+					var galleryObject = this;
+					$.get(galleryObject.albumsURL, function(response){
+						var i, temp;
+						for(i = 0; i < galleryObject.twentyRandomPhotos.length; i++){
+							temp = response.find(function(album){
+								return galleryObject.twentyRandomPhotos[i].albumId === album.id;
+							});
+							if(galleryObject.photoAlbums.indexOf(temp) < 0){
+								galleryObject.photoAlbums.push(temp);
+							}
+							
+						}
+
+						//after fetching albums we display photos on the page
+						galleryObject.displayPhotosByAlbum();
+					})
+			},
+			displayPhotosByAlbum: function(){
+				var galleryObject = this;
+				var tempAlbum = [];
+				var temp;
+				var i;
+				var currAlbum;
+				var context = {};
+				for(i = 0; i < galleryObject.photoAlbums.length; i++){
+					currAlbum = galleryObject.photoAlbums[i];
+					temp = galleryObject.twentyRandomPhotos.filter(function(photo){
+						return photo.albumId === currAlbum.id;
+					});
+					context[currAlbum.id] = [];
+					context[currAlbum.id].push(...temp);
+				}
+				galleryObject.setPhotos(context);
+
 			},
 			setPhotos: function(photos) {
 				var templateStr = this.$templateStr.html();
 				var photoTemplate = Handlebars.compile(templateStr);
-				var html = photoTemplate({ photos: photos });
+				var html = photoTemplate(photos);
 				this.$el.append(html);
 			},
 			handlePhotoClick: function(event){
@@ -46,17 +85,15 @@
 				var photoObject = galleryObject.twentyRandomPhotos.find(function(photo){
 					return photo.id === photoId;
 				});
-				console.log(photoObject);
 				var photoURL = photoObject.url;
-				$(photoContainer).avgrund({
-					showClose: true,
-					showCloseText: 'close',
-					width: 350,
-					height: 350,
-					template: '<img height=350 id="#gallery-modal__img" src="'+photoURL+'"/>'
-				});
-				//activating the modal code doesn't make it appear so we must trigger a click
-				$(photoContainer).trigger('click'); 		
+				var win = window.open(photoURL, '_blank');
+				if (win) {
+				    //Browser has allowed it to be opened
+				    win.focus();
+				} else {
+				    //Browser has blocked it
+				    alert('Please allow popups for this website');
+				}
 			}
 		}
 

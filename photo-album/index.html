@@ -3,36 +3,33 @@
 <head>
 	<title>Photo Album</title>
 	<script id="photo-template" type="text/x-handlebars-template">
-			{{#each photos}}
-				<div id="single-photo-{{id}}" class="photo" data-photoid="{{id}}">
-					<img class="photo__thumbNailURL" src="{{thumbnailUrl}}">
-					<h3 class="photo__title">{{title}}</h3>
+			{{#each this}}
+			<div class="photo-album-wrapper">
+				<h3>Album #: {{@key}}</h3>
+				{{#each this}}
+						<div id="single-photo-{{id}}" class="photo" data-photoid="{{id}}">
+							<img class="photo__thumbNailURL" src="{{thumbnailUrl}}">
+							<h3 class="photo__title">{{title}}</h3>
+						</div>
+				{{/each}}
 				</div>
 			{{/each}}
 	</script>
 	<link rel="stylesheet" type="text/css" href="style/normalize.css">
-	<link rel="stylesheet" type="text/css" href="style/avgrund.css">
+	<!-- <link rel="stylesheet" type="text/css" href="style/featherlight.css"> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="style/avgrund.css"> -->
 	<link rel="stylesheet" type="text/css" href="style/main.css">
 </head>
-<body>
+<body class="body">
 	<div class="container">
 		<h3>Mustache.js Photo Gallery</h3>
 		<section id="all-photos">
 		</section>
 	</div>
-
-	<div id="gallery-modal">
-		<div class="gallery-modal__content">
-			<img id="gallery-modal__img" src=""/>
-		</div>
-	</div>
 	
 	<script type="text/javascript" src="scripts/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/handlebars.js"></script>
-	<script type="text/javascript" src="scripts/jquery.avgrund.js"></script>
+<!-- 	<script type="text/javascript" src="scripts/jquery.avgrund.js"></script> -->
 	<script type="text/javascript" src="scripts/main.js"></script>
-	<script type="text/javascript">
-		$('.photo').avgrund();
-	</script>
 </body>
 </html>
